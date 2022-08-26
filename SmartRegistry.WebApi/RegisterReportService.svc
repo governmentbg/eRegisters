@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="SmartRegistry.WebApi.RegisterReportService" CodeBehind="RegisterReportService.svc.cs" %>
