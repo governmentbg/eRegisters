@@ -1,0 +1,53 @@
+﻿<div class="row">
+
+    @if (System.Configuration.ConfigurationManager.AppSettings["WarningLabel"] != string.Empty)
+    {
+        <div id="Test" runat="server" visible="true" class="container text-center" style="width: 100% !important; background-color: rgb(255, 182, 105); color: white;">
+            <marquee direction="right" height="30" width="400">
+                <h3>@System.Configuration.ConfigurationManager.AppSettings["WarningLabel"] СРЕДА</h3>
+            </marquee>
+        </div>
+    }
+</div>
+<header id="page-topbar">
+    <div class="container">
+        <div class="navbar-header" style="width:100%;">
+            <div class="d-flex" style="justify-content: space-between; width:100%; align-items: center;">
+                <div class="navbar-brand-box">
+                    <a href="@Url.Action("Index","Home")" class="logo logo-dark" style="line-height: normal;">
+                        <img src="/SmartRegistryPublic/Assets/images/logo.svg" alt="">
+                        <div>
+                            <p class="mobile -dn">ИСЦИПР</p>
+                            <p style="font-weight: 500 !important;">Информационна система за централизирано <br>изграждане и поддържане на регистри</p>
+                            <span style="color:grey;">МИНИСТЕРСТВО НА ЕЛЕКТРОННОТО УПРАВЛЕНИЕ</span>
+
+                        </div>
+                    </a>
+                </div>
+
+                <a href="#" class="menu-toggle"><i class="mdi mdi-menu"></i> Меню</a>
+
+
+            </div>
+
+
+        </div>
+
+        <nav>
+            <ul>
+                <li>
+                    <span> Регистри </span>
+                    <ul>
+
+                        <li class="active"> <a href="@Url.Action("Index","")">Начало</a></li>
+                        <li> <a href="@Url.Action("Index","Registers")">Регистри</a></li>
+                        <li><a href="@Url.Action("Index","About")">За агенцията</a></li>
+                        <li><a href="@Url.Action("Index","Contact")">За Контакти</a></li>
+                    </ul>
+        </nav>
+    </div>
+</header>
+
+
+
+

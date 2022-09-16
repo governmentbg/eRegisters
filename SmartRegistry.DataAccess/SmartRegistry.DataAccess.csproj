@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4581AB83-B08B-4535-8F9F-35751DC0CAC8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartRegistry.DataAccess</RootNamespace>
+    <AssemblyName>SmartRegistry.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr3.Runtime.3.5.1\lib\net40-client\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=3.1.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.3.1.0\lib\net461\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.4\lib\net461\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=5.3.0.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.5.3.10\lib\net461\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.Caches.SysCache2, Version=5.7.0.0, Culture=neutral, PublicKeyToken=6876f2ea66c9f443, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.Caches.SysCache2.5.7.0\lib\net461\NHibernate.Caches.SysCache2.dll</HintPath>
+    </Reference>
+    <Reference Include="Orak.Utils, Version=1.0.0.17935, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Orak.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq.EagerFetching, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.EagerFetching.2.2.0\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartRegistry.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SmartRegistry.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AreaGroupDao.cs" />
+    <Compile Include="Mappings\AreaGroupMap.cs" />
+    <Compile Include="Mappings\RegisterAttributeHeadMap.cs" />
+    <Compile Include="Mappings\RegisterAreaMap.cs" />
+    <Compile Include="Mappings\RegisterAttributeMap.cs" />
+    <Compile Include="Mappings\AreaMap.cs" />
+    <Compile Include="Mappings\RegisterPermissionMap.cs" />
+    <Compile Include="Mappings\RegisterRecordMap.cs" />
+    <Compile Include="Mappings\RegisterRecordValueDateTimeMap.cs" />
+    <Compile Include="Mappings\RegisterRecordValueNumericMap.cs" />
+    <Compile Include="Mappings\RegisterRecordValueIntMap.cs" />
+    <Compile Include="Mappings\RegisterRecordValueNVarcharMap.cs" />
+    <Compile Include="Mappings\RegisterRecordValueTextMap.cs" />
+    <Compile Include="Mappings\RegisterRightMap.cs" />
+    <Compile Include="Mappings\ServiceLogMap.cs" />
+    <Compile Include="Mappings\SystemLogEventMap.cs" />
+    <Compile Include="Mappings\UnifiedDataMap.cs" />
+    <Compile Include="Mappings\UserAdministrativeBodyMap.cs" />
+    <Compile Include="Mappings\RegisterMap.cs" />
+    <Compile Include="Mappings\UnifiedDataCompositeMap.cs" />
+    <Compile Include="Mappings\UserGroupRightMap.cs" />
+    <Compile Include="Mappings\WebServiceMap.cs" />
+    <Compile Include="Mappings\WebServiceRequestConditionMap.cs" />
+    <Compile Include="Mappings\WebServiceResponseAttributeMap.cs" />
+    <Compile Include="RegisterAreaDao.cs" />
+    <Compile Include="RegisterAttributeDao.cs" />
+    <Compile Include="RegisterAttributeHeadDao.cs" />
+    <Compile Include="RegisterPermissionsDao.cs" />
+    <Compile Include="RegisterRecordsDao.cs" />
+    <Compile Include="AreasDao.cs" />
+    <Compile Include="RegisterRightsDao.cs" />
+    <Compile Include="RegistersDao.cs" />
+    <Compile Include="ServiceLogDao.cs" />
+    <Compile Include="UnifiedDataCompositeDao.cs" />
+    <Compile Include="UnifiedDataDao.cs" />
+    <Compile Include="UserGroupRightsDao.cs" />
+    <Compile Include="ConstantsDAO.cs" />
+    <Compile Include="Mappings\UserGroupMap.cs" />
+    <Compile Include="Mappings\UserIdentificatorTypeMap.cs" />
+    <Compile Include="Mappings\UserIdentificatorMap.cs" />
+    <Compile Include="SystemLogDao.cs" />
+    <Compile Include="UserGroupsDao.cs" />
+    <Compile Include="UserIdentificatorDao.cs" />
+    <Compile Include="UserIdentificatorTypesDao.cs" />
+    <Compile Include="UsersDao.cs" />
+    <Compile Include="AdministrativeBodiesDao.cs" />
+    <Compile Include="BaseDao.cs" />
+    <Compile Include="Mappings\AdministrativeBodyMap.cs" />
+    <Compile Include="Mappings\RegistrySettingMap.cs" />
+    <Compile Include="Mappings\UserMap.cs" />
+    <Compile Include="NHibernateDbContext.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegistrySettingsDao.cs" />
+    <Compile Include="SessionFactoryManager.cs" />
+    <Compile Include="WebServicesDao.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

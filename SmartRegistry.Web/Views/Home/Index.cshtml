@@ -1,0 +1,77 @@
+﻿
+<div class="container-fluid">
+    <!-- Begin page -->
+    <div class="container">
+
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <!-- start page title -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <h4 class="page-title mb-0 font-size-18">Начало</h4>
+
+                    </div>
+                </div>
+            </div>
+            <!-- end page title -->
+            <div class="page-content">
+                <div class="row">
+                    <div class="col-xl-4">
+                        <a href="@Url.Action("Index", "UnifiedData")">
+                            <div class="card">
+                                <div class="card-body -bg-grey">
+                                    <div class="d-flex align-items-start">
+                                        <div class="avatar-sm font-size-20 -mr1"> <span class="avatar-title bg-soft-primary text-primary rounded"> <i class="mdi mdi-tag-plus-outline"></i> </span> </div>
+                                        <div class="flex-1">
+                                            <div class="font-size-16 mt-2">Информационни обекти</div>
+                                        </div>
+                                    </div>
+                                    <h4 class="mt-4">@ViewBag.UnifiedCount</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xl-4">
+                        <a href="@Url.Action("Index", "Registers")">
+                            <div class="card">
+                                <div class="card-body -bg-grey">
+                                    <div class="d-flex align-items-start">
+                                        <div class="avatar-sm font-size-20 -mr1"> <span class="avatar-title bg-soft-primary text-primary rounded"> <i class="mdi mdi-clipboard-list-outline"></i> </span> </div>
+                                        <div class="flex-1">
+                                            <div class="font-size-16 mt-2">Регистър на Регистрите</div>
+                                        </div>
+                                    </div>
+                                    <h4 class="mt-4">@ViewBag.Registers</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-xl-4">
+                        <a href="@Url.Action("Index", "AdministrativeBodies")">
+                            <div class="card">
+                                <div class="card-body -bg-grey">
+                                    <div class="d-flex align-items-start">
+                                        <div class="avatar-sm font-size-20 -mr1"> <span class="avatar-title bg-soft-primary text-primary rounded"> <i class="mdi mdi-file-table-box-multiple-outline"></i> </span> </div>
+                                        <div class="flex-1">
+                                            <div class="font-size-16 mt-2">Административни органи </div>
+                                        </div>
+                                    </div>
+                                    <h4 class="mt-4">@ViewBag.Organizations</h4>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <!-- end row -->
+
+            </div>
+            <!-- End Page-content -->
+        </div>
+        <!-- end main content-->
+    </div>
+    <!-- END layout-wrapper -->
+
+</div>
