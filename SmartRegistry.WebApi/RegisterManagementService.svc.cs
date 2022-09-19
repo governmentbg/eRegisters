@@ -11,6 +11,7 @@ using SmartRegistry.DataAccess;
 using SmartRegistry.Domain;
 using SmartRegistry.Domain.Entities;
 using SmartRegistry.Domain.Interfaces;
+using SmartRegistry.CommonWeb;
 using System.Xml.Linq;
 using SmartRegistry.WebApi.Helper;
 using System.Web;

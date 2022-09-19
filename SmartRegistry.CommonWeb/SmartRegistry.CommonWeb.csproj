@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73993F34-8904-4BD8-9622-E6FC917163B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SmartRegistry.CommonWeb</RootNamespace>
+    <AssemblyName>SmartRegistry.CommonWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EgovAdministrativeRegister, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\EgovAdministrativeRegister.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Orak.Utils, Version=1.0.0.17935, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Orak.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartRegistry.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\SmartRegistry.Domain.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseControlsTransformer.cs" />
+    <Compile Include="JsonControls\AjaxInputResultObject.cs" />
+    <Compile Include="JsonControls\ControlModelAjaxInput.cs" />
+    <Compile Include="JsonControls\ControlModelBase.cs" />
+    <Compile Include="JsonControls\ControlModelCheckbox.cs" />
+    <Compile Include="JsonControls\ControlModelDate.cs" />
+    <Compile Include="JsonControls\ControlModelDateTime.cs" />
+    <Compile Include="JsonControls\ControlModelHidden.cs" />
+    <Compile Include="JsonControls\ControlModelMultilineText.cs" />
+    <Compile Include="JsonControls\ControlModelFieldset.cs" />
+    <Compile Include="JsonControls\ControlModelNumber.cs" />
+    <Compile Include="JsonControls\ControlModelOptionElement.cs" />
+    <Compile Include="JsonControls\ControlModelOptionElementBase.cs" />
+    <Compile Include="JsonControls\ControlModelOptionGroup.cs" />
+    <Compile Include="JsonControls\ControlModelOptionGroupWrapper.cs" />
+    <Compile Include="JsonControls\ControlModelOptionList.cs" />
+    <Compile Include="JsonControls\ControlModelOptionListBase.cs" />
+    <Compile Include="JsonControls\ControlModelOptionMultiList.cs" />
+    <Compile Include="JsonControls\ControlModelOptionMultiSelectList.cs" />
+    <Compile Include="JsonControls\ControlModelPassword.cs" />
+    <Compile Include="JsonControls\ControlModelRepeater.cs" />
+    <Compile Include="JsonControls\ControlModelRepeaterItemTemplate.cs" />
+    <Compile Include="JsonControls\ControlModelText.cs" />
+    <Compile Include="JsonControls\TableColumnTitleModel.cs" />
+    <Compile Include="JsonControls\TableDataCellActionsModel.cs" />
+    <Compile Include="JsonControls\TableDataCellModelBase.cs" />
+    <Compile Include="JsonControls\TableDataCellTextModel.cs" />
+    <Compile Include="JsonControls\TableDataCellUrlModel.cs" />
+    <Compile Include="JsonControls\TableDataModel.cs" />
+    <Compile Include="JsonControls\TableDataRowAction.cs" />
+    <Compile Include="JsonControls\TableDataRowModel.cs" />
+    <Compile Include="JsonHelpers\BaseJsonHelper.cs" />
+    <Compile Include="JsonHelpers\RegisterJsonHelper.cs" />
+    <Compile Include="JsonHelpers\RegisterRightsJsonHelper.cs" />
+    <Compile Include="JsonHelpers\RegisterStructureJsonHelper.cs" />
+    <Compile Include="JsonHelpers\SystemLogListJsonHelper.cs" />
+    <Compile Include="JsonHelpers\RegisterListJsonHelper.cs" />
+    <Compile Include="JsonHelpers\RegisterRecordJsonHelper.cs" />
+    <Compile Include="JsonHelpers\RegisterRecordListJsonHelper.cs" />
+    <Compile Include="JsonHelpers\UnifiedDataJsonHelper.cs" />
+    <Compile Include="JsonHelpers\UnifiedDataListJsonHelper.cs" />
+    <Compile Include="JsonHelpers\UserGroupJsonHelper.cs" />
+    <Compile Include="JsonHelpers\UserGroupListJsonHelper.cs" />
+    <Compile Include="JsonHelpers\UserJsonHelper.cs" />
+    <Compile Include="JsonHelpers\UserListJsonHelper.cs" />
+    <Compile Include="JsonHelpers\AreaGroupListJsonHelper.cs" />
+    <Compile Include="JsonHelpers\WebServiceJsonHelper.cs" />
+    <Compile Include="JsonHelpers\WebServiceListJsonHelper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SmartDbContextHttpModule.cs" />
+    <Compile Include="SmartRegistryWebContext.cs" />
+    <Compile Include="TestControlsTransformer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartRegistry.DataAccess\SmartRegistry.DataAccess.csproj">
+      <Project>{4581ab83-b08b-4535-8f9f-35751dc0cac8}</Project>
+      <Name>SmartRegistry.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

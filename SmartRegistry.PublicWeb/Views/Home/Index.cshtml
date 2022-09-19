@@ -1,0 +1,64 @@
+﻿@using SmartRegistry.Domain.Common
+@using System.Collections.Generic;
+@using SmartRegistry.Domain.Entities
+@model List<SmartRegistry.Domain.Entities.AreaGroup>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="container">
+        <div class="main-content">
+             <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <h4 class="page-title mb-0 font-size-18">Начало</h4>
+
+                    </div>
+                </div>
+            </div>
+            <div class="page-content">
+           
+        <div class="row row-boxes">
+            <div class="col-sm-4">
+                <div class="box box-green">
+                    <span>@ViewBag.Organizations</span>
+                    <p>Организации</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="box box-red">
+                    <span>@ViewBag.Registers</span>
+                    <p>Набори от данни</p>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="box box-blue">
+                    <span>24/7</span>
+                    <p>Достъпност до данните</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row category-row">
+            <div class="col-sm-12">
+                <h3>
+Електронни услуги и информация за гражданите и бизнеса
+</h3>
+            </div>
+
+            @foreach (AreaGroup ag in Model)
+            {
+                <div class="col-sm-4">
+                    <a href="~/Home/Theme/@ag.Id">
+                        <strong>@ag.Name</strong> <br />
+                        @ag.Description
+                    </a>
+                </div>
+            }
+        </div>
+            
+            </div>
+            </div>
+
+    </div>

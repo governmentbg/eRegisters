@@ -1,0 +1,73 @@
+﻿@using SmartRegistry.Domain.Common
+@using System.Collections.Generic;
+@using SmartRegistry.Domain.Entities
+@model List<SmartRegistry.Domain.Entities.AreaGroup>
+
+@{
+    ViewBag.Title = "Theme";
+}
+
+    <div class="container">
+        <div class="main-content">
+             <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <div class="breadcrumb">
+
+                            <a href="~/Home/">Начало</a> / @Model.Where(x => x.Id == ViewBag.SelectedTheme).FirstOrDefault().Name
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page-content">
+        <div class="row">
+            <div class="col-sm-4 sidebar">
+                <h3></h3>
+                @foreach (AreaGroup ag in Model)
+                {
+
+                    if (ag.Id == ViewBag.SelectedTheme)
+                    {           
+                        <a href="~/Home/Theme/@ag.Id" class="theme-links active">
+                            <strong>@ag.Name</strong> <br />
+                            @ag.Description 
+                        </a>
+                      
+                    }
+                    else
+                    {
+                        <a href="~/Home/Theme/@ag.Id" class="theme-links">
+                            <strong>@ag.Name</strong> <br />
+                            @ag.Description
+                        </a>
+                    }
+
+                }
+            </div>
+            
+            
+            @if (ViewBag.SelectedTheme != null)
+            {
+                var selected = Model.Where(x => x.Id == ViewBag.SelectedTheme).FirstOrDefault();
+            <div class="col-sm-8 content-main">
+                <h1></h1>
+                <h2>@selected.Name</h2>
+                <div class="sub-links">
+                @foreach (Area ar in selected.AreaList)
+                {
+                        <a href="~/Registers/Show/@ar.Id">
+                            <strong>@ar.Name</strong> <br />
+                            @ar.Description
+                        </a>
+                }
+                    </div>
+            </div>
+
+                
+            }
+        </div>
+      </div>
+            </div>
+
+    </div>
+</section>

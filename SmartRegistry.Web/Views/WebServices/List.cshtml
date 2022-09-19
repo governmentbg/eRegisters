@@ -1,0 +1,70 @@
+﻿@using SmartRegistry.Domain.Common
+@using System.Collections.Generic;
+@using SmartRegistry.Domain.Entities
+@using PagedList.Mvc;
+@using SmartRegistry.Web.Models
+
+<div class="container-fluid">
+    <!-- Begin page -->
+    <div class="container">
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-flex align-items-center justify-content-between">
+                    <h4 class="page-title mb-0 font-size-18">@ViewBag.Title</h4>
+                    <div class="page-title-right">
+
+                        <ul class="btn-list">
+                            <li>
+                                <a href="#" class="btn btn-success waves-effect waves-light show-hide-btn"> <i class="mdi mdi-plus-box-multiple-outline"></i> Създай Уеб услуга </a>
+                                <ul>
+                                    <li>
+                                        <a href="@Url.Action("CreateManagementService", "WebServices", new { id = ViewBag.RegisterId})">Създай уеб услуга за вписване/промяна/заличаване</a>
+                                    </li>
+                                    <li>
+                                        <a href="@Url.Action("CreateReportService", "WebServices", new { id = ViewBag.RegisterId})">Създай уеб услуга за удостоверяване</a>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="breadcrumb">
+            <a href="@Url.Action("Index","Home")">Начало</a> / <a href="@Url.Action("Structure","Registers")">Структура на регистри</a> / @ViewBag.Title
+        </div>
+        <div class="main-content">
+            <div class="page-content">
+
+                <div id="app"></div>
+                <script>
+                    window.jsonData = {
+                        jsonUrlFilter:
+                            '@Url.Action("GetFilterControls", "WebServices")',
+                        jsonUrlTable:
+                            '@Url.Action("GetWebServicesList", "WebServices", new { registerId = ViewBag.RegisterId})'
+                    }
+                </script>
+
+                <script defer="defer" type="module" src="@Url.Content("~/dist/table/js/chunk-vendors.js")"></script>
+                <script defer="defer" type="module" src="@Url.Content("~/dist/table/js/app.js")"></script>
+                <link href="@Url.Content("~/dist/table/css/chunk-vendors.css")" rel="stylesheet">
+                <script defer="defer" src="@Url.Content("~/dist/table/js/chunk-vendors-legacy.js")" nomodule></script>
+                <script defer="defer" src="@Url.Content("~/dist/table/js/app-legacy.js")" nomodule></script>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+</div>

@@ -42,14 +42,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Orak.Utils, Version=1.0.0.17364, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Orak.Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartRegistry.DataAccess, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SmartRegistry.DataAccess.dll</HintPath>
-    </Reference>
     <Reference Include="SmartRegistry.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Lib\SmartRegistry.Domain.dll</HintPath>
@@ -104,6 +96,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SmartRegistry.CommonWeb\SmartRegistry.CommonWeb.csproj">
+      <Project>{73993f34-8904-4bd8-9622-e6fc917163b8}</Project>
+      <Name>SmartRegistry.CommonWeb</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartRegistry.DataAccess\SmartRegistry.DataAccess.csproj">
+      <Project>{4581ab83-b08b-4535-8f9f-35751dc0cac8}</Project>
+      <Name>SmartRegistry.DataAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

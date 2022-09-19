@@ -1,0 +1,39 @@
+﻿@using SmartRegistry.Domain.Common
+@using System.Collections.Generic;
+@using SmartRegistry.Domain.Entities
+
+
+ <div class="container">
+        <div class="main-content">
+             <div class="row">
+                <div class="col-12">
+                    <div class="page-title-box d-flex align-items-center justify-content-between">
+                        <div class="breadcrumb">
+                            <a href="~/Home/">Начало</a> / @ViewBag.Title
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="page-content">
+              
+                 <h4 class="page-title mb-6 font-size-18 ">   @ViewBag.Title</h4>
+                 <div id="app"></div>
+                 <script>
+                    window.jsonData = {
+                        jsonUrlFilter:
+                            '@Url.Action("GetFilterControls", "Registers", new { id = ViewBag.RegisterId })',
+                        jsonUrlTable:
+                             '@Url.Action("GetRegisterRecords", "Registers", new { registerId = ViewBag.RegisterId })'
+                    }
+                 </script>
+
+                 <script defer="defer" type="module" src="@Url.Content("~/dist/table-public/js/chunk-vendors.js")"></script>
+                 <script defer="defer" type="module" src="@Url.Content("~/dist/table-public/js/app.js")"></script>
+                 <link href="@Url.Content("~/dist/table-public/css/chunk-vendors.css")" rel="stylesheet">
+                 <script defer="defer" src="@Url.Content("~/dist/table-public/js/chunk-vendors-legacy.js")" nomodule></script>
+                 <script defer="defer" src="@Url.Content("~/dist/table-public/js/app-legacy.js")" nomodule></script>
+
+             </div>
+            </div>
+
+    </div>

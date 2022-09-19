@@ -1,0 +1,152 @@
+﻿
+
+
+@using SmartRegistry.Domain.Common
+@using PagedList.Mvc;
+@model PagedList.IPagedList<SmartRegistry.Domain.Entities.AdministrativeBody>
+@using SmartRegistry.Web.Models
+@*@using Myresource = SmartRegistry.Resources.AdministrativeBodies*@
+
+
+<div class="container-fluid">
+    <!-- Begin page -->
+    <div class="container">
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-flex align-items-center justify-content-between">
+                    <h4 class="page-title mb-0 font-size-18">Административни органи </h4>
+                    <div class="page-title-right">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="breadcrumb">
+            <a href="~/Home/">Начало</a> /  Административни органи
+        </div>
+        <div class="main-content">
+            <div class="page-content">
+
+                @using (Html.BeginForm("Index", "AdministrativeBodies", FormMethod.Post))
+                {
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom04">Наименование</label>
+
+                                <input type="text" class="form-control" name="Name" id="Name">
+                                <div class="invalid-feedback">
+                                    Please provide a valid state.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom05">Тип</label> <br />
+                                <select class="select2 form-control select2-multiple select2-hidden-accessible" name="Types" id="Types" multiple="" data-placeholder="" data-select2-id="1" tabindex="-1" aria-hidden="true" style="width: 350px">
+
+                                    @foreach (EnumValues enm in ViewBag.ClientValues)
+                                    {
+                                        <option value=@enm.ID> @Resources.Content.ResourceManager.GetString(@enm.Name)</option>
+                                    }
+
+                                </select>
+
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <label class="form-label" for="validationCustom099">Статус</label> <br />
+                                <select class="form-control" name="Status" id="Status" style="padding-left:15px">
+                                    <option value="All">Всички</option>
+                                    <option value="True">Активни</option>
+                                    <option value="False">Неактивни</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="mb-3">
+                                <label class="form-label -db" for="validationCustom05">&nbsp;</label>
+                                <button class="btn btn-primary -db -w100" type="submit" value="Filter">Филтрирай</button>
+                            </div>
+                        </div>
+
+                    </div>
+                }
+
+
+
+
+                <div class="row">
+                    <div class="col-xl-12">
+
+
+                        <table class="table table-bordered table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                            <thead>
+                                <tr>
+                                    <th><strong>Наименование</strong></th>
+                                    <th><strong>Тип</strong> </th>
+                                    <th><strong>Статус</strong> </th>
+                                    <th width="20%"><strong>Oпции</strong></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <td> @Html.DisplayFor(modelItem => item.Name) </td>
+                                        <td> <label> @Resources.Content.ResourceManager.GetString(item.AdministrativeBodyKind.ToString())</label> </td>
+
+                                        @if (item.IsActive)
+                                        {
+                                            <td><label>Активен</label></td>
+                                        }
+                                        else
+                                        {
+                                            <td><label>Не активнен</label></td>
+                                        }
+
+                                        <td><a class="btn btn-warning" href="@Url.Action("ShowInfo", "AdministrativeBodies", new { id = item.Id})"><i class="dripicons-pencil"></i></a></td>
+
+                                    </tr>
+                                }
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- end row -->
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @ViewBag.SearchName, @ViewBag.Types, @ViewBag.Status }), new PagedListRenderOptions
+                        {
+                         DisplayLinkToIndividualPages = true,
+                         DisplayPageCountAndCurrentLocation = true,
+                         DisplayEllipsesWhenNotShowingAllPageNumbers = true,
+                         MaximumPageNumbersToDisplay = 10,
+                         UlElementClasses = new string[] { "pagination" },
+                         LiElementClasses = new string[] { "paginate_button page-item active page-link" },
+                         })
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+</div>

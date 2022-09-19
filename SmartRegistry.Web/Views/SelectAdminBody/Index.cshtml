@@ -1,0 +1,208 @@
+﻿@{
+    Layout = null;
+}
+
+@model IEnumerable<SmartRegistry.Web.Models.SelectAdminBody.UserAdminBody>
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <div style="background:#f6f6f6">
+        <div class="container">
+            <input id="StudentId" name="StudentId" type="hidden" value="1" />
+            <div class="row" style="padding-top:5px; padding-bottom:5px;">
+
+                @{
+                    var selected = Model.Where(x => x.IsCurrent).FirstOrDefault();
+                    if (selected != null)
+                    {
+                        <div class="col-md-8" style="display: flex;align-items: center;"> 
+                            <p style="padding-top:13px;"><strong>@selected.AdminBodyName</strong> <a href="#" data-bs-toggle="modal" data-bs-target="#myModal"><i class="mdi mdi-lead-pencil"></i> </a></p>  
+                
+
+                            
+                            
+                           <div id="myModal" class="modal fade " tabindex="-1" role="dialog"
+                                            aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title mt-0">Смяна на административен орган
+                                                        </h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                            aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <select class="px-3 custom-select" id="selectedAdmin" onchange="javascript:sendParam();">
+                        @{
+                            foreach (var admBody in Model)
+                            {
+                                <option value=@admBody.UserId selected=@admBody.IsCurrent>@admBody.AdminBodyName</option>
+                            }
+                        }
+
+                    </select>             </div>
+                                                    </div>
+                                                </div>
+                                 </div>
+                </div>
+                    }
+                }
+       
+                <div class="col-md-4">
+                    
+                    
+                    <div class="d-flex"  style="justify-content: end;">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <div class="dropdown d-inline-block d-lg-none ms-2">
+                        <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="mdi mdi-magnify"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                             aria-labelledby="page-header-search-dropdown">
+                            <form class="p-3">
+                                <div class="form-group m-0">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search ..."
+                                               aria-label="Recipient's username">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="dropdown d-none d-lg-inline-block ms-1">
+                        <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen"> <i class="mdi mdi-fullscreen"></i> </button>
+                    </div>
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item noti-icon waves-effect"
+                                id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                            <i class="mdi mdi-bell-outline"></i> <span class="badge bg-info rounded-pill">3</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                             aria-labelledby="page-header-notifications-dropdown">
+                            <div class="p-3">
+                                <div class="row align-items-center">
+                                    <div class="col">
+                                        <h6 class="m-0"> Съобщения </h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <div data-simplebar style="max-height: 230px;">
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex align-items-start">
+                                        <img src="~/Images/avatar-6.jpg" class="me-3 rounded-circle avatar-xs"
+                                             alt="user-pic">
+                                        <div class="flex-1">
+                                            <h6 class="mt-0 mb-1">@User.Identity.Name</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1">Добави нов Регистър на регистрите.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> преди 1 час</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex align-items-start">
+                                        <img src="~/Images/avatar-6.jpg" class="me-3 rounded-circle avatar-xs"
+                                             alt="user-pic">
+                                        <div class="flex-1">
+                                            <h6 class="mt-0 mb-1">@User.Identity.Name</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1">Добави нов Регистър на регистрите.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> преди 1 час</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="" class="text-reset notification-item">
+                                    <div class="d-flex align-items-start">
+                                        <img src="~/Images/avatar-6.jpg" class="me-3 rounded-circle avatar-xs"
+                                             alt="user-pic">
+                                        <div class="flex-1">
+                                            <h6 class="mt-0 mb-1">@User.Identity.Name</h6>
+                                            <div class="font-size-12 text-muted">
+                                                <p class="mb-1">Добави нов Регистър на регистрите.</p>
+                                                <p class="mb-0"><i class="mdi mdi-clock-outline"></i> преди 1 час</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="p-2 border-top d-grid"> <a class="btn btn-sm btn-link font-size-14 btn-block text-center" href="javascript:void(0)"> <i class="mdi mdi-arrow-right-circle me-1"></i> виж всички.. </a> </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-end">
+
+                    </div>
+                    <div class="dropdown d-inline-block">
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user" src="~/Images/avatar-6.jpg"
+                                 alt="Header Avatar"> <span class="d-none d-xl-inline-block ms-1">@User.Identity.Name</span> <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                            </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            @*<a class="dropdown-item" href="#">
+                                <i class="bx bx-user font-size-16 align-middle me-1"></i>
+                                Профил
+                            </a>
+                            <a class="dropdown-item d-block" href="#">
+                                <i class="bx bx-wrench font-size-16 align-middle me-1"></i>
+                                Настройки
+                            </a>*@
+                            @*<a class="dropdown-item d-block" href="#">
+                             
+                            </a>
+
+                           
+
+                            <div class="dropdown-divider">
+                            </div>*@
+
+
+                            @using (Html.BeginForm("LogOff", "Authentication", FormMethod.Post, new { id = "logoutForm" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                <a class="dropdown-item text-danger" href="javascript:document.getElementById('logoutForm').submit()">
+                                    <i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>
+
+                                    Изход
+                                </a>
+                            }
+                        </div>
+                        </div>
+                        <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light"
+                                data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+                            <i class="fa fa-fw fa-bars"></i>
+                        </button>
+                    }
+            </div>
+                </div>
+            </div>
+            <div class="row">
+
+                @if (System.Configuration.ConfigurationManager.AppSettings["WarningLabel"] != string.Empty) {
+                <div id="Test" runat="server" visible="true" class="container text-center" style="width: 100% !important; background-color: rgb(255, 182, 105); color: white;">
+                    <marquee direction="right" height="30" width="400">
+                        <h3>@System.Configuration.ConfigurationManager.AppSettings["WarningLabel"] СРЕДА</h3>
+                    </marquee>
+                </div>
+                 }
+            </div>
+        </div>
+    </div>
+}
+
+<script type="text/javascript">
+        function sendParam() {
+
+          window.location.href="@Url.Action("Select", "SelectAdminBody")/" + jQuery("#selectedAdmin").val();
+        }
+</script>
