@@ -3,9 +3,14 @@ using SmartRegistry.CommonWeb.JsonHelpers;
 using SmartRegistry.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using SmartRegistry.Web.AuthHelp;
 
 namespace SmartRegistry.Web.Controllers
 {
@@ -17,9 +22,10 @@ namespace SmartRegistry.Web.Controllers
 
             ViewBag.Title = "Теми ";
             ViewBag.ListAction = "GetAreaList";
-                       
+
             return View();
         }
+
 
 
         [HttpGet]
@@ -62,9 +68,9 @@ namespace SmartRegistry.Web.Controllers
                 var areaGrpService = SmartContext.AreaGroupsService;
                 var list = areaGrpService.GetAll(logFilter);
                 
-                var areaListTable = jsonHelper.GetAreaTable(GetApplicationPath(), list, logFilter);
+                var importListTable = jsonHelper.GetAreaTable(GetApplicationPath(), list, logFilter);
 
-                var jsonData = JsonConvert.SerializeObject(areaListTable);
+                var jsonData = JsonConvert.SerializeObject(importListTable);
 
 
                 return Content(jsonData, "application/json");

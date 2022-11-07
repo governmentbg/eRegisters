@@ -41,11 +41,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="SmartRegistry.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SmartRegistry.Domain.dll</HintPath>
+    <Reference Include="log4net">
+      <HintPath>..\SmartRegistry.Web\bin\log4net.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -98,6 +98,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Orak.Identity\Orak.Identity.csproj">
+      <Project>{c81e2ce7-b62a-4c7a-931e-af5fc58a466f}</Project>
+      <Name>Orak.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orak.Utils\Orak.Utils.csproj">
+      <Project>{a139b24c-ce3d-4ca1-b440-a2c2334f266a}</Project>
+      <Name>Orak.Utils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SmartRegistry.CommonWeb\SmartRegistry.CommonWeb.csproj">
       <Project>{73993f34-8904-4bd8-9622-e6fc917163b8}</Project>
       <Name>SmartRegistry.CommonWeb</Name>
@@ -105,6 +113,10 @@
     <ProjectReference Include="..\SmartRegistry.DataAccess\SmartRegistry.DataAccess.csproj">
       <Project>{4581ab83-b08b-4535-8f9f-35751dc0cac8}</Project>
       <Name>SmartRegistry.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartRegistry.Domain\SmartRegistry.Domain.csproj">
+      <Project>{fbe519b9-6994-47d1-a344-388ade72700e}</Project>
+      <Name>SmartRegistry.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

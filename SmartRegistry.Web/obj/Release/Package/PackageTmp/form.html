@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Smart Register</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+<meta content="Themesbrand" name="author" />
+<!-- App favicon -->
+<link rel="shortcut icon" href="assets/images/favicon.ico">
+<link href="assets/libs/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+<!-- jquery.vectormap css -->
+<link href="assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css" rel="stylesheet"
+        type="text/css" />
+
+<!-- Bootstrap Css -->
+<link href="assets/css/bootstrap.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
+<!-- Icons Css -->
+<link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+<!-- App Css-->
+<link href="assets/css/app.css" id="app-style" rel="stylesheet" type="text/css" />
+
+<!-- DataTables -->
+<link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<link href="assets/libs/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet"
+        type="text/css" />
+
+<!-- Responsive datatable examples -->
+<link href="assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body data-layout="horizontal">
+<header id="page-topbar">
+    <div class="container">
+        <div class="navbar-header">
+            <div class="d-flex"> 
+                <!-- LOGO -->
+                <div class="navbar-brand-box"> <a href="dashboard.html" class="logo logo-dark"> <img src="assets/images/logo.svg" alt="" />
+                    <div>
+                        <p class="mobile -dn">ИСЦИПР</p>
+                        <p>Информационна система <br>
+                            за централизирано изграждане <br>
+                            и поддържане на регистри</p>
+                    </div>
+                    </a> </div>
+                <div class="topnav d-flex">
+                    <nav class="navbar navbar-light navbar-expand-lg topnav-menu">
+                        <div class="collapse navbar-collapse" id="topnav-menu-content">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-dashboard"
+                                                role="button"> Регистри
+                                    <div class="arrow-down"></div>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="topnav-dashboard"> <a href="uni-data.html" class="dropdown-item">Информационни обекти</a> <a href="nabor-danni.html" class="dropdown-item">Регистър на регистрите</a> <a href="obstoyatelstva.html" class="dropdown-item">Структура на регистър</a> </div>
+                                </li>
+                                <li class="nav-item "> <a class="nav-link arrow-none" href="adminstrative-organs.html" id="topnav-ui-element"
+                                                role="button"> Административни органи </a> </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="d-flex">
+                <div class="dropdown d-inline-block d-lg-none ms-2">
+                    <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-search-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-magnify"></i> </button>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0"
+                                aria-labelledby="page-header-search-dropdown">
+                        <form class="p-3">
+                            <div class="form-group m-0">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search ..."
+                                                aria-label="Recipient's username">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit"><i
+                                                        class="mdi mdi-magnify"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="dropdown d-none d-lg-inline-block ms-1">
+                    <button type="button" class="btn header-item noti-icon waves-effect" data-toggle="fullscreen"> <i class="mdi mdi-fullscreen"></i> </button>
+                </div>
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn header-item noti-icon waves-effect"
+                                id="page-header-notifications-dropdown" data-bs-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false"> <i class="mdi mdi-bell-outline"></i> <span class="badge bg-info rounded-pill">3</span> </button>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                                aria-labelledby="page-header-notifications-dropdown">
+                        <div class="p-3">
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <h6 class="m-0"> Съобщения </h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-simplebar style="max-height: 230px;"> <a href="" class="text-reset notification-item">
+                            <div class="d-flex align-items-start"> <img src="assets/images/users/avatar-7.jpg" class="me-3 rounded-circle avatar-xs"
+                                                alt="user-pic">
+                                <div class="flex-1">
+                                    <h6 class="mt-0 mb-1">Иван Иванов</h6>
+                                    <div class="font-size-12 text-muted">
+                                        <p class="mb-1">Добави нов Регистър на регистрите.</p>
+                                        <p class="mb-0"><i class="mdi mdi-clock-outline"></i> преди 1 час</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </a> <a href="" class="text-reset notification-item">
+                            <div class="d-flex align-items-start"> <img src="assets/images/users/avatar-7.jpg" class="me-3 rounded-circle avatar-xs"
+                                                alt="user-pic">
+                                <div class="flex-1">
+                                    <h6 class="mt-0 mb-1">Иван Иванов</h6>
+                                    <div class="font-size-12 text-muted">
+                                        <p class="mb-1">Добави нов Регистър на регистрите.</p>
+                                        <p class="mb-0"><i class="mdi mdi-clock-outline"></i> преди 1 час</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </a> <a href="" class="text-reset notification-item">
+                            <div class="d-flex align-items-start"> <img src="assets/images/users/avatar-7.jpg" class="me-3 rounded-circle avatar-xs"
+                                                alt="user-pic">
+                                <div class="flex-1">
+                                    <h6 class="mt-0 mb-1">Иван Иванов</h6>
+                                    <div class="font-size-12 text-muted">
+                                        <p class="mb-1">Добави нов Регистър на регистрите.</p>
+                                        <p class="mb-0"><i class="mdi mdi-clock-outline"></i> преди 1 час</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </a> </div>
+                        <div class="p-2 border-top d-grid"> <a class="btn btn-sm btn-link font-size-14 btn-block text-center" href="javascript:void(0)"> <i class="mdi mdi-arrow-right-circle me-1"></i> виж всички.. </a> </div>
+                    </div>
+                </div>
+                <div class="dropdown d-inline-block">
+                    <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-7.jpg"
+                                    alt="Header Avatar"> <span class="d-none d-xl-inline-block ms-1">Иванов</span> <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i> </button>
+                    <div class="dropdown-menu dropdown-menu-end"> 
+                        <!-- item--> 
+                        <a class="dropdown-item" href="#"><i class="bx bx-user font-size-16 align-middle me-1"></i> Профил</a> <a class="dropdown-item d-block" href="#"><i
+                                        class="bx bx-wrench font-size-16 align-middle me-1"></i> Настройки</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item text-danger" href="Logout.aspx"><i class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i> Изход</a> </div>
+                </div>
+                <button type="button" class="btn btn-sm px-3 font-size-16 d-lg-none header-item waves-effect waves-light"
+                            data-bs-toggle="collapse" data-bs-target="#topnav-menu-content"> <i class="fa fa-fw fa-bars"></i> </button>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="container-fluid"> 
+    <!-- Begin page -->
+    <div class="container"> 
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-flex align-items-center justify-content-between">
+                    <h4 class="page-title mb-0 font-size-18">Създаване на Регистър на регистрите </h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title --> 
+        
+        <!-- ============================================================== --> 
+        <!-- Start right Content here --> 
+        <!-- ============================================================== -->
+        <div class="main-content">
+            <div class="page-content">
+                
+                
+                
+                <div id="form">
+				
+				<div class="alert" v-if="SendSuccess === true">Записът е успешен</div>
+				<div class="alert" v-if="LoadError === true">Зареждането на формата е невъзможно</div>
+				<div class="alert" v-if="SendError === true">Записът е неуспешен</div>
+				
+                    <form action="" @submit.prevent>
+                            <div class="mb-3 row"  v-for="Field in Fields" :key="Field.Name">
+							
+							<input type="hidden" :value="objectId" />
+                                <label :for="Field.Name" class="col-md-2 col-form-label">{{ Field.Label }}</label>
+                                <div class="col-md-10">
+                                    
+                                    
+                                <template v-if="Field.Type === 'Text'">
+                                    <input :id="Field.Name" class="form-control" :type="Field.Type"  :required="Field.Required" v-model="Field.Value" :name="Field.Name" >
+                                </template>
+                                    
+                                    
+                                    
+                                <template v-if="Field.Type === 'Textarea'">
+                                    <textarea :id="Field.Name" class="form-control"  :required="Field.Required" :name="Field.Name" ></textarea>
+                                </template>
+
+
+                                  <template v-if="Field.Type === 'Select'"> <multiselect  v-model="Field.Value" :options="Field.Options" :searchable="false" :show-labels="false" placeholder="- Избери -" label="Label" track-by="Label"></multiselect>
+								   </template>
+                                    
+                                    
+                                      <template  v-if="Field.Type === 'Selectsearch'" > <multiselect v-model="Field.Value" :options="Field.Options" :custom-label="nameWithLang" placeholder="- Избери -" label="Label" track-by="Label"></multiselect>
+                                    </template>
+									
+                                     <template v-if="Field.Type === 'Multiselect'" ><multiselect v-model="Field.Value" :options="Field.Options" :multiple="true" :close-on-select="false" :clear-on-select="false" :preserve-search="true" placeholder="- Избери -" label="Label" track-by="Label" :reset-after="false" :preselect-first="true"  group-values="GroupValues" group-label="GroupLabel" :group-select="true" :hide-selected="true">
+									</multiselect>
+									</template>
+                                    
+                                    
+
+                                    
+                                </div>
+                            </div>
+							<div class="mb-3 row">
+							<label class="col-md-2 col-form-label">&nbsp;</label><div class="col-md-10"><button class="btn btn-success" @click="sendJsonData">Изпрати</button></div>
+							</div>
+                    </form>
+
+                </div>
+
+              
+                
+            </div>
+            <!-- End Page-content -->
+            
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-12 text-center"> 
+                            <script>document.write(new Date().getFullYear())</script> © SmartRegister. </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- end main content--> 
+        
+    </div>
+    <!-- END layout-wrapper --> 
+    
+</div>
+<!-- end container-fluid --> 
+
+<!-- JAVASCRIPT --> 
+<!-- JAVASCRIPT --> 
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> 
+<script src="https://unpkg.com/vue-multiselect@2.1.0"></script>
+<link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.0/dist/vue-multiselect.min.css">
+    
+    
+    
+<script src="assets/libs/jquery/jquery.min.js"></script> 
+<script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script> 
+<script src="assets/libs/metismenu/metisMenu.min.js"></script> 
+<script src="assets/libs/simplebar/simplebar.min.js"></script> 
+<script src="assets/libs/node-waves/waves.min.js"></script> 
+<script src="assets/libs/jquery-sparkline/jquery.sparkline.min.js"></script> 
+
+<!-- apexcharts --> 
+<script src="assets/libs/select2/js/select22.min.js"></script> 
+<script src="assets/js/pages/form-advanced2.init.js"></script> 
+    
+<script src="assets/js/app.js"></script> 
+<script>
+var getJsonUrl = "Registers/GetControls?id=123"; 
+var sendJsonUrl = "Registers/SendData"; 
+</script>
+<script src="assets/js/vue-form.js"></script>
+</body>
+</html>

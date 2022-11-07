@@ -1,5 +1,6 @@
 ﻿using NHibernate;
 using NHibernate.Criterion;
+using NHibernate.Linq;
 using SmartRegistry.Domain.Common;
 using SmartRegistry.Domain.Entities;
 using SmartRegistry.Domain.Interfaces;
@@ -131,6 +132,22 @@ namespace SmartRegistry.DataAccess
             criteria = criteria.Add(Subqueries.Exists(detCrit));
 
             return criteria;
+        }
+
+        public void ClearRegisterRecords(Register reg)
+        {
+
+            //manual delete
+            //var listNvarchar = Session.Query<RegisterRecordValueNVarchar>()
+            //.Where(x => x.RegisterRecord.Register == reg).ToList();
+            //foreach (RegisterRecordValueNVarchar nvar in listNvarchar)
+            //{
+            //    Session.Delete(nvar);
+            //}
+
+            Session.Query<RegisterRecord>()
+               .Where(x => x.Register == reg)
+               .Delete();
         }
     }
 }

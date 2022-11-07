@@ -222,6 +222,19 @@ namespace SmartRegistry.CommonWeb
             }
         }
 
+        public ImportService ImportService
+        {
+            get
+            {
+                var service = (ImportService)HttpContext.Current.Items["ImportService"];
+                if (service == null)
+                {
+                    service = new ImportService(this);
+                    HttpContext.Current.Items["ImportService"] = service;
+                }
+                return service;
+            }
+        }
 
         public ISmartRegistryContext CreateNewContext()
         {

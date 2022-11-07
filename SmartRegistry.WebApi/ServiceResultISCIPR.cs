@@ -11,7 +11,7 @@ namespace SmartRegistry.WebApi
     public class ServiceResultISCIPR
     {
         [DataMember]
-        public XmlElement Data { get; set; }
+        public string Data { get; set; }
 
         [DataMember]
         public bool HasError { get; set; }

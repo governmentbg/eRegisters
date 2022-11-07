@@ -9,11 +9,16 @@ using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Xml;
+using log4net;
+using System.IO;
 
 namespace SmartRegistry.WebApi.Helper
 {
+
     public class DataHelper
     {
+
+        private static readonly ILog _logger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
 
         private IDbContext _dbContext;
@@ -36,14 +41,18 @@ namespace SmartRegistry.WebApi.Helper
 
         public DataHelper()
         {
+            log4net.Config.XmlConfigurator.Configure();
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             SessionFactoryManager.Initialize(connectionString);
+            _logger.Debug("BuildingDBConnection");
         }
 
 
 
         public ServiceResultISCIPR ProccessData(RequestDataISCIPR requestData, WebServiceType serviceType)
         {
+
+            _logger.Debug("ProccessData");
             var registerRecDao = DbContext.RegisterRecordsDao;
             ServiceResultISCIPR result = new ServiceResultISCIPR();
             List<RegisterRecord> recordList = new List<RegisterRecord>();
@@ -53,6 +62,12 @@ namespace SmartRegistry.WebApi.Helper
             var namespaceAdminBody = listOperation[0];
             var namesapaceRegister = listOperation[1];
             var namespaceService = listOperation[2];
+
+            _logger.Debug("opperation" + operation);
+            _logger.Debug("namespaceAdminBody" + namespaceAdminBody);
+            _logger.Debug("namesapaceRegister" + namesapaceRegister);
+            _logger.Debug("namespaceService" + namespaceService);
+
 
             logRequest(requestData.CallContext);
 
@@ -64,16 +79,47 @@ namespace SmartRegistry.WebApi.Helper
                 webservice = DbContext.WebServicesDao.GetByServiceKey(namespaceService);
                 usr = getServiceUser();
 
+                _logger.Debug("afterUsr");
+
                 if (webservice != null)
                 {
+                    _logger.Debug("inWebService");
+
                     var listAttributes = webservice.AttributeHead.Attributes;
                     var argumentData = requestData.Argument;
+                    if (argumentData != null)
+                    {
+                        _logger.Debug("XMLDATAOUTER" + argumentData);
+                        //  _logger.Debug("XMLDATAINNER" + argumentData.InnerXml);
+                    }
+                    else
+                    {
+                        _logger.Debug("XMLDATA NULL");
+                    }
+
                     XmlDocument doc = new XmlDocument();
-                    doc.LoadXml(argumentData.OuterXml);
+
+                    try
+                    {
+                        doc.LoadXml(argumentData);
+                    }
+                    catch (Exception xError)
+                    {
+                        _logger.Debug("xError" + xError.Message);
+                    }
+
                     var elementList = doc.GetElementsByTagName(namesapaceRegister + "Record");
+
+                    _logger.Debug("elementListCount" + elementList.Count);
 
                     foreach (XmlNode baseNode in elementList)
                     {
+                        _logger.Debug("RecordElements");
+                        _dbContext = new NHibernateDbContext();
+                        _dbContext.StartTransaction();
+
+                        webservice = _dbContext.WebServicesDao.GetByServiceKey(namespaceService);
+
                         var childList = baseNode.ChildNodes;
                         var xmlElement = baseNode as XmlElement;
 
@@ -87,25 +133,44 @@ namespace SmartRegistry.WebApi.Helper
 
                         if (serviceType == WebServiceType.CreateRecord)
                         {
+                            _logger.Debug("CreateRecord");
+
                             var externalIdNode = xmlElement.GetElementsByTagName("ExternalId");
                             if (externalIdNode.Count != 0)
                             {
-                                var externalId = externalIdNode[0].InnerText; ;
+                                var externalId = externalIdNode[0].InnerText;
                                 regRec.ExternalId = externalId;
+                                _logger.Debug("externalId " + externalId);
+
+                                RegisterRecordFilter recFilter = new RegisterRecordFilter();
+                                recFilter.ExternalId = externalId;
+                                recFilter.Register = webservice.Register;
+                                RegisterRecord selectedEntry = _dbContext.RegisterRecordsDao.GetRecords(recFilter).Results.FirstOrDefault();
+                                if (selectedEntry != null)
+                                {
+                                    regRec = selectedEntry;
+                                    regRec.ModifiedBy = usr;
+                                    regRec.IsActive = true;
+                                    _logger.Debug("registeRECORDID" + regRec.Id.ToString());
+                                }
+
+
                             }
                         }
 
                         if (serviceType == WebServiceType.ChangeRecord)
                         {
-
+                            _logger.Debug("ChangeRecord");
                             var uriNode = xmlElement.GetElementsByTagName("URI");
                             if (uriNode.Count != 0)
                             {
                                 var uri = uriNode[0].InnerText;
                                 RegisterRecordFilter recFilter = new RegisterRecordFilter();
                                 recFilter.URI = uri;
-                                regRec = DbContext.RegisterRecordsDao.GetRecords(recFilter).Results.FirstOrDefault();
+                                recFilter.Register = webservice.Register;
+                                regRec = _dbContext.RegisterRecordsDao.GetRecords(recFilter).Results.FirstOrDefault();
                                 regRec.ModifiedBy = usr;
+                                regRec.IsActive = true;
                             }
 
                             var externalIdNode = xmlElement.GetElementsByTagName("ExternalId");
@@ -114,8 +179,10 @@ namespace SmartRegistry.WebApi.Helper
                                 var externalId = externalIdNode[0].InnerText; ;
                                 RegisterRecordFilter recFilter = new RegisterRecordFilter();
                                 recFilter.ExternalId = externalId;
-                                regRec = DbContext.RegisterRecordsDao.GetRecords(recFilter).Results.FirstOrDefault();
+                                recFilter.Register = webservice.Register;
+                                regRec = _dbContext.RegisterRecordsDao.GetRecords(recFilter).Results.FirstOrDefault();
                                 regRec.ModifiedBy = usr;
+                                regRec.IsActive = true;
                             }
 
                             if (externalIdNode.Count == 0 && uriNode.Count == 0)
@@ -123,6 +190,7 @@ namespace SmartRegistry.WebApi.Helper
                                 result.HasError = true;
                                 result.ErrorMessage = "Възникна грешка ! Липсва URI/ExternalId елемент в XML!";
                                 result.ErrorCode = "Липсва URI елемент в XML!";
+                                _logger.Error("Липсва URI елемент в XML!");
                                 return result;
                             }
 
@@ -131,6 +199,7 @@ namespace SmartRegistry.WebApi.Helper
                                 result.HasError = true;
                                 result.ErrorMessage = "Възникна грешка ! Не са намерени данните за редактиране!";
                                 result.ErrorCode = "Данните за редактиране не са намерени!";
+                                _logger.Error("Данните за редактиране не са намерени");
                                 return result;
                             }
 
@@ -143,6 +212,8 @@ namespace SmartRegistry.WebApi.Helper
                             var nodeName = childNode.Name;
                             var nodeValue = childNode.InnerXml;
 
+                            _logger.Debug("childNode " + nodeName + nodeValue);
+
                             var selectedAttr = listAttributes.Where(x => x.ApiName == nodeName).FirstOrDefault();
                             if (selectedAttr == null)
                             {
@@ -152,7 +223,7 @@ namespace SmartRegistry.WebApi.Helper
                             if (selectedAttr != null)
                             {
 
-                                var attr = DbContext.GetRegisterAttributeDao().GetById(selectedAttr.Id);
+                                var attr = _dbContext.GetRegisterAttributeDao().GetById(selectedAttr.Id);
                                 RegisterRecordValueBase attrValue = null;
 
                                 switch (attr.UnifiedData.DataType)
@@ -181,13 +252,30 @@ namespace SmartRegistry.WebApi.Helper
                             }
 
                         }
-                        registerRecDao.Save(regRec);
-                        if (regRec.URI == null)
-                        {
-                            regRec.URI = generateURI(regRec);
-                            registerRecDao.Save(regRec);
+                        _logger.Debug("save line");
+
+                        try  {
+                         
+                         
+                            _dbContext.RegisterRecordsDao.Save(regRec);
+                           
+                            if (regRec.URI == null)
+                            {
+                                _logger.Debug("save uri");
+                                regRec.URI = generateURI(regRec);
+                                _dbContext.RegisterRecordsDao.Save(regRec);
+                            }
+                            _dbContext.CommitTransaction();
+                            recordList.Add(regRec);
+
                         }
-                        recordList.Add(regRec);
+                        catch (Exception ezz) {
+                            _dbContext.RollbackTransaction();
+                            _dbContext.Dispose();
+                            _logger.Error("ERROR TRANSACTION EXTERNALID" + regRec.ExternalId);
+                            _logger.Error("ERROR TRANSACTION" + ezz.Message);
+                        }
+
                     }
 
                 }
@@ -197,6 +285,7 @@ namespace SmartRegistry.WebApi.Helper
                 result.HasError = true;
                 result.ErrorMessage = "Възникна грешка при обработването на данни.";
                 result.ErrorCode = e.Message;
+                _logger.Error("Error" + e.Message);
                 return result;
 
             }
@@ -205,6 +294,7 @@ namespace SmartRegistry.WebApi.Helper
             {
                 XmlDocument xDoc = new XmlDocument();
                 XmlElement span = xDoc.CreateElement(namesapaceRegister + "Request" + "Result");
+                _logger.Debug("create result xml");
 
                 span.SetAttribute("xmlns:xsi", "http://www.w3.org/2001/XMLSchema-instance");
                 span.SetAttribute("xmlns:xsd", "http://www.w3.org/2001/XMLSchema");
@@ -218,7 +308,8 @@ namespace SmartRegistry.WebApi.Helper
                 }
 
                 xDoc.AppendChild(span);
-                result.Data = xDoc.DocumentElement;
+                // result.Data = xDoc.DocumentElement;
+                result.Data = xDoc.OuterXml;
                 result.HasError = false;
 
             }
@@ -227,9 +318,10 @@ namespace SmartRegistry.WebApi.Helper
                 result.HasError = true;
                 result.ErrorMessage = "Възникна грешка при връщането на xml.";
                 result.ErrorCode = ex.Message;
+                _logger.Error("Error xml result" + ex.Message);
                 return result;
             }
-
+            _logger.Debug("predi result ");
             return result;
         }
 
@@ -268,14 +360,15 @@ namespace SmartRegistry.WebApi.Helper
                     var argumentData = requestData.Argument;
 
                     XmlDocument doc = new XmlDocument();
-                    doc.LoadXml(argumentData.OuterXml);
+                    doc.LoadXml(argumentData);
                     var uriNode = doc.GetElementsByTagName("URI");
                     foreach (XmlNode node in uriNode)
                     {
 
                         var uri = node.InnerText;
                         RegisterRecordFilter recFilter = new RegisterRecordFilter();
-                        recFilter.URI = uri;                       
+                        recFilter.URI = uri;
+                        recFilter.Register = webservice.Register;
                         regRec = DbContext.RegisterRecordsDao.GetRecords(recFilter).Results.FirstOrDefault();
 
                         if (regRec != null)
@@ -299,8 +392,9 @@ namespace SmartRegistry.WebApi.Helper
                     {
 
                         var uri = node.InnerText;
-                        RegisterRecordFilter recFilter = new RegisterRecordFilter();                     
-                        recFilter.ExternalId = uri;                        
+                        RegisterRecordFilter recFilter = new RegisterRecordFilter();
+                        recFilter.ExternalId = uri;
+                        recFilter.Register = webservice.Register;
                         regRec = DbContext.RegisterRecordsDao.GetRecords(recFilter).Results.FirstOrDefault();
 
                         if (regRec != null)
@@ -346,7 +440,8 @@ namespace SmartRegistry.WebApi.Helper
                 }
 
                 xDoc.AppendChild(span);
-                result.Data = xDoc.DocumentElement;
+                // result.Data = xDoc.DocumentElement;
+                result.Data = xDoc.OuterXml;
                 result.HasError = false;
 
             }
@@ -364,14 +459,26 @@ namespace SmartRegistry.WebApi.Helper
         private void logRequest(CallContext callContext)
         {
             //todo add logging data
-            ServiceLog log = new ServiceLog();
-            log.InsDateTime = DateTime.Now;
-            log.ServiceType = Int32.Parse(callContext.ServiceType);
-            log.ServiceUri = callContext.ServiceURI;
-            log.EmployeeIdentificator = callContext.EmployeeIdentifier;
-            log.EmployeeNames = callContext.EmployeeNames;
+            _logger.Debug("logRequest");
 
-            DbContext.GetServiceLogDao().Save(log);
+            try
+            {
+
+                ServiceLog log = new ServiceLog();
+                log.InsDateTime = DateTime.Now;
+                log.ServiceType = callContext.ServiceType;
+                log.ServiceUri = callContext.ServiceURI;
+                log.EmployeeIdentificator = callContext.EmployeeIdentifier;
+                log.EmployeeNames = callContext.EmployeeNames;
+
+                DbContext.GetServiceLogDao().Save(log);
+
+            }
+            catch (Exception ex)
+            {
+                _logger.Error("logRequest error" + ex.Message);
+            }
+
 
         }
 
@@ -488,9 +595,9 @@ namespace SmartRegistry.WebApi.Helper
 
         public RegisterRecordValueDateTime SetDateAttrValue(RegisterRecord regRec, RegisterAttribute attr, object val)
         {
-            // DateTime? dtVal = (DateTime?)val;
-            DateTime? result = DateTime.ParseExact((string)val, "yyyy-MM-dd", CultureInfo.InvariantCulture);
 
+            string[] formats = { "MM/dd/yyyy hh:mm:ss tt", "yyyy-MM-dd hh:mm:ss", "yyyy-MM-dd", "YYYY-MM-DDThh:mm:ss", "yyyy-MM-ddTHH:mm:ss.fffZ", "yyyy-MM-dd zzz", "yyyy-MM-ddzzz" };
+            DateTime? result = DateTime.ParseExact((string)val, formats, CultureInfo.InvariantCulture, DateTimeStyles.None);
 
             var attrValue = regRec.GetDateTimeValue(attr);
             if (attrValue == null)

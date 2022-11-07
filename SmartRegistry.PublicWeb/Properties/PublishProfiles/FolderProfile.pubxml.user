@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>F:\_Work\EGovNew\SmartRegistry\SmartRegistry.PublicWeb\bin\app.publish</_PublishTargetUrl>
-    <History>True|2022-09-13T04:57:16.5792840Z;True|2022-07-03T14:50:07.6200648+03:00;False|2022-07-03T14:49:01.4038116+03:00;True|2022-06-07T09:49:53.7977402+03:00;True|2022-06-06T15:06:13.5265621+03:00;</History>
+    <History>True|2022-10-28T13:03:01.9875442Z;True|2022-09-13T07:57:16.5792840+03:00;True|2022-07-03T14:50:07.6200648+03:00;False|2022-07-03T14:49:01.4038116+03:00;True|2022-06-07T09:49:53.7977402+03:00;True|2022-06-06T15:06:13.5265621+03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include="Assets/css/app-dark-rtl.min.css">
@@ -3345,16 +3345,16 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/10/2013 19:29:20</publishTime>
     </File>
     <File Include="bin/bg/EgovAdministrativeRegister.resources.dll">
-      <publishTime>09/13/2022 07:56:51</publishTime>
+      <publishTime>10/28/2022 16:02:35</publishTime>
     </File>
     <File Include="bin/EgovAdministrativeRegister.dll">
-      <publishTime>09/13/2022 07:56:51</publishTime>
+      <publishTime>10/28/2022 16:02:35</publishTime>
     </File>
     <File Include="bin/EgovAdministrativeRegister.dll.config">
       <publishTime>08/22/2022 09:25:46</publishTime>
     </File>
     <File Include="bin/EgovAdministrativeRegister.pdb">
-      <publishTime>09/13/2022 07:56:51</publishTime>
+      <publishTime>10/28/2022 16:02:35</publishTime>
     </File>
     <File Include="bin/FluentNHibernate.dll">
       <publishTime>11/12/2020 03:57:18</publishTime>
@@ -3552,37 +3552,37 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/24/2022 14:01:01</publishTime>
     </File>
     <File Include="bin/SmartRegistry.CommonWeb.dll">
-      <publishTime>09/13/2022 07:56:52</publishTime>
+      <publishTime>10/28/2022 16:02:37</publishTime>
     </File>
     <File Include="bin/SmartRegistry.CommonWeb.dll.config">
       <publishTime>06/16/2022 17:11:03</publishTime>
     </File>
     <File Include="bin/SmartRegistry.CommonWeb.pdb">
-      <publishTime>09/13/2022 07:56:52</publishTime>
+      <publishTime>10/28/2022 16:02:37</publishTime>
     </File>
     <File Include="bin/SmartRegistry.DataAccess.dll">
-      <publishTime>09/13/2022 07:52:30</publishTime>
+      <publishTime>10/28/2022 15:02:52</publishTime>
     </File>
     <File Include="bin/SmartRegistry.DataAccess.dll.config">
       <publishTime>05/05/2022 15:57:45</publishTime>
     </File>
     <File Include="bin/SmartRegistry.DataAccess.pdb">
-      <publishTime>09/13/2022 07:52:30</publishTime>
+      <publishTime>10/28/2022 15:02:52</publishTime>
     </File>
     <File Include="bin/SmartRegistry.Domain.dll">
-      <publishTime>09/13/2022 07:52:29</publishTime>
+      <publishTime>10/28/2022 15:02:51</publishTime>
     </File>
     <File Include="bin/SmartRegistry.Domain.dll.config">
       <publishTime>06/08/2022 10:20:57</publishTime>
     </File>
     <File Include="bin/SmartRegistry.Domain.pdb">
-      <publishTime>09/13/2022 07:52:29</publishTime>
+      <publishTime>10/28/2022 15:02:51</publishTime>
     </File>
     <File Include="bin/SmartRegistry.PublicWeb.dll">
-      <publishTime>09/13/2022 07:56:52</publishTime>
+      <publishTime>10/28/2022 16:02:37</publishTime>
     </File>
     <File Include="bin/SmartRegistry.PublicWeb.pdb">
-      <publishTime>09/13/2022 07:56:52</publishTime>
+      <publishTime>10/28/2022 16:02:37</publishTime>
     </File>
     <File Include="bin/System.Web.Helpers.dll">
       <publishTime>11/28/2018 15:04:24</publishTime>

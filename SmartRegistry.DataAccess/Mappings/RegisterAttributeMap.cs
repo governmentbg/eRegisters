@@ -23,6 +23,7 @@ namespace SmartRegistry.DataAccess.Mappings
             Map(x => x.CanFilter).Column("CAN_FILTER");
             References(x => x.ParentAttribute).Column("COMPOSITE_PARENT_ID");
             Map(x => x.ApiName).Column("API_NAME");
+            Map(x=>x.IsEncrypted).Column("IS_ENCRYPTED");
         }
     }
 }

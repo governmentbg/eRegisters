@@ -148,6 +148,13 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 Name = "ExportWebServices",
                 Checked = (attribute == null) ? true : attribute.ExportWebServices
             });
+            result.Controls.Add(new ControlModelCheckbox()
+            {
+                Col = 12,
+                Label = "Криптирана стойност (кратък текст до 80символа!)",
+                Name = "IsEncrypted",
+                Checked = (attribute == null) ? true : attribute.IsEncrypted
+            });
 
             return result;
         }
@@ -222,6 +229,10 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 if (elem.name == "ExportWebServices")
                 {
                     attrModel.ExportWebServices = elem.value;
+                }
+                if (elem.name == "IsEncrypted")
+                {
+                    attrModel.IsEncrypted = elem.value;
                 }
             }
 

@@ -113,6 +113,29 @@ namespace SmartRegistry.DataAccess
                 criteria.AddOrder(order);
             }
         }
+        protected void ApplyFilterToDetachedCriteria(DetachedCriteria criteria, QueryFilterBase filter)
+        {
+            if (!string.IsNullOrEmpty(filter.OrderByColumn))
+            {
+                Order order;
+                if (filter.OrderByDirection == OrderDbEnum.Asc)
+                {
+                    order = Order.Asc(filter.OrderByColumn);
+                }
+                else
+                {
+                    order = Order.Desc(filter.OrderByColumn);
+                }
+                criteria.AddOrder(order);
+            }
+
+            if ((filter.PageSize != null) && (filter.PageSize != 0))
+            {
+                criteria.SetMaxResults((int)filter.PageSize)
+                         .SetFirstResult(((int)filter.PageNumber - 1) * (int)filter.PageSize);
+            }
+
+        }
 
         protected void ApplyStringFilterToDetachedCriteria(DetachedCriteria criteria, string filterName, string filterValue)
         {
