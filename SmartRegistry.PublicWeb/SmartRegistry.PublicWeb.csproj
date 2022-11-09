@@ -49,14 +49,6 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Orak.Utils, Version=1.0.0.14173, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Orak.Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartRegistry.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SmartRegistry.Domain.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -1375,6 +1367,10 @@
     <ProjectReference Include="..\SmartRegistry.DataAccess\SmartRegistry.DataAccess.csproj">
       <Project>{4581ab83-b08b-4535-8f9f-35751dc0cac8}</Project>
       <Name>SmartRegistry.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartRegistry.Domain\SmartRegistry.Domain.csproj">
+      <Project>{fbe519b9-6994-47d1-a344-388ade72700e}</Project>
+      <Name>SmartRegistry.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

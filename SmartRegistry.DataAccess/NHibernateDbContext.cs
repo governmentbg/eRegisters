@@ -142,6 +142,33 @@ namespace SmartRegistry.DataAccess
             }
         }
 
+        public IImportRowDao ImportRowDao
+        {
+            get
+            {
+                ImportRowDao importRowDao = new ImportRowDao(this);
+                return importRowDao;
+            }
+        }
+
+        public IImportHeadDao ImportHeadDao
+        {
+            get
+            {
+                ImportHeadDao importHeadDao = new ImportHeadDao(this);
+                return importHeadDao;
+            }
+        }
+
+        public IImportColumnDao ImportColumnDao
+        {
+            get
+            {
+                ImportColumnDao importColumnDao = new ImportColumnDao(this);
+                return importColumnDao;
+            }
+        }
+
         public IRegisterPermissionsDao GetRegisterPermissionsDao()
         {
             return new RegisterPermissionsDao(this);
@@ -198,6 +225,12 @@ namespace SmartRegistry.DataAccess
         {
             ServiceLogDao serviceLogDao = new ServiceLogDao(this);
             return serviceLogDao;
+        }
+
+        public IWebServicesClientsDao WebServicesClientsDao()
+        {            
+             WebServicesClientsDao webServicesClientsDao = new WebServicesClientsDao(this);
+             return webServicesClientsDao;            
         }
     }
 

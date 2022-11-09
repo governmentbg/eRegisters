@@ -3318,16 +3318,16 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/10/2013 19:29:20</publishTime>
     </File>
     <File Include="bin/bg/EgovAdministrativeRegister.resources.dll">
-      <publishTime>09/13/2022 07:52:32</publishTime>
+      <publishTime>11/07/2022 16:45:43</publishTime>
     </File>
     <File Include="bin/EgovAdministrativeRegister.dll">
-      <publishTime>09/13/2022 07:52:31</publishTime>
+      <publishTime>11/07/2022 16:45:43</publishTime>
     </File>
     <File Include="bin/EgovAdministrativeRegister.dll.config">
       <publishTime>08/22/2022 09:25:46</publishTime>
     </File>
     <File Include="bin/EgovAdministrativeRegister.pdb">
-      <publishTime>09/13/2022 07:52:31</publishTime>
+      <publishTime>11/07/2022 16:45:43</publishTime>
     </File>
     <File Include="bin/FluentNHibernate.dll">
       <publishTime>11/12/2020 03:57:18</publishTime>
@@ -3417,10 +3417,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>03/20/2020 16:52:32</publishTime>
     </File>
     <File Include="bin/Orak.Identity.dll">
-      <publishTime>09/13/2022 07:52:30</publishTime>
+      <publishTime>11/07/2022 16:45:41</publishTime>
     </File>
     <File Include="bin/Orak.Identity.pdb">
-      <publishTime>09/13/2022 07:52:30</publishTime>
+      <publishTime>11/07/2022 16:45:41</publishTime>
     </File>
     <File Include="bin/Orak.Utils.dll">
       <publishTime>09/13/2022 07:52:27</publishTime>
@@ -3606,37 +3606,37 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/24/2022 14:01:01</publishTime>
     </File>
     <File Include="bin/SmartRegistry.CommonWeb.dll">
-      <publishTime>09/13/2022 07:52:33</publishTime>
+      <publishTime>11/07/2022 16:45:44</publishTime>
     </File>
     <File Include="bin/SmartRegistry.CommonWeb.dll.config">
       <publishTime>06/16/2022 17:11:03</publishTime>
     </File>
     <File Include="bin/SmartRegistry.CommonWeb.pdb">
-      <publishTime>09/13/2022 07:52:33</publishTime>
+      <publishTime>11/07/2022 16:45:44</publishTime>
     </File>
     <File Include="bin/SmartRegistry.DataAccess.dll">
-      <publishTime>09/13/2022 07:52:30</publishTime>
+      <publishTime>11/07/2022 16:45:42</publishTime>
     </File>
     <File Include="bin/SmartRegistry.DataAccess.dll.config">
       <publishTime>05/05/2022 15:57:45</publishTime>
     </File>
     <File Include="bin/SmartRegistry.DataAccess.pdb">
-      <publishTime>09/13/2022 07:52:30</publishTime>
+      <publishTime>11/07/2022 16:45:42</publishTime>
     </File>
     <File Include="bin/SmartRegistry.Domain.dll">
-      <publishTime>09/13/2022 07:52:29</publishTime>
+      <publishTime>11/07/2022 16:45:41</publishTime>
     </File>
     <File Include="bin/SmartRegistry.Domain.dll.config">
       <publishTime>06/08/2022 10:20:57</publishTime>
     </File>
     <File Include="bin/SmartRegistry.Domain.pdb">
-      <publishTime>09/13/2022 07:52:29</publishTime>
+      <publishTime>11/07/2022 16:45:41</publishTime>
     </File>
     <File Include="bin/SmartRegistry.Web.dll">
-      <publishTime>09/13/2022 07:52:35</publishTime>
+      <publishTime>11/07/2022 16:45:44</publishTime>
     </File>
     <File Include="bin/SmartRegistry.Web.pdb">
-      <publishTime>09/13/2022 07:52:35</publishTime>
+      <publishTime>11/07/2022 16:45:44</publishTime>
     </File>
     <File Include="bin/System.Buffers.dll">
       <publishTime>02/19/2020 12:05:18</publishTime>
@@ -4329,7 +4329,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/24/2022 14:01:06</publishTime>
     </File>
     <File Include="Views/AdministrativeBodies/Index.cshtml">
-      <publishTime>06/29/2022 06:53:40</publishTime>
+      <publishTime>11/02/2022 16:00:13</publishTime>
     </File>
     <File Include="Views/AdministrativeBodies/ShowInfo.cshtml">
       <publishTime>02/24/2022 14:01:14</publishTime>
@@ -4366,6 +4366,15 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
     </File>
     <File Include="Views/Home/Index.cshtml">
       <publishTime>06/24/2022 13:48:57</publishTime>
+    </File>
+    <File Include="Views/Import/Create.cshtml">
+      <publishTime>10/27/2022 15:45:03</publishTime>
+    </File>
+    <File Include="Views/Import/Index.cshtml">
+      <publishTime>10/27/2022 11:09:35</publishTime>
+    </File>
+    <File Include="Views/Import/Review.cshtml">
+      <publishTime>11/01/2022 11:00:13</publishTime>
     </File>
     <File Include="Views/RegisterRecords/Edit.cshtml">
       <publishTime>07/03/2022 12:15:39</publishTime>
@@ -4404,7 +4413,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/24/2022 14:01:16</publishTime>
     </File>
     <File Include="Views/SelectAdminBody/Index.cshtml">
-      <publishTime>08/26/2022 10:01:03</publishTime>
+      <publishTime>11/02/2022 20:21:25</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>02/24/2022 14:01:13</publishTime>
@@ -4416,7 +4425,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>08/22/2022 09:46:12</publishTime>
     </File>
     <File Include="Views/Shared/_Navigation.cshtml">
-      <publishTime>06/27/2022 09:12:40</publishTime>
+      <publishTime>10/27/2022 11:09:35</publishTime>
     </File>
     <File Include="Views/Shared/_ProgramLogo.cshtml">
       <publishTime>02/24/2022 14:01:14</publishTime>
@@ -4464,7 +4473,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>02/24/2022 14:01:13</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>08/23/2022 09:49:31</publishTime>
+      <publishTime>11/07/2022 16:45:46</publishTime>
     </File>
   </ItemGroup>
 </Project>

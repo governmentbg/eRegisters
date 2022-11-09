@@ -14,7 +14,8 @@ namespace SmartRegistry.WebApi
         public string Operation { get; set; }
 
         [DataMember]
-        public XmlElement Argument { get; set; }
+        //  public XmlElement Argument { get; set; }
+        public string Argument { get; set; }
 
         [DataMember]
         public CallContext CallContext { get; set; }

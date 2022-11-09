@@ -46,19 +46,11 @@
     <Reference Include="NHibernate.Caches.SysCache2, Version=5.7.0.0, Culture=neutral, PublicKeyToken=6876f2ea66c9f443, processorArchitecture=MSIL">
       <HintPath>..\packages\NHibernate.Caches.SysCache2.5.7.0\lib\net461\NHibernate.Caches.SysCache2.dll</HintPath>
     </Reference>
-    <Reference Include="Orak.Utils, Version=1.0.0.17935, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Orak.Utils.dll</HintPath>
-    </Reference>
     <Reference Include="Remotion.Linq, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
       <HintPath>..\packages\Remotion.Linq.2.2.0\lib\net45\Remotion.Linq.dll</HintPath>
     </Reference>
     <Reference Include="Remotion.Linq.EagerFetching, Version=2.2.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
       <HintPath>..\packages\Remotion.Linq.EagerFetching.2.2.0\lib\net45\Remotion.Linq.EagerFetching.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartRegistry.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SmartRegistry.Domain.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -75,7 +67,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaGroupDao.cs" />
+    <Compile Include="ImportColumnDao.cs" />
+    <Compile Include="ImportHeadDao.cs" />
+    <Compile Include="ImportRowDao.cs" />
     <Compile Include="Mappings\AreaGroupMap.cs" />
+    <Compile Include="Mappings\ImportColumnMap.cs" />
+    <Compile Include="Mappings\ImportDataMap.cs" />
+    <Compile Include="Mappings\ImportHeadMap.cs" />
+    <Compile Include="Mappings\ImportRowMap.cs" />
     <Compile Include="Mappings\RegisterAttributeHeadMap.cs" />
     <Compile Include="Mappings\RegisterAreaMap.cs" />
     <Compile Include="Mappings\RegisterAttributeMap.cs" />
@@ -95,6 +94,7 @@
     <Compile Include="Mappings\RegisterMap.cs" />
     <Compile Include="Mappings\UnifiedDataCompositeMap.cs" />
     <Compile Include="Mappings\UserGroupRightMap.cs" />
+    <Compile Include="Mappings\WebServiceClientMap.cs" />
     <Compile Include="Mappings\WebServiceMap.cs" />
     <Compile Include="Mappings\WebServiceRequestConditionMap.cs" />
     <Compile Include="Mappings\WebServiceResponseAttributeMap.cs" />
@@ -128,7 +128,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrySettingsDao.cs" />
     <Compile Include="SessionFactoryManager.cs" />
+    <Compile Include="WebServicesClientsDao.cs" />
     <Compile Include="WebServicesDao.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Orak.Utils\Orak.Utils.csproj">
+      <Project>{a139b24c-ce3d-4ca1-b440-a2c2334f266a}</Project>
+      <Name>Orak.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartRegistry.Domain\SmartRegistry.Domain.csproj">
+      <Project>{fbe519b9-6994-47d1-a344-388ade72700e}</Project>
+      <Name>SmartRegistry.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

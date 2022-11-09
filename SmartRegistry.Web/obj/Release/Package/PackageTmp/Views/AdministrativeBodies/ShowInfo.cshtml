@@ -1,0 +1,41 @@
+﻿
+@using SmartRegistry.Domain.Entities
+@using SmartRegistry.Web.Models
+@model AdministrativeBodyInfo
+
+@{
+    ViewBag.Title = "ShowInfo";
+}
+
+<h3>@Model.Name</h3>
+
+<table class="table table-bordered table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+    <thead>
+
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.InfoData)
+        {
+
+            <tr>
+                <td> @Html.DisplayFor(modelItem => item.Head) </td>
+                @foreach (var strdata in item.Data)
+                {
+                    <td> @Html.DisplayFor(modelItem => strdata) </td>
+                }
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<p>
+
+</p>
+<div class="row" style="margin-top:100px;">
+    <div class="col-sm-12 col-md-12">
+       
+    </div>
+</div>

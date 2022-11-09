@@ -24,7 +24,7 @@ namespace SmartRegistry.DataAccess.Mappings
             References(x => x.ModifiedBy).Column("MODIFIED_BY");
             #endregion
 
-            Map(x => x.Value).Column("DATA_VALUE");
+            Map(x => x.ValueDB).Column("DATA_VALUE");
         }
     }
 }

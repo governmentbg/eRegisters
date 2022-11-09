@@ -1,0 +1,63 @@
+﻿@using SmartRegistry.Domain.Common
+@using System.Collections.Generic;
+@using SmartRegistry.Domain.Entities
+@using PagedList.Mvc;
+@model IList<User>
+@using SmartRegistry.Web.Models
+
+<div class="container-fluid">
+    <!-- Begin page -->
+    <div class="container">
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-flex align-items-center justify-content-between">
+                    <h4 class="page-title mb-0 font-size-18">Потребители</h4>
+                    <div class="page-title-right">
+                        <a href="@Url.Action("Create", "Users")" class="btn btn-success waves-effect waves-light">
+
+                            <i class="mdi mdi-plus-box-multiple-outline"></i>Добави нов потребител
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="breadcrumb">
+            <a href="~/Home/">Начало</a> / Потребители
+        </div>
+        <div class="main-content">
+            <div class="page-content">
+                <!--  <a href="@Url.Action("GetFilterControls", "Users")">Линк за контролите за филтрите</a>
+              <p />
+              <a href="@Url.Action("GetUsersList", "Users")">Линк за даннните - списък потребители</a>-->
+
+                <div id="app"></div>
+                <script>
+                    window.jsonData = {
+                        jsonUrlFilter:
+                            '@Url.Action("GetFilterControls", "Users")',
+                        jsonUrlTable:
+                            '@Url.Action("GetUsersList", "Users")'
+                    }
+                </script>
+
+                <script defer="defer" type="module" src="@Url.Content("~/dist/table/js/chunk-vendors.js")"></script>
+                <script defer="defer" type="module" src="@Url.Content("~/dist/table/js/app.js")"></script>
+                <link href="@Url.Content("~/dist/table/css/chunk-vendors.css")" rel="stylesheet">
+                <script defer="defer" src="@Url.Content("~/dist/table/js/chunk-vendors-legacy.js")" nomodule></script>
+                <script defer="defer" src="@Url.Content("~/dist/table/js/app-legacy.js")" nomodule></script>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+</div>
