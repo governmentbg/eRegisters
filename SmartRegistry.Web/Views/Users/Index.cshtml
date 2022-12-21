@@ -12,11 +12,11 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">Потребители</h4>
+                    <h4 class="page-title mb-0 font-size-18">@Resources.Content.ResourceManager.GetString("users_index_header") </h4>
                     <div class="page-title-right">
                         <a href="@Url.Action("Create", "Users")" class="btn btn-success waves-effect waves-light">
 
-                            <i class="mdi mdi-plus-box-multiple-outline"></i>Добави нов потребител
+                            <i class="mdi mdi-plus-box-multiple-outline"></i>@Resources.Content.ResourceManager.GetString("users_index_create_btn")
                         </a>
                     </div>
                 </div>
@@ -27,7 +27,8 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="breadcrumb">
-            <a href="~/Home/">Начало</a> / Потребители
+            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("users_index_breadcrumb_start") </a> /
+            @Resources.Content.ResourceManager.GetString("users_index_breadcrumb_users") 
         </div>
         <div class="main-content">
             <div class="page-content">

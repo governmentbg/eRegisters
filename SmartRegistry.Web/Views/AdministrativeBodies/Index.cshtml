@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">Административни органи </h4>
+                    <h4 class="page-title mb-0 font-size-18">  @Resources.Content.ResourceManager.GetString("home_index_adminbody") </h4>
                     <div class="page-title-right">
                     </div>
                 </div>
@@ -26,7 +26,8 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="breadcrumb">
-            <a href="~/Home/">Начало</a> /  Административни органи
+            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("area_breadcrumb_start")</a> /
+            @Resources.Content.ResourceManager.GetString("home_index_adminbody")
         </div>
         <div class="main-content">
             <div class="page-content">
@@ -36,7 +37,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="mb-3">
-                                <label class="form-label" for="validationCustom04">Наименование</label>
+                                <label class="form-label" for="validationCustom04">   @Resources.Content.ResourceManager.GetString("base_namespace")</label>
 
                                 <input type="text" class="form-control" name="Name" id="Name">
                                 <div class="invalid-feedback">
@@ -46,7 +47,7 @@
                         </div>
                         <div class="col-md-4">
                             <div class="mb-3">
-                                <label class="form-label" for="validationCustom05">Тип</label> <br />
+                                <label class="form-label" for="validationCustom05">@Resources.Content.ResourceManager.GetString("base_type")</label> <br />
                                 <select class="select2 form-control select2-multiple select2-hidden-accessible" name="Types" id="Types" multiple="" data-placeholder="" data-select2-id="1" tabindex="-1" aria-hidden="true" style="width: 350px">
 
                                     @foreach (EnumValues enm in ViewBag.ClientValues)
@@ -62,11 +63,11 @@
 
                         <div class="col-md-2">
                             <div class="mb-3">
-                                <label class="form-label" for="validationCustom099">Статус</label> <br />
+                                <label class="form-label" for="validationCustom099">@Resources.Content.ResourceManager.GetString("base_status")</label> <br />
                                 <select class="form-control" name="Status" id="Status" style="padding-left:15px">
-                                    <option value="All">Всички</option>
-                                    <option value="True">Активни</option>
-                                    <option value="False">Неактивни</option>
+                                    <option value="All">@Resources.Content.ResourceManager.GetString("base_status_all")</option>
+                                    <option value="True">@Resources.Content.ResourceManager.GetString("base_status_active")</option>
+                                    <option value="False">@Resources.Content.ResourceManager.GetString("base_status_inactive")</option>
                                 </select>
                             </div>
                         </div>
@@ -90,10 +91,10 @@
                         <table class="table table-bordered table-striped dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
                                 <tr>
-                                    <th><strong>Наименование</strong></th>
-                                    <th><strong>Тип</strong> </th>
-                                    <th><strong>Статус</strong> </th>
-                                    <th width="20%"><strong>Oпции</strong></th>
+                                    <th><strong>@Resources.Content.ResourceManager.GetString("base_namespace")</strong></th>
+                                    <th><strong>@Resources.Content.ResourceManager.GetString("base_type")</strong> </th>
+                                    <th><strong>@Resources.Content.ResourceManager.GetString("base_status")</strong> </th>
+                                    <th width="20%"><strong>@Resources.Content.ResourceManager.GetString("base_options")</strong></th>
                                 </tr>
                             </thead>
                             <tbody>

@@ -2,7 +2,9 @@
 using SmartRegistry.Web.Models.SelectAdminBody;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -72,6 +74,46 @@ namespace SmartRegistry.Web.Controllers
                 newcookie.Expires = DateTime.Now.AddDays(1);
                 HttpContext.Response.Cookies.Add(newcookie);
             }
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult SelectLng(int id)
+        {
+            CultureInfo uiCultureInfo = Thread.CurrentThread.CurrentUICulture;
+            CultureInfo ucultureInfo = Thread.CurrentThread.CurrentCulture;
+
+            if (id == 1)
+            {
+                Response.Cookies.Remove("Language");
+                HttpCookie languageCookie = System.Web.HttpContext.Current.Request.Cookies["Language"];
+
+                var cultureInfo = new CultureInfo("bg-BG");
+                Thread.CurrentThread.CurrentUICulture = cultureInfo;
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(cultureInfo.Name);
+
+                if (languageCookie == null) languageCookie = new HttpCookie("Language");
+                languageCookie.Value = "bg-BG";
+                languageCookie.Expires = DateTime.Now.AddDays(10);
+                Response.SetCookie(languageCookie);
+
+
+            }
+            else {
+                Response.Cookies.Remove("Language");
+                HttpCookie languageCookie = System.Web.HttpContext.Current.Request.Cookies["Language"];
+
+                var cultureInfo = new CultureInfo("en-GB");
+                Thread.CurrentThread.CurrentUICulture = cultureInfo;
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(cultureInfo.Name);
+
+                if (languageCookie == null) languageCookie = new HttpCookie("Language");
+                languageCookie.Value = "en-GB";
+                languageCookie.Expires = DateTime.Now.AddDays(10);
+                Response.SetCookie(languageCookie);
+
+            }
+
 
             return RedirectToAction("Index", "Home");
         }

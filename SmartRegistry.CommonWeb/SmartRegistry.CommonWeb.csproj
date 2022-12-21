@@ -31,20 +31,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EgovAdministrativeRegister, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\EgovAdministrativeRegister.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="Orak.Utils, Version=1.0.0.17935, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\Orak.Utils.dll</HintPath>
-    </Reference>
-    <Reference Include="SmartRegistry.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Lib\SmartRegistry.Domain.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -88,6 +76,9 @@
     <Compile Include="JsonControls\TableDataModel.cs" />
     <Compile Include="JsonControls\TableDataRowAction.cs" />
     <Compile Include="JsonControls\TableDataRowModel.cs" />
+    <Compile Include="JsonHelpers\RegisterTransitionJsonHelper.cs" />
+    <Compile Include="JsonHelpers\RegisterStatesJsonHelper.cs" />
+    <Compile Include="JsonHelpers\ImportHeadJsonHelper.cs" />
     <Compile Include="JsonHelpers\BaseJsonHelper.cs" />
     <Compile Include="JsonHelpers\RegisterJsonHelper.cs" />
     <Compile Include="JsonHelpers\RegisterRightsJsonHelper.cs" />
@@ -106,19 +97,43 @@
     <Compile Include="JsonHelpers\WebServiceJsonHelper.cs" />
     <Compile Include="JsonHelpers\WebServiceListJsonHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
     <Compile Include="SmartDbContextHttpModule.cs" />
     <Compile Include="SmartRegistryWebContext.cs" />
     <Compile Include="TestControlsTransformer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EgovAdministrativeRegister\EgovAdministrativeRegister.csproj">
+      <Project>{5553749f-e0de-4c7e-9825-dd96b96654f3}</Project>
+      <Name>EgovAdministrativeRegister</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Orak.Utils\Orak.Utils.csproj">
+      <Project>{a139b24c-ce3d-4ca1-b440-a2c2334f266a}</Project>
+      <Name>Orak.Utils</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SmartRegistry.DataAccess\SmartRegistry.DataAccess.csproj">
       <Project>{4581ab83-b08b-4535-8f9f-35751dc0cac8}</Project>
       <Name>SmartRegistry.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartRegistry.Domain\SmartRegistry.Domain.csproj">
+      <Project>{fbe519b9-6994-47d1-a344-388ade72700e}</Project>
+      <Name>SmartRegistry.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Content.bg.resx" />
+    <EmbeddedResource Include="Properties\Content.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

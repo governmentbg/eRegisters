@@ -41,7 +41,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelCheckbox()
             {
                 Col = 12,
-                Label = "Приема много стойности",
+                Label = Properties.Content.unified_multiple_values,
                 Name = UnifiedDataViewModel.JSON_NAME_HASMULTIPLE,
                 Checked = (uniData == null) ? false : uniData.HasMultipleValues
             });
@@ -49,7 +49,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var dataTypeControl = new ControlModelOptionList()
             {
                 Col = 12,
-                Label = "Тип",
+                Label = Properties.Content.unified_type,
                 Required = true,
                 Name = UnifiedDataViewModel.JSON_NAME_DATATYPE
             };
@@ -72,16 +72,16 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "УРИ",
+                Label = Properties.Content.unified_uri,
                 Name = UnifiedDataViewModel.JSON_NAME_URI,
                 Enabled = false,
-                Value = (uniData == null) ? "*генерира се*" : uniData.URI
+                Value = (uniData == null) ? Properties.Content.uri_auto_generated : uniData.URI
             });
 
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Име",
+                Label = Properties.Content.unified_name,
                 Name = UnifiedDataViewModel.JSON_NAME_NAME,
                 Required=true,
                 Value = (uniData == null) ? string.Empty : uniData.Name
@@ -90,7 +90,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Техническо име",
+                Label = Properties.Content.unified_namespaceapi,
                 Name = UnifiedDataViewModel.JSON_NAME_NAMESPACEAPI,
                 Required = true,
                 Value = (uniData == null) ? string.Empty : uniData.NamespaceApi
@@ -99,7 +99,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelMultilineText()
             {
                 Col = 12,
-                Label = "Описание",
+                Label = Properties.Content.unified_description,
                 Name = UnifiedDataViewModel.JSON_NAME_DESCRIPTION,
                 Rows = 10,
                 Value = (uniData == null) ? string.Empty : uniData.Description
@@ -137,7 +137,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelAjaxInput()
             {
                 Col = 12,
-                Label = "Референтен регистър",
+                Label = Properties.Content.unified_referential_register,
                 Name = UnifiedDataViewModel.JSON_NAME_REF_REGISTER,
                 Value = (refRegister == null) ? null : refRegister.Id.ToString(),
                 DisplayValue = (refRegister == null) ? null : refRegister.Name.ToString(),
@@ -149,7 +149,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelAjaxInput()
             {
                 Col = 12,
-                Label = "Референтен Атрибут",
+                Label = Properties.Content.unified_referential_attribute,
                 Name = UnifiedDataViewModel.JSON_NAME_REF_ATTRIBUTE,
                 Value = (refAttr == null) ? null : refAttr.Id.ToString(),
                 DisplayValue = (refAttr == null) ? null : refAttr.Name.ToString(),
@@ -182,7 +182,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
 
             var repeater = new ControlModelRepeater();
             repeater.Col = 12;
-            repeater.Label = "Инфо обект";
+            repeater.Label = Properties.Content.unified_info_object;
             repeater.Name = UnifiedDataViewModel.JSON_NAME_COMPOSITELIST;
             repeater.ItemTemplate = CreateStructureItemTemplate(null);
 
@@ -212,7 +212,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var uniDataCombo = new ControlModelOptionList()
             {
                 Col = 12,
-                Label = "Информационен обект",
+                Label = Properties.Content.unified_information_object,
                 Required = true,
                 Name = "InfoObject"
             };

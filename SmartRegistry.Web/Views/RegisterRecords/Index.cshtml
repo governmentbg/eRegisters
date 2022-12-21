@@ -11,13 +11,30 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">@ViewBag.Title</h4>
-                    <div class="page-title-right">
-                        <a href="@Url.Action("Create", "RegisterRecords", new { registerId = ViewBag.registerId})" class="btn btn-success waves-effect waves-light">
+                    <h4 class="page-title mb-0 font-size-18">@Resources.Content.ResourceManager.GetString("registerrecords_index_header") - @ViewBag.Title</h4>              
+                    <ul class="btn-list">
+                        <li>
+                            <a href="#" class="btn btn-success waves-effect waves-light show-hide-btn"> <i class="mdi mdi-plus-box-multiple-outline"></i> @Resources.Content.ResourceManager.GetString("registerrecords_index_entry_btn_list") </a>
+                            <ul>
 
-                            <i class="mdi mdi-plus-box-multiple-outline"></i>Вписване на обстоятелства
-                        </a>
-                    </div>
+                                @if ((ViewBag.InitialStates as IList<RegisterState>).Count > 0)
+                                {
+                                    foreach (RegisterState rs in (ViewBag.InitialStates as IList<RegisterState>))
+                                    {
+                                        <li>
+                                            <a href="@Url.Action("Create", "RegisterRecords", new { registerId = ViewBag.registerId,stateId = rs.Id })">@Resources.Content.ResourceManager.GetString("registerrecords_index_entry_btn_list") @rs.Name</a>
+                                        </li>
+                                    }
+                                }
+                                else
+                                {
+                                    <li>
+                                        <a href="@Url.Action("Create", "RegisterRecords", new { registerId = ViewBag.registerId })">@Resources.Content.ResourceManager.GetString("registerrecords_index_entry_btn") </a>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -26,7 +43,9 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="breadcrumb">
-            <a href="~/Home/">Начало</a> /   <a href="~/Registers/">Регистри</a> /  @ViewBag.Title
+            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("registerrecords_index_breadcrumb_start")</a> /
+            <a href="~/Registers/">@Resources.Content.ResourceManager.GetString("registerrecords_index_breadcrumb_registers")</a> /
+            @ViewBag.Title
         </div>
         <div class="main-content">
             <div class="page-content">

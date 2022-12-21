@@ -41,7 +41,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Име",
+                Label = Properties.Content.webservice_name,
                 Required=true,
                 Name = WebServiceViewModel.JSON_NAME_NAME,
                 Value = (webServ == null) ? string.Empty : webServ.Name
@@ -50,7 +50,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Техническо име",
+                Label = Properties.Content.webservice_apiname,
                 Required = true,
                 Name = WebServiceViewModel.JSON_NAME_SERVICEKEY,
                 Value = (webServ == null) ? string.Empty : webServ.ServiceKey
@@ -64,7 +64,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelMultilineText()
             {
                 Col = 12,
-                Label = "Описание",
+                Label = Properties.Content.webservice_description,
                 Name = WebServiceViewModel.JSON_NAME_DESCRIPTION,
                 Value = (webServ == null) ? string.Empty : webServ.Description
             });
@@ -87,7 +87,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                     var requestRepeater = new ControlModelRepeater()
                     {
                         Col = 12,
-                        Label = "Настройки на заявката",
+                        Label = Properties.Content.webservice_settings,
                         Name = WebServiceViewModel.JSON_NAME_REQUESTSETTINGS
                     };
                     IList<RegisterAttribute> allAttributes = attrHead.Attributes;
@@ -106,7 +106,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                     var responseRepeater = new ControlModelRepeater()
                     {
                         Col = 12,
-                        Label = "Атрибути в резултата",
+                        Label = Properties.Content.webservice_attribute_result,
                         Name = WebServiceViewModel.JSON_NAME_RESPONSEATTRIBUTELIST
                     };
                     responseRepeater.ItemTemplate = CreateResponseAttributeItemTemplate(allAttributes,null);
@@ -136,7 +136,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var attrOptionList = new ControlModelOptionList()
             {
                 Col = 12,
-                Label = "Атрибут",
+                Label = Properties.Content.base_attribute,
                 Name = WebServiceViewModel.JSON_NAME_RESPONSEATTRIBUTE
             };
             RegisterAttribute regAttr = null;
@@ -163,7 +163,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var condOperatorControl = new ControlModelOptionList()
             {
                 Col = 12,
-                Label = "Условие",
+                Label = Properties.Content.base_condition,
                 Name = WebServiceRequestConditionViewModel.JSON_NAME_CONDITION
             };
             AddRequestCondtionToCombo(condOperatorControl, ConditionOperator.Equal, cond);
@@ -179,7 +179,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var attrControl = new ControlModelOptionList()
             {
                 Col = 12,
-                Label = "Атрибут",
+                Label = Properties.Content.base_attribute,
                 Name = WebServiceRequestConditionViewModel.JSON_NAME_ATTRIBUTE
             };
             RegisterAttribute regAttr = null;
@@ -196,7 +196,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Controls.Add(new ControlModelCheckbox()
             {
                 Col = 12,
-                Label = "Задължителен в заявката",
+                Label = Properties.Content.webservice_required_in_report,
                 Name = WebServiceRequestConditionViewModel.JSON_NAME_ISREQUIRED,
                 Checked = (cond == null) ? false : cond.IsRequired
             });
@@ -242,7 +242,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var serviceTypeControl = new ControlModelOptionList()
             {
                 Col = 12,
-                Label = "Тип",
+                Label = Properties.Content.base_type,
                 Required = true,
                 Name = WebServiceViewModel.JSON_NAME_SERVICETYPE
             };

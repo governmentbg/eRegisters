@@ -4367,8 +4367,11 @@ max-width: 100% !important;}
 max-width: 100% !important}
 }
 
-
-
+.submit-message{text-align:center; display:none; position: fixed; left: 0px; top: 0px; background: rgba(0,0,0,.2); width:100%; height:100%; z-index: 1000000000;}
+.content-box{background:#fff; width:100%; max-width:350px; margin:0 auto; top: 50%; position: relative; transform: translateY(-50%); padding:40px; }
+.content-box h3{font-size:24px; line-height: normal;}
+.submit-message a{box-shadow:none !important; margin:0 20px 0 0;}
+.submit-btn{display:none}
 
 
 

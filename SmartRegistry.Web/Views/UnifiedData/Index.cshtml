@@ -11,11 +11,11 @@
         <div class="row z2">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">Списък информационни обекти</h4>
+                    <h4 class="page-title mb-0 font-size-18"> @Resources.Content.ResourceManager.GetString("unifieddata_index_header")</h4>
                     <div class="page-title-right">
                         
                         <ul class="btn-list">
-                            <li> <a href="#" class="btn btn-success waves-effect waves-light show-hide-btn"> <i class="mdi mdi-plus-box-multiple-outline"></i> Създай обект </a>
+                            <li> <a href="#" class="btn btn-success waves-effect waves-light show-hide-btn"> <i class="mdi mdi-plus-box-multiple-outline"></i> @Resources.Content.ResourceManager.GetString("unifieddata_index_create_btn") </a>
                                  <ul>
                                      @if (ViewBag.UserAccess != null)
                                      {
@@ -23,13 +23,13 @@
                                          if (user.HasPermission(PermissionEnum.ManageInfoObjects))
                                          {
                                              <li>
-                                                 <a href="@Url.Action("CreateReferential", "UnifiedData")">Създай референтен обект</a>
+                                                 <a href="@Url.Action("CreateReferential", "UnifiedData")"> @Resources.Content.ResourceManager.GetString("unifieddata_index_create_referential")</a>
                                              </li>
                                              <li>
-                                                 <a href="@Url.Action("CreateComposite", "UnifiedData")">Създай съставен обект</a>
+                                                 <a href="@Url.Action("CreateComposite", "UnifiedData")">@Resources.Content.ResourceManager.GetString("unifieddata_index_create_composite")</a>
                                              </li>
                                              <li>
-                                                 <a href="@Url.Action("Create", "UnifiedData")">Създай информационен обект</a>
+                                                 <a href="@Url.Action("Create", "UnifiedData")">@Resources.Content.ResourceManager.GetString("unifieddata_index_create_unified")</a>
                                              </li>
                                          }
 
@@ -48,7 +48,7 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="breadcrumb">
-            <a href="~/Home/">Начало</a> / Списък информационни обекти
+            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("unifieddata_index_breadcrumb_start")</a> / @Resources.Content.ResourceManager.GetString("unifieddata_index_breadcrumb_unifiedlist")
         </div>
         <div class="main-content">
             <div class="page-content">

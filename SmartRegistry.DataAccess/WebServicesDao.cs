@@ -56,9 +56,9 @@ namespace SmartRegistry.DataAccess
             {
                 criteria = criteria.Add(Restrictions.Eq("Register.Id", filter.RegisterId));
             }
-            if (filter.AttributeId != null)
+            if (filter.AttributeHeadId != null)
             {
-                criteria = criteria.Add(Restrictions.Eq("AttributeHead.Id", filter.AttributeId));
+                criteria = criteria.Add(Restrictions.Eq("AttributeHead.Id", filter.AttributeHeadId));
             }
 
             return criteria;

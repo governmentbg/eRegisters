@@ -28,7 +28,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 3,
-                Label = "Наименование",
+                Label = Properties.Content.area_name,
                 Name = "NameFilter",
                 Value = ""
             });
@@ -36,7 +36,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 3,
-                Label = "Описание",
+                Label = Properties.Content.area_description,
                 Name = "DescFilter",
                 Value = ""
             });
@@ -104,37 +104,37 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Name",
-                Label = "Име",
+                Label = Properties.Content.area_name,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Description",
-                Label = "Описание",
+                Label = Properties.Content.area_description,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "SubAreas",
-                Label = "Подтема",
+                Label = Properties.Content.area_subarea,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "InsDateTime",
-                Label = "Дата",
+                Label = Properties.Content.area_date,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "CreatedBy",
-                Label = "Създадена от",
+                Label = Properties.Content.area_createdby,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Actions",
-                Label = "Опции",
+                Label = Properties.Content.base_options,
                 Sortable = false
             });
 
@@ -163,7 +163,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 row.AddTextCell("CreatedBy", (area.CreatedBy!=null) ? area.CreatedBy.Name : string.Empty);
 
                 var actions = new TableDataCellActionsModel();
-                actions.AddAction("edit", "Редакция", relativePathBase + "Area/Edit/" + area.Id);
+                actions.AddAction("edit", Properties.Content.areagroup_hint_edit, relativePathBase + "Area/Edit/" + area.Id);
                 row.AddActionsCell("actions", actions);
 
                 result.Rows.Add(row);
@@ -181,30 +181,30 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             {
                 Col = 12,
                 Label = "",
-                Name = AreaViewGroupModel.JSON_NAME_ID,
+                Name = AreaGroupViewModel.JSON_NAME_ID,
                 Value = (areaGrp == null) ? string.Empty : areaGrp.Id.ToString()
             });
 
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Име",
-                Name = AreaViewGroupModel.JSON_NAME_NAME,
+                Label = Properties.Content.area_name,
+                Name = AreaGroupViewModel.JSON_NAME_NAME,
                 Value = (areaGrp == null) ? string.Empty : areaGrp.Name
             });
 
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Описание",
-                Name = AreaViewGroupModel.JSON_NAME_DESCRIPTION,
+                Label = Properties.Content.area_description,
+                Name = AreaGroupViewModel.JSON_NAME_DESCRIPTION,
                 Value = (areaGrp == null) ? string.Empty : areaGrp.Description
             });
 
             var repeater = new ControlModelRepeater();
             repeater.Col = 12;
-            repeater.Label = "Под теми";
-            repeater.Name = AreaViewGroupModel.JSON_NAME_AREAS;
+            repeater.Label = Properties.Content.area_subarea;
+            repeater.Name = AreaGroupViewModel.JSON_NAME_AREAS;
             repeater.ItemTemplate = CreateStructureItemTemplate(null);
             if (areaGrp != null)
             {
@@ -231,16 +231,16 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Controls.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Наименование",
-                Name = AreaViewGroupModel.JSON_NAME_NAME,
+                Label = Properties.Content.area_name,
+                Name = AreaGroupViewModel.JSON_NAME_NAME,
                 Value = (attribute == null) ? string.Empty : attribute.Name
             });
 
             result.Controls.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Описание",
-                Name = AreaViewGroupModel.JSON_NAME_DESCRIPTION,
+                Label = Properties.Content.area_description,
+                Name = AreaGroupViewModel.JSON_NAME_DESCRIPTION,
                 Value = (attribute == null) ? string.Empty : attribute.Description
             });
 
@@ -249,14 +249,14 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
         }
 
 
-        public AreaViewGroupModel ParseAreaFromJson(string json)
+        public AreaGroupViewModel ParseAreaFromJson(string json)
         {
-            var result = new AreaViewGroupModel();
+            var result = new AreaGroupViewModel();
 
             dynamic areaData = JsonConvert.DeserializeObject(json);
 
             var idElem = areaData[0];
-            if (idElem.name != AreaViewGroupModel.JSON_NAME_ID) throw new Exception("Invalid JSON Area data : missing Id as first element!");
+            if (idElem.name != AreaGroupViewModel.JSON_NAME_ID) throw new Exception("Invalid JSON Area data : missing Id as first element!");
 
             if (idElem.value != string.Empty)
             {
@@ -266,16 +266,16 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             foreach (var elem in areaData)
             {
                 
-                if (elem.name == AreaViewGroupModel.JSON_NAME_NAME)
+                if (elem.name == AreaGroupViewModel.JSON_NAME_NAME)
                 {
                     result.Name = elem.value;
                 }
-                if (elem.name == AreaViewGroupModel.JSON_NAME_DESCRIPTION)
+                if (elem.name == AreaGroupViewModel.JSON_NAME_DESCRIPTION)
                 {
                     result.Description = elem.value;
                 }
 
-                if (elem.name == AreaViewGroupModel.JSON_NAME_AREAS)
+                if (elem.name == AreaGroupViewModel.JSON_NAME_AREAS)
                 {
                     result.Areas = new List<AreaViewModel>();
                     foreach (var z in elem.values)

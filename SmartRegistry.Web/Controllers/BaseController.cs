@@ -14,6 +14,8 @@ using SmartRegistry.CommonWeb;
 using SmartRegistry.Domain.Entities;
 using Microsoft.AspNet.Identity.Owin;
 using System.Web.Security;
+using System.Threading;
+using System.Globalization;
 
 namespace SmartRegistry.Web.Controllers
 {
@@ -157,7 +159,7 @@ namespace SmartRegistry.Web.Controllers
             int result = 0;
             try
             {
-                result = int.Parse(Request.Params["registerId"]);
+                result = int.Parse(Request.Params[paramName]);
             }
             catch (Exception ex)
             {
@@ -165,6 +167,28 @@ namespace SmartRegistry.Web.Controllers
             }
             return result;
         }
+
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+
+
+            HttpCookie languageCookie = System.Web.HttpContext.Current.Request.Cookies["Language"];
+            if (languageCookie != null)
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(languageCookie.Value);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(languageCookie.Value);
+            }
+            else
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("bg-BG");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("bg-BG");
+            }
+
+
+            base.Initialize(requestContext);
+        }
+
+
 
     }
 

@@ -28,7 +28,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 1,
-                Label = "Име",
+                Label = Properties.Content.webservice_filter_name,
                 Name = "Name",
                 Value = ""
             });
@@ -78,31 +78,31 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Name",
-                Label = "Име",
+                Label = Properties.Content.webservice_name,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Description",
-                Label = "Описание",
+                Label = Properties.Content.webservice_description,
                 Sortable = false
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "ServiceTypeName",
-                Label = "Тип на услугата",
+                Label = Properties.Content.webservice_type,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "ApiName",
-                Label = "Техническо име на услугата ",
+                Label = Properties.Content.webservice_apiname,
                 Sortable = false
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Actions",
-                Label = "Действия",
+                Label = Properties.Content.base_options,
                 Sortable = false
             });
 
@@ -119,9 +119,9 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 row.AddTextCell("ApiName", apiName);
 
                 var actions = new TableDataCellActionsModel();
-                actions.AddAction("edit", "Редакция", relativePathBase + "WebServices/Edit/" + webServ.Id);
-                actions.AddAction("view", "Download XSD", relativePathBase + "WebServices/DownloadXSD/" + webServ.Id);
-                actions.AddAction("download", "Download XSD", relativePathBase + "WebServices/DownloadXSD/" + webServ.Id);
+                actions.AddAction("edit", Properties.Content.webservice_hint_edit, relativePathBase + "WebServices/Edit/" + webServ.Id);
+                actions.AddAction("view", Properties.Content.webservice_hint_downloadXSD, relativePathBase + "WebServices/DownloadXSD/" + webServ.Id);
+                actions.AddAction("download", Properties.Content.webservice_hint_downloadXSD, relativePathBase + "WebServices/DownloadXSD/" + webServ.Id);
                 row.AddActionsCell("actions", actions);
 
                 result.Rows.Add(row);

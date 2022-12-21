@@ -35,7 +35,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 3,
-                Label = "Наименование",
+                Label = Properties.Content.usergroup_filter_name,
                 Name = "NameFilter",
                 Value = ""
             });
@@ -43,23 +43,23 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var statusFilter = new ControlModelOptionList()
             {
                 Col = 3,
-                Label = "Статус",
+                Label = Properties.Content.base_status_name,
                 Name = "StatusFilter"
             };
             var val1 = new ControlModelOptionElement()
             {
-                Label = "--Избери--",
+                Label = Properties.Content.base_status_option_0,
                 Value = "0"
             };
             statusFilter.Options.Add(val1);
             statusFilter.Options.Add(new ControlModelOptionElement()
             {
-                Label = "Активна",
+                Label = Properties.Content.base_status_option_1,
                 Value = "1"
             });
             statusFilter.Options.Add(new ControlModelOptionElement()
             {
-                Label = "Неактивна",
+                Label = Properties.Content.base_status_option_2,
                 Value = "2"
             });
             statusFilter.SelectedValue = val1;
@@ -113,19 +113,19 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "UserGroupName",
-                Label = "Наименование",
+                Label = Properties.Content.usergroup_name,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Status",
-                Label = "Статус",
+                Label = Properties.Content.base_status_name,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Actions",
-                Label = "Опции",
+                Label = Properties.Content.base_options,
                 Sortable = false
             });
 
@@ -141,7 +141,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 row.AddTextCell("Status", statusStr);
 
                 var actions = new TableDataCellActionsModel();
-                actions.AddAction("edit", "Редакция", relativePathBase + "UserGroups/Edit/" + userGr.Id);
+                actions.AddAction("edit", Properties.Content.usergroup_hint_edit, relativePathBase + "UserGroups/Edit/" + userGr.Id);
                // actions.AddAction("history", "Редакция", relativePathBase + "/UserGroups/History/" + userGr.Id);
                 row.AddActionsCell("actions", actions);
 

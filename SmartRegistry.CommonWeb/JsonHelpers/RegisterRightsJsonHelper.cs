@@ -36,7 +36,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
 
             var repeater = new ControlModelRepeater();
             repeater.Col = 12;
-            repeater.Label = "Права за Регистър";
+            repeater.Label = Properties.Content.rights_name;
             repeater.Name = "UserRightsRepeater";
             repeater.ItemTemplate = CreateRightsItemTemplate(register, null, allowedUserGroups, allPermissions);
 
@@ -73,7 +73,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var userGroupsCombo = new ControlModelOptionList()
             {
                 Col = 12,
-                Label = "Потребителска група",
+                Label = Properties.Content.rights_usergroup,
                 Name = "UserGroupCombo",
                 Required=true,
                 Enabled = (userGroup == null)

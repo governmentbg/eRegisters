@@ -25,7 +25,8 @@ namespace SmartRegistry.Web.Controllers
         public ActionResult Create()
         {
             ViewBag.GetControlsUrl = Url.Action("UserGroupData", "UserGroups");
-            ViewBag.PageName = "Създаване на потребителска група";
+            // ViewBag.PageName = "Създаване на потребителска група";
+            ViewBag.PageName = "usergroups_create_header";
             return View("Edit");
         }
 
@@ -33,7 +34,8 @@ namespace SmartRegistry.Web.Controllers
         public ActionResult Edit(int id)
         {
             ViewBag.GetControlsUrl = Url.Action("UserGroupData", "UserGroups", new { userGroupId = id });
-            ViewBag.PageName = "Редакция на потребителска група";
+            // ViewBag.PageName = "Редакция на потребителска група";
+            ViewBag.PageName = "usergroups_edit_header";
             return View("Edit");
         }
 

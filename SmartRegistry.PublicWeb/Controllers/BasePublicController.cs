@@ -4,9 +4,11 @@ using SmartRegistry.Domain.Common;
 using SmartRegistry.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -68,6 +70,68 @@ namespace SmartRegistry.PublicWeb.Controllers
             if (!appPath.EndsWith("/")) appPath += "/";
 
             return appPath;
+        }
+
+        protected override void Initialize(System.Web.Routing.RequestContext requestContext)
+        {
+
+
+            HttpCookie languageCookie = System.Web.HttpContext.Current.Request.Cookies["Language"];
+            if (languageCookie != null)
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(languageCookie.Value);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(languageCookie.Value);
+            }
+            else
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("bg-BG");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("bg-BG");
+            }
+
+
+            base.Initialize(requestContext);
+        }
+
+
+        public ActionResult SelectLng(int id)
+        {
+            CultureInfo uiCultureInfo = Thread.CurrentThread.CurrentUICulture;
+            CultureInfo ucultureInfo = Thread.CurrentThread.CurrentCulture;
+
+            if (id == 1)
+            {
+                Response.Cookies.Remove("Language");
+                HttpCookie languageCookie = System.Web.HttpContext.Current.Request.Cookies["Language"];
+
+                var cultureInfo = new CultureInfo("bg-BG");
+                Thread.CurrentThread.CurrentUICulture = cultureInfo;
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(cultureInfo.Name);
+
+                if (languageCookie == null) languageCookie = new HttpCookie("Language");
+                languageCookie.Value = "bg-BG";
+                languageCookie.Expires = DateTime.Now.AddDays(10);
+                Response.SetCookie(languageCookie);
+
+
+            }
+            else
+            {
+                Response.Cookies.Remove("Language");
+                HttpCookie languageCookie = System.Web.HttpContext.Current.Request.Cookies["Language"];
+
+                var cultureInfo = new CultureInfo("en-GB");
+                Thread.CurrentThread.CurrentUICulture = cultureInfo;
+                Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(cultureInfo.Name);
+
+                if (languageCookie == null) languageCookie = new HttpCookie("Language");
+                languageCookie.Value = "en-GB";
+                languageCookie.Expires = DateTime.Now.AddDays(10);
+                Response.SetCookie(languageCookie);
+
+            }
+
+
+            return RedirectToAction("Index", "Home");
         }
 
     }

@@ -1,0 +1,54 @@
+﻿@using SmartRegistry.Domain.Common
+@using System.Collections.Generic;
+@using SmartRegistry.Domain.Entities
+@using PagedList.Mvc;
+@using SmartRegistry.Web.Models
+
+
+<div class="container-fluid">
+    <!-- Begin page -->
+    <div class="container">
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-flex align-items-center justify-content-between">
+                    <h4 class="page-title mb-0 font-size-18"> @ViewBag.PageName </h4>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="breadcrumb">
+            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("registerstates_edit_breadcrumb_start")</a> /
+            <a href="~/Registers/Structure">@Resources.Content.ResourceManager.GetString("registerstates_edit_breadcrumb_structure")</a> /
+            <a href="@Url.Action("Index", "RegisterStates",new { id = ViewBag.RegisterId})">@Resources.Content.ResourceManager.GetString("registerstates_edit_breadcrumb_states")</a> /
+            @ViewBag.PageName
+        </div>
+        <div class="main-content">
+            <div class="page-content">
+
+                <div id="app"></div>
+                <script>
+                  window.jsonData = {
+                    jsonUrlControls:'@ViewBag.GetControlsUrl',
+                      jsonUrlCreateEdit: '@ViewBag.SaveControlsUrl',
+                    }
+                </script>
+                <script defer="defer" type="module" src="@Url.Content("~/dist/dynamic-form/js/chunk-vendors.js")"></script>
+                <script defer="defer" type="module" src="@Url.Content("~/dist/dynamic-form/js/app.js")"></script>
+                <link href="@Url.Content("~/dist/dynamic-form/css/chunk-vendors.css")" rel="stylesheet">
+                <script defer="defer" src="@Url.Content("~/dist/dynamic-form/js/chunk-vendors-legacy.js")" nomodule></script>
+                <script defer="defer" src="@Url.Content("~/dist/dynamic-form/js/app-legacy.js")" nomodule></script>
+
+            </div>
+            <!-- End Page-content -->
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+</div>
+<!-- end container-fluid -->

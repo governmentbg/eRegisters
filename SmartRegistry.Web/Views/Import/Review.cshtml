@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">Импортиране на данни </h4>
+                    <h4 class="page-title mb-0 font-size-18">@Resources.Content.ResourceManager.GetString("import_review_header") </h4>
                     <div class="page-title-right">
                     </div>
                 </div>
@@ -21,20 +21,23 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="breadcrumb">
-            <a href="~/Home/">Начало</a> /  <a href="~/Import/">Импортиране на данни</a>  / Преглед / @Model.UserFileName
+            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("import_review_breadcrumb_start")</a> /
+            <a href="~/Import/">@Resources.Content.ResourceManager.GetString("import_review_breadcrumb_importdata")</a>  /
+            @Resources.Content.ResourceManager.GetString("import_review_breadcrumb_review") /
+            @Model.UserFileName
         </div>
         <div class="main-content">
             <div class="page-content">
                 @using (Html.BeginForm("ReviewData", "Import", new { Id = Model.Id }, FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
-                    <div class="text-center">
-                        <h3> @Model.Register.Name </h3><br />
-                        Файл качен на: @Model.InsDateTime <br />
-                        Статус: @Model.Status <br />
-                        Качено от: @Model.CreatedBy.Name <br />
-                        Име на файл: @Model.UserFileName <br />
+                <div class="text-center">
+                    <h3> @Model.Register.Name </h3><br />
+                    @Resources.Content.ResourceManager.GetString("import_file_upload_date")  @Model.InsDateTime <br />
+                    @Resources.Content.ResourceManager.GetString("import_file_status") @Model.Status <br />
+                    @Resources.Content.ResourceManager.GetString("import_file_upload_by") @Model.CreatedBy.Name <br />
+                    @Resources.Content.ResourceManager.GetString("import_file_filename") @Model.UserFileName <br />
 
-                    </div>
+                </div>
                     if (Model.Status != ImportHeadStatus.Validated)
                     {
                         <div class="row" style="margin-top:30px;">
@@ -42,10 +45,10 @@
                             <div class="col-xl-3">
                             </div>
                             <div class="col-xl-3">
-                                <input type="submit" value="Валидирай" name="submitButton" class="btn btn-success waves-effect waves-light" />
+                                <input type="submit" value="@Resources.Content.ResourceManager.GetString("import_review_validate_btn")" name="submitButton" class="btn btn-success waves-effect waves-light" />
                             </div>
                             <div class="col-xl-3">
-                                <input type="submit" value="Качи файл отново" name="submitButton" class="btn btn-success waves-effect waves-light" />
+                                <input type="submit" value="@Resources.Content.ResourceManager.GetString("import_review_reupload_btn")" name="submitButton" class="btn btn-success waves-effect waves-light" />
                             </div>
                             <div class="col-xl-3">
                             </div>
@@ -58,10 +61,10 @@
                             <div class="col-xl-3">
                             </div>
                             <div class="col-xl-3">
-                                <input type="submit" value="Импортирай" name="submitButton" class="btn btn-success waves-effect waves-light" />
+                                <input type="submit" value="@Resources.Content.ResourceManager.GetString("import_review_import_btn")" name="submitButton" class="btn btn-success waves-effect waves-light"  />
                             </div>
                             <div class="col-xl-3">
-                                <input type="submit" value="Импортирай със зануляване" name="submitButton" class="btn btn-success waves-effect waves-light" />
+                                <input type="submit" value="@Resources.Content.ResourceManager.GetString("import_review_import_data_btn")" name="submitButton" class="btn btn-success waves-effect waves-light" />
                             </div>
                             <div class="col-xl-3">
                             </div>
@@ -70,7 +73,7 @@
                     if ((@ViewBag.ValidationErrors != null) && (@ViewBag.ValidationErrors != string.Empty))
                     {
                         <div class="row text-center" style="margin-top:50px;">
-                            <h3 class="form-label">Грешки при валидация</h3> <br />
+                            <h3 class="form-label">@Resources.Content.ResourceManager.GetString("import_review_validation_error")</h3> <br />
                             <p>
                                 @ViewBag.ValidationErrors
 
@@ -88,7 +91,7 @@
                     if (@ViewBag.ShowFile != null)
                     {
                         <div class="row text-center" style="margin-top:100px;">
-                            <h3 class="form-label">Качване на CSV</h3> <br />
+                            <h3 class="form-label">@Resources.Content.ResourceManager.GetString("import_review_upload_csv")</h3> <br />
                             <p>
 
 
@@ -103,7 +106,7 @@
 
 
                                 </p>
-                                <input type="submit" value="Качи CSV" name="submitButton" class="btn btn-success waves-effect waves-light" />
+                                <input type="submit" value="@Resources.Content.ResourceManager.GetString("import_review_upload_csv_btn")" name="submitButton" class="btn btn-success waves-effect waves-light" />
                                 <p>
 
 

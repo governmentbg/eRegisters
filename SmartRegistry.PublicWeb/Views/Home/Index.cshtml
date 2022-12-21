@@ -12,7 +12,7 @@
              <div class="row">
                 <div class="col-12">
                     <div class="page-title-box d-flex align-items-center justify-content-between">
-                        <h4 class="page-title mb-0 font-size-18">Начало</h4>
+                        <h4 class="page-title mb-0 font-size-18"> @Resources.Content.ResourceManager.GetString("base_start")</h4>
 
                     </div>
                 </div>
@@ -23,19 +23,19 @@
             <div class="col-sm-4">
                 <div class="box box-green">
                     <span>@ViewBag.Organizations</span>
-                    <p>Организации</p>
+                    <p>@Resources.Content.ResourceManager.GetString("home_index_organization")</p>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="box box-red">
                     <span>@ViewBag.Registers</span>
-                    <p>Набори от данни</p>
+                    <p>@Resources.Content.ResourceManager.GetString("home_index_registers") </p>
                 </div>
             </div>
             <div class="col-sm-4">
                 <div class="box box-blue">
                     <span>24/7</span>
-                    <p>Достъпност до данните</p>
+                    <p>@Resources.Content.ResourceManager.GetString("home_index_access")</p>
                 </div>
             </div>
         </div>
@@ -43,16 +43,26 @@
         <div class="row category-row">
             <div class="col-sm-12">
                 <h3>
-Електронни услуги и информация за гражданите и бизнеса
-</h3>
+                    @Resources.Content.ResourceManager.GetString("home_index_list_header")
+                </h3>
             </div>
 
             @foreach (AreaGroup ag in Model)
             {
                 <div class="col-sm-4">
                     <a href="~/Home/Theme/@ag.Id">
-                        <strong>@ag.Name</strong> <br />
+
+
+                        @if(@Resources.Content.ResourceManager.GetString(@ag.Name)!=null){
+                        <strong> @Resources.Content.ResourceManager.GetString(@ag.Name)</strong> <br />
+                        @Resources.Content.ResourceManager.GetString(@ag.Description)
+                        }else{
+                       <strong>@ag.Name</strong> <br />
                         @ag.Description
+                        }
+
+
+
                     </a>
                 </div>
             }

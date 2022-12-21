@@ -79,6 +79,132 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add New Area.
+        /// </summary>
+        internal static string area_add_btn {
+            get {
+                return ResourceManager.GetString("area_add_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string area_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("area_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Areas.
+        /// </summary>
+        internal static string area_create_breadcrumb_areas {
+            get {
+                return ResourceManager.GetString("area_create_breadcrumb_areas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string area_create_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("area_create_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add New Area.
+        /// </summary>
+        internal static string area_create_header {
+            get {
+                return ResourceManager.GetString("area_create_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Area.
+        /// </summary>
+        internal static string area_edit_header {
+            get {
+                return ResourceManager.GetString("area_edit_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Areas.
+        /// </summary>
+        internal static string area_index_header {
+            get {
+                return ResourceManager.GetString("area_index_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string base_namespace {
+            get {
+                return ResourceManager.GetString("base_namespace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        internal static string base_option {
+            get {
+                return ResourceManager.GetString("base_option", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status.
+        /// </summary>
+        internal static string base_status {
+            get {
+                return ResourceManager.GetString("base_status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Active.
+        /// </summary>
+        internal static string base_status_active {
+            get {
+                return ResourceManager.GetString("base_status_active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to All.
+        /// </summary>
+        internal static string base_status_all {
+            get {
+                return ResourceManager.GetString("base_status_all", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Inactive.
+        /// </summary>
+        internal static string base_status_inactive {
+            get {
+                return ResourceManager.GetString("base_status_inactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type.
+        /// </summary>
+        internal static string base_type {
+            get {
+                return ResourceManager.GetString("base_type", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Council.
         /// </summary>
         internal static string Council {
@@ -93,6 +219,15 @@ namespace Resources {
         internal static string CouncilOfMinistersAdministration {
             get {
                 return ResourceManager.GetString("CouncilOfMinistersAdministration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        internal static string edit_hint {
+            get {
+                return ResourceManager.GetString("edit_hint", resourceCulture);
             }
         }
         
@@ -115,6 +250,330 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Administrative Bodies.
+        /// </summary>
+        internal static string home_index_adminbody {
+            get {
+                return ResourceManager.GetString("home_index_adminbody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unified Data Objects.
+        /// </summary>
+        internal static string home_index_information_objects {
+            get {
+                return ResourceManager.GetString("home_index_information_objects", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers.
+        /// </summary>
+        internal static string home_index_registers {
+            get {
+                return ResourceManager.GetString("home_index_registers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string home_index_start {
+            get {
+                return ResourceManager.GetString("home_index_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string import_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("import_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Data.
+        /// </summary>
+        internal static string import_create_breadcrumb_importdata {
+            get {
+                return ResourceManager.GetString("import_create_breadcrumb_importdata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string import_create_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("import_create_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate CSV.
+        /// </summary>
+        internal static string import_create_generate_csv {
+            get {
+                return ResourceManager.GetString("import_create_generate_csv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Generate CSV with Data.
+        /// </summary>
+        internal static string import_create_generate_csv_data {
+            get {
+                return ResourceManager.GetString("import_create_generate_csv_data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import New Data.
+        /// </summary>
+        internal static string import_create_header {
+            get {
+                return ResourceManager.GetString("import_create_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose register to import data.
+        /// </summary>
+        internal static string import_create_pick_register {
+            get {
+                return ResourceManager.GetString("import_create_pick_register", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload CSV.
+        /// </summary>
+        internal static string import_create_upload_csv_btn {
+            get {
+                return ResourceManager.GetString("import_create_upload_csv_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload CSV file.
+        /// </summary>
+        internal static string import_create_upload_csv_header {
+            get {
+                return ResourceManager.GetString("import_create_upload_csv_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to There was an error uploading the file !.
+        /// </summary>
+        internal static string import_file_error {
+            get {
+                return ResourceManager.GetString("import_file_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name of file: .
+        /// </summary>
+        internal static string import_file_filename {
+            get {
+                return ResourceManager.GetString("import_file_filename", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Status: .
+        /// </summary>
+        internal static string import_file_status {
+            get {
+                return ResourceManager.GetString("import_file_status", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to File uploaded successfully!.
+        /// </summary>
+        internal static string import_file_success {
+            get {
+                return ResourceManager.GetString("import_file_success", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uploaded by: .
+        /// </summary>
+        internal static string import_file_upload_by {
+            get {
+                return ResourceManager.GetString("import_file_upload_by", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Date file was uploaded: .
+        /// </summary>
+        internal static string import_file_upload_date {
+            get {
+                return ResourceManager.GetString("import_file_upload_date", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Data.
+        /// </summary>
+        internal static string import_index_add_btn {
+            get {
+                return ResourceManager.GetString("import_index_add_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Data.
+        /// </summary>
+        internal static string import_index_header {
+            get {
+                return ResourceManager.GetString("import_index_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Data.
+        /// </summary>
+        internal static string import_review_breadcrumb_importdata {
+            get {
+                return ResourceManager.GetString("import_review_breadcrumb_importdata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Review.
+        /// </summary>
+        internal static string import_review_breadcrumb_review {
+            get {
+                return ResourceManager.GetString("import_review_breadcrumb_review", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string import_review_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("import_review_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Data.
+        /// </summary>
+        internal static string import_review_header {
+            get {
+                return ResourceManager.GetString("import_review_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Data.
+        /// </summary>
+        internal static string import_review_import_btn {
+            get {
+                return ResourceManager.GetString("import_review_import_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete Old Data and Import.
+        /// </summary>
+        internal static string import_review_import_data_btn {
+            get {
+                return ResourceManager.GetString("import_review_import_data_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reupload file.
+        /// </summary>
+        internal static string import_review_reupload_btn {
+            get {
+                return ResourceManager.GetString("import_review_reupload_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload CSV file.
+        /// </summary>
+        internal static string import_review_upload_csv {
+            get {
+                return ResourceManager.GetString("import_review_upload_csv", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Upload CSV.
+        /// </summary>
+        internal static string import_review_upload_csv_btn {
+            get {
+                return ResourceManager.GetString("import_review_upload_csv_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validate.
+        /// </summary>
+        internal static string import_review_validate_btn {
+            get {
+                return ResourceManager.GetString("import_review_validate_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validation Errors.
+        /// </summary>
+        internal static string import_review_validation_error {
+            get {
+                return ResourceManager.GetString("import_review_validation_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Proccessed.
+        /// </summary>
+        internal static string import_status_proccessed {
+            get {
+                return ResourceManager.GetString("import_status_proccessed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UploadedFile.
+        /// </summary>
+        internal static string import_status_uploaded_file {
+            get {
+                return ResourceManager.GetString("import_status_uploaded_file", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validated.
+        /// </summary>
+        internal static string import_status_validated {
+            get {
+                return ResourceManager.GetString("import_status_validated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validation Error.
+        /// </summary>
+        internal static string import_status_validation_error {
+            get {
+                return ResourceManager.GetString("import_status_validation_error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Ministry.
         /// </summary>
         internal static string Ministry {
@@ -133,11 +592,542 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Administrative Bodies.
+        /// </summary>
+        internal static string navigation_menu_adminbody {
+            get {
+                return ResourceManager.GetString("navigation_menu_adminbody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Areas.
+        /// </summary>
+        internal static string navigation_menu_area {
+            get {
+                return ResourceManager.GetString("navigation_menu_area", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Import Data.
+        /// </summary>
+        internal static string navigation_menu_importdata {
+            get {
+                return ResourceManager.GetString("navigation_menu_importdata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Menu.
+        /// </summary>
+        internal static string navigation_menu_name {
+            get {
+                return ResourceManager.GetString("navigation_menu_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nomenclature.
+        /// </summary>
+        internal static string navigation_menu_nomenclature {
+            get {
+                return ResourceManager.GetString("navigation_menu_nomenclature", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers.
+        /// </summary>
+        internal static string navigation_menu_registers {
+            get {
+                return ResourceManager.GetString("navigation_menu_registers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers.
+        /// </summary>
+        internal static string navigation_menu_register_registers {
+            get {
+                return ResourceManager.GetString("navigation_menu_register_registers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register Structure.
+        /// </summary>
+        internal static string navigation_menu_structure {
+            get {
+                return ResourceManager.GetString("navigation_menu_structure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System.
+        /// </summary>
+        internal static string navigation_menu_system {
+            get {
+                return ResourceManager.GetString("navigation_menu_system", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Log.
+        /// </summary>
+        internal static string navigation_menu_sytemlog {
+            get {
+                return ResourceManager.GetString("navigation_menu_sytemlog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unified Data Objects.
+        /// </summary>
+        internal static string navigation_menu_unified_data {
+            get {
+                return ResourceManager.GetString("navigation_menu_unified_data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Groups.
+        /// </summary>
+        internal static string navigation_menu_usergroup {
+            get {
+                return ResourceManager.GetString("navigation_menu_usergroup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        internal static string navigation_menu_users {
+            get {
+                return ResourceManager.GetString("navigation_menu_users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to RegionalAdminisration.
         /// </summary>
         internal static string RegionalAdminisration {
             get {
                 return ResourceManager.GetString("RegionalAdminisration", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register Record Entry.
+        /// </summary>
+        internal static string registerrecords_create_header {
+            get {
+                return ResourceManager.GetString("registerrecords_create_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register Records.
+        /// </summary>
+        internal static string registerrecords_edit_breadcrumb_records {
+            get {
+                return ResourceManager.GetString("registerrecords_edit_breadcrumb_records", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers.
+        /// </summary>
+        internal static string registerrecords_edit_breadcrumb_registers {
+            get {
+                return ResourceManager.GetString("registerrecords_edit_breadcrumb_registers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string registerrecords_edit_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("registerrecords_edit_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State.
+        /// </summary>
+        internal static string registerrecords_edit_state {
+            get {
+                return ResourceManager.GetString("registerrecords_edit_state", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers.
+        /// </summary>
+        internal static string registerrecords_index_breadcrumb_registers {
+            get {
+                return ResourceManager.GetString("registerrecords_index_breadcrumb_registers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string registerrecords_index_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("registerrecords_index_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter Record.
+        /// </summary>
+        internal static string registerrecords_index_entry_btn {
+            get {
+                return ResourceManager.GetString("registerrecords_index_entry_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enter.
+        /// </summary>
+        internal static string registerrecords_index_entry_btn_list {
+            get {
+                return ResourceManager.GetString("registerrecords_index_entry_btn_list", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register Record.
+        /// </summary>
+        internal static string registerrecords_index_header {
+            get {
+                return ResourceManager.GetString("registerrecords_index_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create State.
+        /// </summary>
+        internal static string registerstates_create_header {
+            get {
+                return ResourceManager.GetString("registerstates_create_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string registerstates_edit_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("registerstates_edit_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to States.
+        /// </summary>
+        internal static string registerstates_edit_breadcrumb_states {
+            get {
+                return ResourceManager.GetString("registerstates_edit_breadcrumb_states", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers Structure.
+        /// </summary>
+        internal static string registerstates_edit_breadcrumb_structure {
+            get {
+                return ResourceManager.GetString("registerstates_edit_breadcrumb_structure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit State.
+        /// </summary>
+        internal static string registerstates_edit_header {
+            get {
+                return ResourceManager.GetString("registerstates_edit_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add State.
+        /// </summary>
+        internal static string registerstates_index_add_btn {
+            get {
+                return ResourceManager.GetString("registerstates_index_add_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string registerstates_index_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("registerstates_index_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers Structure.
+        /// </summary>
+        internal static string registerstates_index_breadcrumb_structure {
+            get {
+                return ResourceManager.GetString("registerstates_index_breadcrumb_structure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to State of proccess.
+        /// </summary>
+        internal static string registerstates_index_header {
+            get {
+                return ResourceManager.GetString("registerstates_index_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create New Register.
+        /// </summary>
+        internal static string registers_create_header {
+            get {
+                return ResourceManager.GetString("registers_create_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string registers_editstructure_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("registers_editstructure_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers Structure.
+        /// </summary>
+        internal static string registers_editstructure_breadcrumb_structue {
+            get {
+                return ResourceManager.GetString("registers_editstructure_breadcrumb_structue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Structure - .
+        /// </summary>
+        internal static string registers_editstructure_header {
+            get {
+                return ResourceManager.GetString("registers_editstructure_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers.
+        /// </summary>
+        internal static string registers_edit_breadcrumb_registers {
+            get {
+                return ResourceManager.GetString("registers_edit_breadcrumb_registers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string registers_edit_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("registers_edit_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Register .
+        /// </summary>
+        internal static string registers_edit_header {
+            get {
+                return ResourceManager.GetString("registers_edit_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers.
+        /// </summary>
+        internal static string registers_index_header {
+            get {
+                return ResourceManager.GetString("registers_index_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers.
+        /// </summary>
+        internal static string registers_rights_breadcrumb_registry {
+            get {
+                return ResourceManager.GetString("registers_rights_breadcrumb_registry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string registers_rights_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("registers_rights_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register Rights - .
+        /// </summary>
+        internal static string registers_rights_header {
+            get {
+                return ResourceManager.GetString("registers_rights_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers Structure.
+        /// </summary>
+        internal static string registers_structure_index_header {
+            get {
+                return ResourceManager.GetString("registers_structure_index_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Transition.
+        /// </summary>
+        internal static string registertransition_create_header {
+            get {
+                return ResourceManager.GetString("registertransition_create_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string registertransition_edit_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("registertransition_edit_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers Structure.
+        /// </summary>
+        internal static string registertransition_edit_breadcrumb_structure {
+            get {
+                return ResourceManager.GetString("registertransition_edit_breadcrumb_structure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transitions.
+        /// </summary>
+        internal static string registertransition_edit_breadcrumb_transitions {
+            get {
+                return ResourceManager.GetString("registertransition_edit_breadcrumb_transitions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Transition.
+        /// </summary>
+        internal static string registertransition_edit_header {
+            get {
+                return ResourceManager.GetString("registertransition_edit_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add Transition.
+        /// </summary>
+        internal static string registertransition_index_add_btn {
+            get {
+                return ResourceManager.GetString("registertransition_index_add_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string registertransition_index_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("registertransition_index_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers Structure.
+        /// </summary>
+        internal static string registertransition_index_breadcrumb_structure {
+            get {
+                return ResourceManager.GetString("registertransition_index_breadcrumb_structure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Transitions.
+        /// </summary>
+        internal static string registertransition_index_header {
+            get {
+                return ResourceManager.GetString("registertransition_index_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string register_index_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("register_index_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create New Register.
+        /// </summary>
+        internal static string register_index_create_btn {
+            get {
+                return ResourceManager.GetString("register_index_create_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ИСЦИПР.
+        /// </summary>
+        internal static string site_head_iscipr {
+            get {
+                return ResourceManager.GetString("site_head_iscipr", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MINISTRY OF E-GOVERNANCE.
+        /// </summary>
+        internal static string site_head_meu {
+            get {
+                return ResourceManager.GetString("site_head_meu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INFORMATION SYSTEM FOR CENTRALIZED.
+        /// </summary>
+        internal static string site_head_system_1 {
+            get {
+                return ResourceManager.GetString("site_head_system_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ESTABLISHMENT AND MAINTENANCE OF REGISTERS.
+        /// </summary>
+        internal static string site_head_system_2 {
+            get {
+                return ResourceManager.GetString("site_head_system_2", resourceCulture);
             }
         }
         
@@ -178,11 +1168,506 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string syerstemlog_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("syerstemlog_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Export.
+        /// </summary>
+        internal static string systemlog_index_export_btn {
+            get {
+                return ResourceManager.GetString("systemlog_index_export_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to System Log.
+        /// </summary>
+        internal static string systemlog_index_header {
+            get {
+                return ResourceManager.GetString("systemlog_index_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string unifieddata_create_composite_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("unifieddata_create_composite_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unified Objects List.
+        /// </summary>
+        internal static string unifieddata_create_composite_breadcrumb_unifiedlist {
+            get {
+                return ResourceManager.GetString("unifieddata_create_composite_breadcrumb_unifiedlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Composite Object.
+        /// </summary>
+        internal static string unifieddata_create_composite_header {
+            get {
+                return ResourceManager.GetString("unifieddata_create_composite_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string unifieddata_create_referential_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("unifieddata_create_referential_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unified Objects List.
+        /// </summary>
+        internal static string unifieddata_create_referential_breadcrumb_unifiedlist {
+            get {
+                return ResourceManager.GetString("unifieddata_create_referential_breadcrumb_unifiedlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Referentail Object.
+        /// </summary>
+        internal static string unifieddata_create_referential_header {
+            get {
+                return ResourceManager.GetString("unifieddata_create_referential_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string unifieddata_create_unified_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("unifieddata_create_unified_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unified Objects List.
+        /// </summary>
+        internal static string unifieddata_create_unified_breadcrumb_unifiedlist {
+            get {
+                return ResourceManager.GetString("unifieddata_create_unified_breadcrumb_unifiedlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Unified Object.
+        /// </summary>
+        internal static string unifieddata_create_unified_header {
+            get {
+                return ResourceManager.GetString("unifieddata_create_unified_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Composite Object.
+        /// </summary>
+        internal static string unifieddata_edit_composite_header {
+            get {
+                return ResourceManager.GetString("unifieddata_edit_composite_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Referentail Object.
+        /// </summary>
+        internal static string unifieddata_edit_referential_header {
+            get {
+                return ResourceManager.GetString("unifieddata_edit_referential_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Unified Object.
+        /// </summary>
+        internal static string unifieddata_edit_unified_header {
+            get {
+                return ResourceManager.GetString("unifieddata_edit_unified_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string unifieddata_index_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("unifieddata_index_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unified Objects List.
+        /// </summary>
+        internal static string unifieddata_index_breadcrumb_unifiedlist {
+            get {
+                return ResourceManager.GetString("unifieddata_index_breadcrumb_unifiedlist", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Unified Object.
+        /// </summary>
+        internal static string unifieddata_index_create_btn {
+            get {
+                return ResourceManager.GetString("unifieddata_index_create_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Composite Object.
+        /// </summary>
+        internal static string unifieddata_index_create_composite {
+            get {
+                return ResourceManager.GetString("unifieddata_index_create_composite", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Referential Object.
+        /// </summary>
+        internal static string unifieddata_index_create_referential {
+            get {
+                return ResourceManager.GetString("unifieddata_index_create_referential", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Unifed Object.
+        /// </summary>
+        internal static string unifieddata_index_create_unified {
+            get {
+                return ResourceManager.GetString("unifieddata_index_create_unified", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unified Objects List.
+        /// </summary>
+        internal static string unifieddata_index_header {
+            get {
+                return ResourceManager.GetString("unifieddata_index_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unknown.
         /// </summary>
         internal static string Unknown {
             get {
                 return ResourceManager.GetString("Unknown", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create  User Group.
+        /// </summary>
+        internal static string usergroups_create_header {
+            get {
+                return ResourceManager.GetString("usergroups_create_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string usergroups_edit_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("usergroups_edit_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Groups.
+        /// </summary>
+        internal static string usergroups_edit_breadcrumb_usergroups {
+            get {
+                return ResourceManager.GetString("usergroups_edit_breadcrumb_usergroups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit User Group.
+        /// </summary>
+        internal static string usergroups_edit_header {
+            get {
+                return ResourceManager.GetString("usergroups_edit_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string usergroups_index_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("usergroups_index_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Groups.
+        /// </summary>
+        internal static string usergroups_index_breadcrumb_usergroups {
+            get {
+                return ResourceManager.GetString("usergroups_index_breadcrumb_usergroups", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create User Group.
+        /// </summary>
+        internal static string usergroups_index_create_btn {
+            get {
+                return ResourceManager.GetString("usergroups_index_create_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Groups.
+        /// </summary>
+        internal static string usergroups_index_header {
+            get {
+                return ResourceManager.GetString("usergroups_index_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create New User.
+        /// </summary>
+        internal static string users_create_header {
+            get {
+                return ResourceManager.GetString("users_create_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string users_edit_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("users_edit_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        internal static string users_edit_breadcrumb_users {
+            get {
+                return ResourceManager.GetString("users_edit_breadcrumb_users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit User.
+        /// </summary>
+        internal static string users_edit_header {
+            get {
+                return ResourceManager.GetString("users_edit_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string users_index_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("users_index_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        internal static string users_index_breadcrumb_users {
+            get {
+                return ResourceManager.GetString("users_index_breadcrumb_users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create New User.
+        /// </summary>
+        internal static string users_index_create_btn {
+            get {
+                return ResourceManager.GetString("users_index_create_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        internal static string users_index_header {
+            get {
+                return ResourceManager.GetString("users_index_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string users_reset_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("users_reset_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        internal static string users_reset_breadcrumb_users {
+            get {
+                return ResourceManager.GetString("users_reset_breadcrumb_users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        internal static string users_reset_email {
+            get {
+                return ResourceManager.GetString("users_reset_email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset User Authentication Data.
+        /// </summary>
+        internal static string users_reset_header {
+            get {
+                return ResourceManager.GetString("users_reset_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string users_reset_name {
+            get {
+                return ResourceManager.GetString("users_reset_name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Send email.
+        /// </summary>
+        internal static string users_reset_send_btn {
+            get {
+                return ResourceManager.GetString("users_reset_send_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string webservices_edit_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("webservices_edit_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers Structure.
+        /// </summary>
+        internal static string webservices_edit_breadcrumb_structure {
+            get {
+                return ResourceManager.GetString("webservices_edit_breadcrumb_structure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit Service.
+        /// </summary>
+        internal static string webservices_edit_header {
+            get {
+                return ResourceManager.GetString("webservices_edit_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Service For Insert/Update/Delete.
+        /// </summary>
+        internal static string webservices_edit_managment_header {
+            get {
+                return ResourceManager.GetString("webservices_edit_managment_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Service For Validation.
+        /// </summary>
+        internal static string webservices_edit_report_header {
+            get {
+                return ResourceManager.GetString("webservices_edit_report_header", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start.
+        /// </summary>
+        internal static string webservices_list_breadcrumb_start {
+            get {
+                return ResourceManager.GetString("webservices_list_breadcrumb_start", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registers Structure.
+        /// </summary>
+        internal static string webservices_list_breadcrumb_structure {
+            get {
+                return ResourceManager.GetString("webservices_list_breadcrumb_structure", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Web Service.
+        /// </summary>
+        internal static string webservices_list_create_btn {
+            get {
+                return ResourceManager.GetString("webservices_list_create_btn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Service For Insert/Update/Delete.
+        /// </summary>
+        internal static string webservices_list_create_entryservice {
+            get {
+                return ResourceManager.GetString("webservices_list_create_entryservice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create Service For Validation.
+        /// </summary>
+        internal static string webservices_list_create_validateservice {
+            get {
+                return ResourceManager.GetString("webservices_list_create_validateservice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Web Services For Register : .
+        /// </summary>
+        internal static string webservices_list_header {
+            get {
+                return ResourceManager.GetString("webservices_list_header", resourceCulture);
             }
         }
     }

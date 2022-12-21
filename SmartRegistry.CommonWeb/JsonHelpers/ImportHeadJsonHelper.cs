@@ -28,7 +28,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 3,
-                Label = "Име на регистър",
+                Label = Properties.Content.import_reg_name,
                 Name = "RegisterName",
                 Value = ""
             });
@@ -36,7 +36,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 3,
-                Label = "Име на файл",
+                Label = Properties.Content.import_file_name,
                 Name = "FileName",
                 Value = ""
             });
@@ -45,35 +45,35 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var statusControl = new ControlModelOptionList()
             {
                 Col = 3,
-                Label = "Статус",
+                Label = Properties.Content.base_status_name,
                 Required = true,
                 Name = "Status"
             };
 
             var noStatus = new ControlModelOptionElement()
             {
-                Label = "--Избери--",
+                Label = Properties.Content.base_status_option_0,
                 Value = "-1"
             };
 
             var upleadedStatus = new ControlModelOptionElement()
             {
-                Label = "Качен файл",
+                Label = Properties.Content.import_status_uploaded_file,
                 Value = ((int)ImportHeadStatus.UploadedFile).ToString()
             };
             var errorStatus = new ControlModelOptionElement()
             {
-            Label = "С грешка",
+            Label = Properties.Content.import_status_validation_error,
             Value = ((int)ImportHeadStatus.HasValidationErrors).ToString()
             };
             var validatedStatus = new ControlModelOptionElement()
             {
-                Label = "Валидиран",
+                Label = Properties.Content.import_status_validated,
                 Value = ((int)ImportHeadStatus.Validated).ToString()
             };
             var proccessedStatus = new ControlModelOptionElement()
             {
-                Label = "Обработен",
+                Label = Properties.Content.import_status_proccessed,
                 Value = ((int)ImportHeadStatus.Processed).ToString()
             };
 
@@ -150,37 +150,37 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "RegisterName",
-                Label = "Име на регистър",
+                Label = Properties.Content.import_reg_name,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "FileName",
-                Label = "Име на файл",
+                Label = Properties.Content.import_file_name,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Status",
-                Label = "Статус",
+                Label = Properties.Content.base_status_name,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "InsDateTime",
-                Label = "Дата",
+                Label = Properties.Content.base_date,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "CreatedBy",
-                Label = "Създадена от",
+                Label = Properties.Content.base_createdby,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Actions",
-                Label = "Опции",
+                Label = Properties.Content.base_options,
                 Sortable = false
             });
 
@@ -201,7 +201,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 row.AddTextCell("CreatedBy", (importHead.CreatedBy!=null) ? importHead.CreatedBy.Name : string.Empty);
 
                 var actions = new TableDataCellActionsModel();
-                actions.AddAction("view", "Преглед", relativePathBase + "Import/Review/" + importHead.Id);
+                actions.AddAction("view", Properties.Content.import_hint_preview, relativePathBase + "Import/Review/" + importHead.Id);
                 row.AddActionsCell("actions", actions);
 
                 result.Rows.Add(row);

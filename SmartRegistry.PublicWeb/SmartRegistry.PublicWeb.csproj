@@ -117,6 +117,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_GlobalResources\Content.bg.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.bg.resx</DependentUpon>
+    </Compile>
+    <Compile Include="App_GlobalResources\Content.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Content.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -168,12 +178,14 @@
     <Content Include="Assets\images\error-img.png" />
     <Content Include="Assets\images\eu.png" />
     <Content Include="Assets\images\favicon.ico" />
+    <Content Include="Assets\images\flag-english.jpg" />
     <Content Include="Assets\images\flags\french.jpg" />
     <Content Include="Assets\images\flags\germany.jpg" />
     <Content Include="Assets\images\flags\italy.jpg" />
     <Content Include="Assets\images\flags\russia.jpg" />
     <Content Include="Assets\images\flags\spain.jpg" />
     <Content Include="Assets\images\flags\us.jpg" />
+    <Content Include="Assets\images\Flag_of_Bulgaria.svg.png" />
     <Content Include="Assets\images\icons\crop.png" />
     <Content Include="Assets\images\icons\economics.png" />
     <Content Include="Assets\images\icons\folder.png" />
@@ -1372,6 +1384,18 @@
       <Project>{fbe519b9-6994-47d1-a344-388ade72700e}</Project>
       <Name>SmartRegistry.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Content.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Content.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_GlobalResources\Content.bg.resx">
+      <Generator>GlobalResourceProxyGenerator</Generator>
+      <LastGenOutput>Content.bg.designer.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

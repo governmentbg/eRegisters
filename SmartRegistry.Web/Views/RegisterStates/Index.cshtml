@@ -1,0 +1,60 @@
+﻿@using SmartRegistry.Domain.Common
+@using System.Collections.Generic;
+@using SmartRegistry.Domain.Entities
+@using PagedList.Mvc;
+@using SmartRegistry.Web.Models
+
+<div class="container-fluid">
+    <!-- Begin page -->
+    <div class="container">
+        <!-- start page title -->
+        <div class="row">
+            <div class="col-12">
+                <div class="page-title-box d-flex align-items-center justify-content-between">
+                    <h4 class="page-title mb-0 font-size-18">@Resources.Content.ResourceManager.GetString("registerstates_index_header") @ViewBag.Title</h4>
+                    <div class="page-title-right">
+                        <a href="@Url.Action("Create", "RegisterStates", new { registerId = ViewBag.registerId})" class="btn btn-success waves-effect waves-light">
+
+                            <i class="mdi mdi-plus-box-multiple-outline"></i>@Resources.Content.ResourceManager.GetString("registerstates_index_add_btn")
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page title -->
+        <!-- ============================================================== -->
+        <!-- Start right Content here -->
+        <!-- ============================================================== -->
+        <div class="breadcrumb">
+            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("registerstates_index_breadcrumb_start")</a> /
+            <a href="~/Registers/Structure">@Resources.Content.ResourceManager.GetString("registerstates_index_breadcrumb_structure")</a> / 
+            @ViewBag.Title
+        </div>
+        <div class="main-content">
+            <div class="page-content">
+                <div id="app"></div>
+                <script>
+                    window.jsonData = {
+                        jsonUrlFilter:
+                            '@Url.Action("GetFilterControls", "RegisterStates", new { id = ViewBag.RegisterId })',
+                        jsonUrlTable:
+                            '@Url.Action("GetRegisterStates", "RegisterStates", new { registerId = ViewBag.RegisterId })'
+                    }
+                </script>
+
+                <script defer="defer" type="module" src="@Url.Content("~/dist/table/js/chunk-vendors.js")"></script>
+                <script defer="defer" type="module" src="@Url.Content("~/dist/table/js/app.js")"></script>
+                <link href="@Url.Content("~/dist/table/css/chunk-vendors.css")" rel="stylesheet">
+                <script defer="defer" src="@Url.Content("~/dist/table/js/chunk-vendors-legacy.js")" nomodule></script>
+                <script defer="defer" src="@Url.Content("~/dist/table/js/app-legacy.js")" nomodule></script>
+
+            </div>
+            <!-- End Page-content -->
+
+        </div>
+        <!-- end main content-->
+
+    </div>
+    <!-- END layout-wrapper -->
+
+</div>

@@ -31,7 +31,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 3,
-                Label = "Потребител",
+                Label = Properties.Content.systemlog_filter_name,
                 Name = "NameFilter",
                 Value = ""
             });
@@ -40,7 +40,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 result.Add(new ControlModelText()
                 {
                     Col = 3,
-                    Label = "Административен орган",
+                    Label = Properties.Content.base_administrative_body,
                     Name = "AdministrativeBody",
                     Value = ""
                 });
@@ -58,13 +58,13 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var statusControl = new ControlModelOptionList()
             {
                 Col = 3,
-                Label = "Тип",
+                Label = Properties.Content.base_type,
                 Name = "Type"
             };
 
             var noStatus = new ControlModelOptionElement()
             {
-                Label = "--Избери--",
+                Label = Properties.Content.base_status_option_0,
                 Value = "0"
             };
 
@@ -159,31 +159,31 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "InfoMessage",
-                Label = "Инфо",
+                Label = Properties.Content.systemlog_info,
                 Sortable = false
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Type",
-                Label = "Тип",
+                Label = Properties.Content.base_type,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "EventTime",
-                Label = "Дата",
+                Label = Properties.Content.systemlog_data,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "CurrentUser",
-                Label = "Потребител",
+                Label = Properties.Content.systemlog_user,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "AdministrativeBody",
-                Label = "Административен орган",
+                Label = Properties.Content.base_administrative_body,
                 Sortable = true
             });
 

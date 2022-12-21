@@ -17,7 +17,7 @@ namespace SmartRegistry.Web.Controllers
         {
             var regServ = SmartContext.RegistersService;
             var register = regServ.GetRegister(id);
-            ViewBag.Title = "Уеб услуги за регистър : " + register.Name;
+            ViewBag.Title = register.Name;
             ViewBag.RegisterId = register.Id;
             return View();
         }
@@ -65,7 +65,8 @@ namespace SmartRegistry.Web.Controllers
             ViewBag.RegisterId = id;
             ViewBag.ServiceType = "management";
             ViewBag.GetControlsUrl = Url.Action("WebServiceData", "WebServices", new { serviceType = "management", registerId = id });
-            ViewBag.PageName = "Създаване на уеб услуга за вписване/промяна/заличаване";
+            // ViewBag.PageName = "Създаване на уеб услуга за вписване/промяна/заличаване";
+            ViewBag.PageName = Resources.Content.webservices_edit_managment_header;
 
             return View("Edit");
         }
@@ -75,7 +76,8 @@ namespace SmartRegistry.Web.Controllers
             ViewBag.RegisterId = id;
             ViewBag.ServiceType = "report";
             ViewBag.GetControlsUrl = Url.Action("WebServiceData", "WebServices", new { serviceType = "report", registerId = id });
-            ViewBag.PageName = "Създаване на уеб услуга за удостоверяване";
+            //  ViewBag.PageName = "Създаване на уеб услуга за удостоверяване";
+            ViewBag.PageName = Resources.Content.webservices_edit_report_header;
 
             return View("Edit");
         }
@@ -99,7 +101,8 @@ namespace SmartRegistry.Web.Controllers
                 ViewBag.ServiceType = "management";
             }
             ViewBag.GetControlsUrl = Url.Action("WebServiceData", "WebServices", new { serviceType = ViewBag.ServiceType, registerId = webServ.Register.Id, webServiceId = id });
-            ViewBag.PageName = "Редактиране на уеб услуга";
+           // ViewBag.PageName = "Редактиране на уеб услуга";
+            ViewBag.PageName = Resources.Content.webservices_edit_header;
 
             return View("Edit");
         }

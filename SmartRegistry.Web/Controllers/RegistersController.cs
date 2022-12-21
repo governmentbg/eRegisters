@@ -26,18 +26,21 @@ namespace SmartRegistry.Web.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Title = "Регистър на регистрите";
+            //ViewBag.Title = "Регистър на регистрите";
             ViewBag.Type = "list";
             ViewBag.ListAction = "GetRegistersList";
+
+            ViewBag.Title = Resources.Content.registers_index_header;
 
             return View();
         }
 
         public ActionResult Structure()
         {
-            ViewBag.Title = "Структура на регистър";
+           // ViewBag.Title = "Структура на регистър";
             ViewBag.Type = "structure";
             ViewBag.ListAction = "GetRegistersListStructure";
+            ViewBag.Title = Resources.Content.registers_structure_index_header;
 
             return View("Index");
         }
@@ -94,7 +97,13 @@ namespace SmartRegistry.Web.Controllers
         public ActionResult RegisterRights(int id)
         {
             ViewBag.GetControlsUrl = Url.Action("GetRegisterRightsControls", "Registers", new { registerId = id });
-            ViewBag.PageName = "Права за регистър";
+           
+            var registersService = SmartContext.RegistersService;
+            var register = registersService.GetRegister(id);
+
+         //   ViewBag.PageName = "Права за регистър - " + register.Name;
+            ViewBag.PageName = Resources.Content.registers_rights_header + register.Name;
+
 
             if ((SmartContext.CurrentUser == null)
                 || (!SmartContext.CurrentUser.HasRegisterRight(id, RegisterPermissionEnum.ManageRegisterRights)))
@@ -358,7 +367,10 @@ namespace SmartRegistry.Web.Controllers
         {
             ViewBag.GetControlsUrl = Url.Action("RegisterData", "Registers");
             ViewBag.SaveControlsUrl = Url.Action("SaveRegisterData", "Registers");
-            ViewBag.PageName = "Вписване на регистър";
+            // ViewBag.PageName = "Вписване на регистър";
+            ViewBag.PageName = Resources.Content.registers_create_header;
+            
+            ViewBag.Type = "Create";
             return View("Edit");
         }
 
@@ -367,7 +379,8 @@ namespace SmartRegistry.Web.Controllers
         {
             ViewBag.GetControlsUrl = Url.Action("RegisterData", "Registers", new { registerId = id });
             ViewBag.SaveControlsUrl = Url.Action("SaveRegisterData", "Registers");
-            ViewBag.PageName = "Редакция на регистър";
+           // ViewBag.PageName = "Редакция на регистър";
+            ViewBag.PageName = Resources.Content.registers_edit_header;
             ViewBag.Type = "Edit";
 
             return View("Edit");
@@ -383,7 +396,9 @@ namespace SmartRegistry.Web.Controllers
             var registersService = SmartContext.RegistersService;
             var register = registersService.GetRegister(id);
 
-            ViewBag.PageName = "Редакция на структура регистър - " + register.Name;
+           // ViewBag.PageName = "Редакция на структура регистър - " + register.Name;
+            ViewBag.PageName = Resources.Content.registers_editstructure_header + register.Name; ;
+
             ViewBag.Type = "EditStructure";
 
             if ((SmartContext.CurrentUser == null)

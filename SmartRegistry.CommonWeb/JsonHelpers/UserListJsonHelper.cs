@@ -30,7 +30,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 3,
-                Label = "Име",
+                Label = Properties.Content.users_name,
                 Name = "NameFilter",
                 Value = ""
             });
@@ -38,7 +38,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 3,
-                Label = "Групи",
+                Label = Properties.Content.base_usergroup,
                 Name = "GroupFilter",
                 Value = ""
             });
@@ -100,25 +100,25 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "UserName",
-                Label = "Име",
+                Label = Properties.Content.users_name,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Groups",
-                Label = "Групи",
+                Label = Properties.Content.base_usergroup,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Status",
-                Label = "Статус",
+                Label = Properties.Content.base_status_name,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Actions",
-                Label = "Опции",
+                Label = Properties.Content.base_options,
                 Sortable = false
             });
 
@@ -142,8 +142,8 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 row.AddTextCell("Status", statusStr);
 
                 var actions = new TableDataCellActionsModel();
-                actions.AddAction("edit", "Редакция", relativePathBase + "Users/Edit/" + user.Id);
-                actions.AddAction("resetPassword", "Смяна Автентикация", relativePathBase + "Users/Reset/" + user.Id);
+                actions.AddAction("edit", Properties.Content.user_hint_edit, relativePathBase + "Users/Edit/" + user.Id);
+                actions.AddAction("resetPassword", Properties.Content.user_hint_resetauth, relativePathBase + "Users/Reset/" + user.Id);
                 row.AddActionsCell("actions", actions);
 
                 result.Rows.Add(row);

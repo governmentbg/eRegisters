@@ -21,5 +21,13 @@ namespace SmartRegistry.DataAccess
             var result = Session.Query<RegisterRight>().ToList();
             return result;
         }
+
+        public IList<RegisterRight> GetRightForRegisterStructure(Register register)
+        {
+            var result = Session.Query<RegisterRight>()
+                .Where(x=>x.Register==register)
+                .Where(x=>x.Permission == RegisterPermissionEnum.ManageRegistryStructure).ToList();
+            return result;
+        }
     }
 }

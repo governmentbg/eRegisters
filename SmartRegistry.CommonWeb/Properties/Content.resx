@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="areagroup_hint_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="import_hint_preview" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="records_hint_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="records_public_hint_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="register_hint_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="register_hint_records" xml:space="preserve">
+    <value>Records</value>
+  </data>
+  <data name="register_hint_rights" xml:space="preserve">
+    <value>Rights</value>
+  </data>
+  <data name="states_hint_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="structure_hint_edit" xml:space="preserve">
+    <value>Attributes</value>
+  </data>
+  <data name="structure_hint_services" xml:space="preserve">
+    <value>Web Services</value>
+  </data>
+  <data name="structure_hint_states" xml:space="preserve">
+    <value>Register States</value>
+  </data>
+  <data name="structure_hint_transitions" xml:space="preserve">
+    <value>Register Transitions</value>
+  </data>
+  <data name="transition_hint_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="unified_hint_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="usergroup_hint_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="user_hint_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="user_hint_resetauth" xml:space="preserve">
+    <value>Reset Authentication</value>
+  </data>
+  <data name="webservice_hint_downloadXSD" xml:space="preserve">
+    <value>Download XSD</value>
+  </data>
+  <data name="webservice_hint_edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="base_status_name" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="base_status_option_0" xml:space="preserve">
+    <value>--Select--</value>
+  </data>
+  <data name="base_status_option_1" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="base_status_option_2" xml:space="preserve">
+    <value>Unactive</value>
+  </data>
+  <data name="register_legalbasis" xml:space="preserve">
+    <value>Legal basis for the register</value>
+  </data>
+  <data name="register_name" xml:space="preserve">
+    <value>Register Name</value>
+  </data>
+  <data name="register_order" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="register_public_description" xml:space="preserve">
+    <value>Description for public part</value>
+  </data>
+  <data name="register_technicalname" xml:space="preserve">
+    <value>Technical Name</value>
+  </data>
+  <data name="register_theme" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="register_uri" xml:space="preserve">
+    <value>URI</value>
+  </data>
+  <data name="register_url" xml:space="preserve">
+    <value>URL</value>
+  </data>
+  <data name="area_createdby" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="area_date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="area_description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="area_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="area_subarea" xml:space="preserve">
+    <value>Sub Areas</value>
+  </data>
+  <data name="base_administrative_body" xml:space="preserve">
+    <value>Adminsitrative Body</value>
+  </data>
+  <data name="base_attribute" xml:space="preserve">
+    <value>Attribute</value>
+  </data>
+  <data name="base_attributes" xml:space="preserve">
+    <value>Attributes</value>
+  </data>
+  <data name="base_condition" xml:space="preserve">
+    <value>Condition</value>
+  </data>
+  <data name="base_createdby" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="base_date" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="base_options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="base_type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="base_usergroup" xml:space="preserve">
+    <value>User Groups</value>
+  </data>
+  <data name="filter_adminbody" xml:space="preserve">
+    <value>Administrative Unit</value>
+  </data>
+  <data name="filter_registerarea" xml:space="preserve">
+    <value>Area</value>
+  </data>
+  <data name="filter_uri" xml:space="preserve">
+    <value>URI</value>
+  </data>
+  <data name="globaladmin_role" xml:space="preserve">
+    <value>Global Admin</value>
+  </data>
+  <data name="import_file_name" xml:space="preserve">
+    <value>File Name</value>
+  </data>
+  <data name="import_reg_name" xml:space="preserve">
+    <value>Register Name</value>
+  </data>
+  <data name="localadmin_role" xml:space="preserve">
+    <value>Local Admin</value>
+  </data>
+  <data name="permission_adminbody" xml:space="preserve">
+    <value>Administrative body module </value>
+  </data>
+  <data name="permission_deactivate" xml:space="preserve">
+    <value>Deactivation of users</value>
+  </data>
+  <data name="permission_importdata" xml:space="preserve">
+    <value>Import data module</value>
+  </data>
+  <data name="permission_info_oboject" xml:space="preserve">
+    <value>Unified data objects module</value>
+  </data>
+  <data name="permission_journal" xml:space="preserve">
+    <value>Journal module</value>
+  </data>
+  <data name="permission_manageuser" xml:space="preserve">
+    <value>Creation and managment of users and usergroups</value>
+  </data>
+  <data name="permission_manage_info_object" xml:space="preserve">
+    <value>Creation and managment of unified objects</value>
+  </data>
+  <data name="register_admin_body" xml:space="preserve">
+    <value>Administrative Unit</value>
+  </data>
+  <data name="rights_name" xml:space="preserve">
+    <value>Register Rights</value>
+  </data>
+  <data name="rights_usergroup" xml:space="preserve">
+    <value>User Group</value>
+  </data>
+  <data name="state_createdby" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="state_fillter_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="state_initial" xml:space="preserve">
+    <value>Entry Point</value>
+  </data>
+  <data name="state_insdatetime" xml:space="preserve">
+    <value>Date</value>
+  </data>
+  <data name="state_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="structure_apiname" xml:space="preserve">
+    <value>Technical Name</value>
+  </data>
+  <data name="structure_attributes" xml:space="preserve">
+    <value>Register Attributes</value>
+  </data>
+  <data name="structure_checkbox_encrypted" xml:space="preserve">
+    <value>Encrypt values (Up to 80 characters!)</value>
+  </data>
+  <data name="structure_checkbox_filter" xml:space="preserve">
+    <value>Can filter by this attribute</value>
+  </data>
+  <data name="structure_checkbox_opendata" xml:space="preserve">
+    <value>Export values to OpenData</value>
+  </data>
+  <data name="structure_checkbox_public" xml:space="preserve">
+    <value>Public access to this attribute</value>
+  </data>
+  <data name="structure_checkbox_webservice" xml:space="preserve">
+    <value>Values accessable through webservices or regix</value>
+  </data>
+  <data name="structure_infoobject" xml:space="preserve">
+    <value>Information Object</value>
+  </data>
+  <data name="structure_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="systemlog_data" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="systemlog_filter_name" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="systemlog_info" xml:space="preserve">
+    <value>Info</value>
+  </data>
+  <data name="systemlog_user" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="transition_end" xml:space="preserve">
+    <value>End State</value>
+  </data>
+  <data name="transition_rights" xml:space="preserve">
+    <value>Rights</value>
+  </data>
+  <data name="transition_start" xml:space="preserve">
+    <value>Start State</value>
+  </data>
+  <data name="unified_description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="unified_filter_name" xml:space="preserve">
+    <value>Name of object</value>
+  </data>
+  <data name="unified_information_object" xml:space="preserve">
+    <value>Information Object</value>
+  </data>
+  <data name="unified_info_object" xml:space="preserve">
+    <value>Info Object</value>
+  </data>
+  <data name="unified_multiple_values" xml:space="preserve">
+    <value>Uses multiple values</value>
+  </data>
+  <data name="unified_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="unified_namespaceapi" xml:space="preserve">
+    <value>Technical Name</value>
+  </data>
+  <data name="unified_referential_attribute" xml:space="preserve">
+    <value>Referential Attribute</value>
+  </data>
+  <data name="unified_referential_register" xml:space="preserve">
+    <value>Referential Register</value>
+  </data>
+  <data name="unified_type" xml:space="preserve">
+    <value>Data Type</value>
+  </data>
+  <data name="unified_uri" xml:space="preserve">
+    <value>URI</value>
+  </data>
+  <data name="uri_auto_generated" xml:space="preserve">
+    <value>*generated automatically*</value>
+  </data>
+  <data name="usergroup_filter_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="usergroup_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="usergroup_type" xml:space="preserve">
+    <value>Type of user group</value>
+  </data>
+  <data name="users_email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="users_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="users_phone" xml:space="preserve">
+    <value>Phone</value>
+  </data>
+  <data name="user_role" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="webservice_apiname" xml:space="preserve">
+    <value>Technical name of the service</value>
+  </data>
+  <data name="webservice_attribute_result" xml:space="preserve">
+    <value>Attributes in the result</value>
+  </data>
+  <data name="webservice_description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="webservice_filter_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="webservice_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="webservice_required_in_report" xml:space="preserve">
+    <value>Mandatory in the request</value>
+  </data>
+  <data name="webservice_settings" xml:space="preserve">
+    <value>Settings of the request</value>
+  </data>
+  <data name="webservice_type" xml:space="preserve">
+    <value>Type of service</value>
+  </data>
+  <data name="import_status_proccessed" xml:space="preserve">
+    <value>Proccessed</value>
+  </data>
+  <data name="import_status_uploaded_file" xml:space="preserve">
+    <value>UploadedFile</value>
+  </data>
+  <data name="import_status_validated" xml:space="preserve">
+    <value>Validated</value>
+  </data>
+  <data name="import_status_validation_error" xml:space="preserve">
+    <value>Validation Error</value>
+  </data>
+</root>

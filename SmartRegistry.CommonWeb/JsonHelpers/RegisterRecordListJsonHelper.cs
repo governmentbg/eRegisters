@@ -7,6 +7,7 @@ using SmartRegistry.Domain.QueryFilters;
 using SmartRegistry.Domain.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +28,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             int registerId,
             IList<RegisterAttribute> allAttributes, RegisterListType publicSite)
         {
+           
             var result = new TableDataModel();
             result.CurrentPage = 1;
             result.NumberOfRowsPerPage = 5;
@@ -52,10 +54,21 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 }
             }
 
+            var regHead = DbContext.GetRegisterAttributeHeadDao().GetCurrentHeadForRegister(registerId);
+            if (regHead.RegisterStatesList.Count != 0)
+            {
+                result.Columns.Add(new TableColumnTitleModel()
+                {
+                    Key = "State",
+                    Label = Properties.Content.base_status_name,
+                    Sortable = false
+                });
+            }
+
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Actions",
-                Label = "Опции",
+                Label = Properties.Content.base_options,
                 Sortable = false
             });
 
@@ -67,6 +80,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             foreach (var regRec in registerRecords.Results)
             {
                 var row = new TableDataRowModel();
+               
 
                 row.ObjectId = regRec.Id.ToString();
                 row.AddTextCell("URI", (regRec.URI == null) ? string.Empty : regRec.URI);
@@ -92,17 +106,22 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                     }
                 }
 
+                if (regHead.RegisterStatesList.Count != 0)
+                {
+                    row.AddTextCell("State", (regRec.RegisterState == null) ? string.Empty : regRec.RegisterState.Name);
+                }
+              
 
                 var actions = new TableDataCellActionsModel();
 
                 if (publicSite != RegisterListType.Public)
                 {
-                    actions.AddAction("edit", "Редакция", relativePathBase + "RegisterRecords/Edit/" + regRec.Id.ToString());
+                    actions.AddAction("edit", Properties.Content.records_hint_edit, relativePathBase + "RegisterRecords/Edit/" + regRec.Id.ToString());
                     row.AddActionsCell("actions", actions);
                 }
                 else
                 {
-                    actions.AddAction("edit", "Редакция", relativePathBase + "Registers/ShowDataText/" + regRec.Id.ToString());
+                    actions.AddAction("edit", Properties.Content.records_public_hint_edit, relativePathBase + "Registers/ShowDataText/" + regRec.Id.ToString());
                     row.AddActionsCell("actions", actions);
                 }
 
@@ -135,6 +154,18 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 }
             }
 
+            var regHead = DbContext.GetRegisterAttributeHeadDao().GetCurrentHeadForRegister(registerId);
+            if (regHead.RegisterStatesList.Count != 0)
+            {
+                result.Add(new ControlModelText()
+                {
+                    Col = 3,
+                    Label = "Статус",
+                    Name = "State",
+                    Value = ""
+                });
+            }
+
             return result;
         }
 
@@ -155,27 +186,27 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                         Value = ""
                     });
                     break;
-                    //case UnifiedDataTypeEnum.Integer:
-                    //    result.Add(new ControlModelNumber()
-                    //    {
-                    //        Col = 1,
-                    //        Label = attr.Name,
-                    //        Name = "FilterAttribute_" + attr.Id.ToString(),
-                    //        Value = 0,
-                    //        Step=1
-                    //    });
-                    //    break;
-                    //case UnifiedDataTypeEnum.Decimal:
+                case UnifiedDataTypeEnum.Integer:
+                    result.Add(new ControlModelNumber()
+                    {
+                        Col = 1,
+                        Label = attr.Name,
+                        Name = "FilterAttribute_" + attr.Id.ToString(),
+                        Value = null,
+                        Step = 1
+                    });
+                    break;
+                case UnifiedDataTypeEnum.Decimal:
 
-                    //    result.Add(new ControlModelNumber()
-                    //    {
-                    //        Col = 1,
-                    //        Label = attr.Name,
-                    //        Name = "FilterAttribute_" + attr.Id.ToString(),
-                    //        Value = 0,
-                    //        Step = Convert.ToDecimal(0.0001)
-                    //    });
-                    //    break;
+                    result.Add(new ControlModelNumber()
+                    {
+                        Col = 1,
+                        Label = attr.Name,
+                        Name = "FilterAttribute_" + attr.Id.ToString(),
+                        Value = null,
+                        Step = Convert.ToDecimal(0.0001)
+                    });
+                    break;
             }
         }
 
@@ -200,8 +231,13 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                     AddAttributeFilter(attribute, result, jsonFilter);
                 }
 
+                if ((!string.IsNullOrEmpty(filterName)) && (filterName.Equals("State"))) {                  
+                    result.State = "%" + jsonFilter.value + "%";
+                }
+
                 AddPageAndOrderToFilter(result, jsonFilter);
             }
+
 
             return result;
         }
@@ -222,6 +258,32 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                             Attribute = attribute,
                             FilterValue = "%" + fltVal + "%"
                         });
+                    }
+                    break;
+                case UnifiedDataTypeEnum.Integer:
+                    string fltValInt = jsonFilter.value;
+                    if (!string.IsNullOrEmpty(fltValInt))
+                    {
+                        int attrVal = Int32.Parse(fltValInt.ToString());                      
+                        result.AttributeFilters.Add(new RegisterAttributeIntFilter()
+                        {
+                            Attribute = attribute,
+                            FilterValue = attrVal
+                        });
+                       
+                    }
+                    break;
+                case UnifiedDataTypeEnum.Decimal:
+                    string fltDcmValue = jsonFilter.value;
+                    if (!string.IsNullOrEmpty(fltDcmValue))
+                    {
+                        fltDcmValue = fltDcmValue.Replace(",", ".");
+                        var value = decimal.Parse(fltDcmValue, new NumberFormatInfo() { NumberDecimalSeparator = "." });
+                        result.AttributeFilters.Add(new RegisterAttributeDecimalFilter()
+                        {
+                                Attribute = attribute,
+                                FilterValue = value
+                        });                        
                     }
                     break;
             }

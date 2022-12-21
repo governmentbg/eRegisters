@@ -14,7 +14,19 @@
                     <div class="page-title-box d-flex align-items-center justify-content-between">
                         <div class="breadcrumb">
 
-                            <a href="~/Home/">Начало</a> / @Model.Where(x => x.Id == ViewBag.SelectedTheme).FirstOrDefault().Name
+                            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("base_start")</a> /
+
+                            @Resources.Content.ResourceManager.GetString(@Model.Where(x => x.Id == ViewBag.SelectedTheme).FirstOrDefault().Name)
+
+                            @if (@Resources.Content.ResourceManager.GetString(@Model.Where(x => x.Id == ViewBag.SelectedTheme).FirstOrDefault().Name) != null)
+                            {
+                                @Resources.Content.ResourceManager.GetString(@Model.Where(x => x.Id == ViewBag.SelectedTheme).FirstOrDefault().Name)
+                            }
+                            else
+                            {
+                                @Model.Where(x => x.Id == ViewBag.SelectedTheme).FirstOrDefault().Name
+                            }
+
                         </div>
                     </div>
                 </div>
@@ -27,19 +39,48 @@
                 {
 
                     if (ag.Id == ViewBag.SelectedTheme)
-                    {           
-                        <a href="~/Home/Theme/@ag.Id" class="theme-links active">
-                            <strong>@ag.Name</strong> <br />
-                            @ag.Description 
-                        </a>
-                      
+                    {
+
+                        if (@Resources.Content.ResourceManager.GetString(ag.Name) != null)
+                        {
+                            <a href="~/Home/Theme/@ag.Id" class="theme-links active">
+                                <strong> @Resources.Content.ResourceManager.GetString(ag.Name)</strong> <br />
+                                @Resources.Content.ResourceManager.GetString(ag.Description)
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="~/Home/Theme/@ag.Id" class="theme-links active">
+                                <strong>@ag.Name</strong> <br />
+                                @ag.Description
+                            </a>
+
+                        }
+
+
+
                     }
                     else
                     {
-                        <a href="~/Home/Theme/@ag.Id" class="theme-links">
-                            <strong>@ag.Name</strong> <br />
-                            @ag.Description
-                        </a>
+                      
+
+                        if (@Resources.Content.ResourceManager.GetString(ag.Name) != null)
+                        {
+                            <a href="~/Home/Theme/@ag.Id" class="theme-links">
+                                <strong> @Resources.Content.ResourceManager.GetString(ag.Name)</strong> <br />
+                                @Resources.Content.ResourceManager.GetString(ag.Description)
+                            </a>
+                        }
+                        else
+                        {
+                            <a href="~/Home/Theme/@ag.Id" class="theme-links">
+                                <strong>@ag.Name</strong> <br />
+                                @ag.Description
+                            </a>
+
+                        }
+
+
                     }
 
                 }
@@ -49,19 +90,41 @@
             @if (ViewBag.SelectedTheme != null)
             {
                 var selected = Model.Where(x => x.Id == ViewBag.SelectedTheme).FirstOrDefault();
-            <div class="col-sm-8 content-main">
-                <h1></h1>
+        <div class="col-sm-8 content-main">
+            <h1></h1>
+            @if (@Resources.Content.ResourceManager.GetString(@selected.Name) != null)
+            {
+                <h2>@Resources.Content.ResourceManager.GetString(@selected.Name)</h2>
+            }
+            else
+            {
                 <h2>@selected.Name</h2>
-                <div class="sub-links">
-                @foreach (Area ar in selected.AreaList)
+            }
+
+        <div class="sub-links">
+            @foreach (Area ar in selected.AreaList)
+            {
+
+
+                if (@Resources.Content.ResourceManager.GetString(@ar.Name) != null)
                 {
-                        <a href="~/Registers/Show/@ar.Id">
-                            <strong>@ar.Name</strong> <br />
-                            @ar.Description
-                        </a>
+                    <a href="~/Registers/Show/@ar.Id">                  
+                        <strong> @Resources.Content.ResourceManager.GetString(@ar.Name)</strong> <br />
+                        @Resources.Content.ResourceManager.GetString(@ar.Description)
+                    </a>
                 }
-                    </div>
-            </div>
+                else
+                {
+                    <a href="~/Registers/Show/@ar.Id">
+                        <strong>@ar.Name</strong> <br />
+                    @ar.Description
+                    </a>
+                }
+
+
+            }
+        </div>
+        </div>
 
                 
             }
