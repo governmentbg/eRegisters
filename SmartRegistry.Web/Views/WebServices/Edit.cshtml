@@ -21,7 +21,9 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="breadcrumb">
-            <a href="~/Home/">Начало</a> / @ViewBag.PageName
+            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("webservices_edit_breadcrumb_start")</a> /
+            <a href="~/Registers/Structure">@Resources.Content.ResourceManager.GetString("webservices_edit_breadcrumb_structure") </a> / 
+            @ViewBag.PageName
         </div>
         <div class="main-content">
             <div class="page-content">

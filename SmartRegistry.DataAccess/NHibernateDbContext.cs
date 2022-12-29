@@ -227,6 +227,28 @@ namespace SmartRegistry.DataAccess
             return serviceLogDao;
         }
 
+        public IRegisterStatesDao GetRegisterStatesDao()
+        {
+            RegisterStatesDao regStatesDao = new RegisterStatesDao(this);
+            return regStatesDao;
+        }
+        public IRegisterStatesAttributeDao GetRegisterStatesAttributeDao()
+        {
+            RegisterStatesAttributeDao regStatesAttrDao = new RegisterStatesAttributeDao(this);
+            return regStatesAttrDao;
+        }
+        public IRegisterTransitionsDao GetRegisterTransitionDao()
+        {
+            RegisterTransitionsDao regTransDao = new RegisterTransitionsDao(this);
+            return regTransDao;
+        }
+
+        public IRegisterTransitionRightsDao GetRegisterTransitionRightsDao()
+        {
+            RegisterTransitionRightsDao regTransRightsDao = new RegisterTransitionRightsDao(this);
+            return regTransRightsDao;
+        }
+
         public IWebServicesClientsDao WebServicesClientsDao()
         {            
              WebServicesClientsDao webServicesClientsDao = new WebServicesClientsDao(this);

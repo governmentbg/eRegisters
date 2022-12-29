@@ -1,4 +1,5 @@
-﻿<div class="row">
+﻿@using System.Globalization;
+<div class="row">
 
     @if (System.Configuration.ConfigurationManager.AppSettings["WarningLabel"] != string.Empty)
     {
@@ -18,14 +19,26 @@
                         <img src="/SmartRegistryPublic/Assets/images/logo.svg" alt="">
                         <div>
                             <p class="mobile -dn">ИСЦИПР</p>
-                            <p style="font-weight: 500 !important;">Информационна система за централизирано <br>изграждане и поддържане на регистри</p>
-                            <span style="color:grey;">МИНИСТЕРСТВО НА ЕЛЕКТРОННОТО УПРАВЛЕНИЕ</span>
+                            <p style="font-weight: 500 !important;">@Resources.Content.ResourceManager.GetString("head_system_1")<br>@Resources.Content.ResourceManager.GetString("head_system_2")</p>
+                            <span style="color:grey;">@Resources.Content.ResourceManager.GetString("head_meu")</span>
 
                         </div>
                     </a>
                 </div>
 
-                <a href="#" class="menu-toggle"><i class="mdi mdi-menu"></i> Меню</a>
+                @if (CultureInfo.CurrentCulture.Name == "en-GB")
+                {
+                    <a href="@Url.Action("SelectLng", "BasePublic", new { id = 1})" id="lng">
+                        <img src="@Url.Content("~/Assets/images/Flag_of_Bulgaria.svg.png")" width="25px" height="25px" style="margin-top:15px;" />
+                    </a>
+                }
+                else
+                {
+                    <a href="@Url.Action("SelectLng", "BasePublic", new { id = 2})" id="lng">
+                        <img src="@Url.Content("~/Assets/images/flag-english.jpg")" width="25px" height="25px" style="margin-top:15px;" />
+                    </a>
+                }
+            <a href="#" class="menu-toggle"><i class="mdi mdi-menu"></i> @Resources.Content.ResourceManager.GetString("site_menu") </a>
 
 
             </div>
@@ -36,13 +49,13 @@
         <nav>
             <ul>
                 <li>
-                    <span> Регистри </span>
+                    <span> @Resources.Content.ResourceManager.GetString("menu_registers") </span>
                     <ul>
 
-                        <li class="active"> <a href="@Url.Action("Index","")">Начало</a></li>
-                        <li> <a href="@Url.Action("Index","Registers")">Регистри</a></li>
-                        <li><a href="@Url.Action("Index","About")">За агенцията</a></li>
-                        <li><a href="@Url.Action("Index","Contact")">За Контакти</a></li>
+                        <li class="active"> <a href="@Url.Action("Index","")">@Resources.Content.ResourceManager.GetString("base_start")</a></li>
+                        <li> <a href="@Url.Action("Index","Registers")">@Resources.Content.ResourceManager.GetString("menu_registers")</a></li>
+                        <li><a href="@Url.Action("Index","About")">@Resources.Content.ResourceManager.GetString("menu_agency")</a></li>
+                        <li><a href="@Url.Action("Index","Contact")">@Resources.Content.ResourceManager.GetString("menu_contact")</a></li>
                     </ul>
         </nav>
     </div>

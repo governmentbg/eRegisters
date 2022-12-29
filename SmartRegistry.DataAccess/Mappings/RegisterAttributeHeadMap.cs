@@ -27,6 +27,18 @@ namespace SmartRegistry.DataAccess.Mappings
                 .ParentKeyColumn("HEAD_ID")
                 .ChildKeyColumn("ATTRIBUTE_ID")
                 .Cascade.SaveUpdate();
+
+            HasManyToMany(x => x.RegisterStatesList)
+              .Table("REGISTER_STATES_HEAD")
+              .ParentKeyColumn("REGISTER_HEAD_ID")
+              .ChildKeyColumn("STATE_ID")
+              .Cascade.SaveUpdate();
+
+            HasManyToMany(x => x.RegisterTransitions)
+          .Table("REGISTER_STATES_TRANSITIONS_HEAD")
+          .ParentKeyColumn("REGISTER_HEAD_ID")
+          .ChildKeyColumn("TRANSITION_ID")
+          .Cascade.SaveUpdate();
         }
     }
 }

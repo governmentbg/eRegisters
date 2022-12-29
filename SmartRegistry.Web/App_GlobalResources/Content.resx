@@ -123,6 +123,27 @@
   <data name="AreaMunicipalAdministration" xml:space="preserve">
     <value>AreaMunicipalAdministration</value>
   </data>
+  <data name="area_add_btn" xml:space="preserve">
+    <value>Add New Area</value>
+  </data>
+  <data name="area_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="area_create_breadcrumb_areas" xml:space="preserve">
+    <value>Areas</value>
+  </data>
+  <data name="area_create_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="area_create_header" xml:space="preserve">
+    <value>Add New Area</value>
+  </data>
+  <data name="area_edit_header" xml:space="preserve">
+    <value>Edit Area</value>
+  </data>
+  <data name="area_index_header" xml:space="preserve">
+    <value>Areas</value>
+  </data>
   <data name="Council" xml:space="preserve">
     <value>Council</value>
   </data>
@@ -135,14 +156,137 @@
   <data name="ExecutivePowerAdministrativeStructure" xml:space="preserve">
     <value>ExecutivePowerAdministrativeStructure</value>
   </data>
+  <data name="home_index_adminbody" xml:space="preserve">
+    <value>Administrative Bodies</value>
+  </data>
+  <data name="home_index_information_objects" xml:space="preserve">
+    <value>Unified Data Objects</value>
+  </data>
+  <data name="home_index_registers" xml:space="preserve">
+    <value>Registers</value>
+  </data>
+  <data name="home_index_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="import_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="import_create_breadcrumb_importdata" xml:space="preserve">
+    <value>Import Data</value>
+  </data>
+  <data name="import_create_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="import_create_generate_csv" xml:space="preserve">
+    <value>Generate CSV</value>
+  </data>
+  <data name="import_create_generate_csv_data" xml:space="preserve">
+    <value>Generate CSV with Data</value>
+  </data>
+  <data name="import_create_header" xml:space="preserve">
+    <value>Import New Data</value>
+  </data>
+  <data name="import_create_pick_register" xml:space="preserve">
+    <value>Choose register to import data</value>
+  </data>
+  <data name="import_create_upload_csv_btn" xml:space="preserve">
+    <value>Upload CSV</value>
+  </data>
+  <data name="import_create_upload_csv_header" xml:space="preserve">
+    <value>Upload CSV file</value>
+  </data>
+  <data name="import_index_add_btn" xml:space="preserve">
+    <value>Add Data</value>
+  </data>
+  <data name="import_index_header" xml:space="preserve">
+    <value>Import Data</value>
+  </data>
+  <data name="import_review_breadcrumb_importdata" xml:space="preserve">
+    <value>Import Data</value>
+  </data>
+  <data name="import_review_breadcrumb_review" xml:space="preserve">
+    <value>Review</value>
+  </data>
+  <data name="import_review_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="import_review_header" xml:space="preserve">
+    <value>Import Data</value>
+  </data>
+  <data name="import_review_import_btn" xml:space="preserve">
+    <value>Import Data</value>
+  </data>
+  <data name="import_review_import_data_btn" xml:space="preserve">
+    <value>Delete Old Data and Import</value>
+  </data>
+  <data name="import_review_reupload_btn" xml:space="preserve">
+    <value>Reupload file</value>
+  </data>
+  <data name="import_review_upload_csv" xml:space="preserve">
+    <value>Upload CSV file</value>
+  </data>
+  <data name="import_review_upload_csv_btn" xml:space="preserve">
+    <value>Upload CSV</value>
+  </data>
+  <data name="import_review_validate_btn" xml:space="preserve">
+    <value>Validate</value>
+  </data>
+  <data name="import_review_validation_error" xml:space="preserve">
+    <value>Validation Errors</value>
+  </data>
   <data name="Ministry" xml:space="preserve">
     <value>Ministry</value>
   </data>
   <data name="MunicipalAdministration" xml:space="preserve">
     <value>MunicipalAdministration</value>
   </data>
+  <data name="navigation_menu_adminbody" xml:space="preserve">
+    <value>Administrative Bodies</value>
+  </data>
+  <data name="navigation_menu_area" xml:space="preserve">
+    <value>Areas</value>
+  </data>
+  <data name="navigation_menu_importdata" xml:space="preserve">
+    <value>Import Data</value>
+  </data>
+  <data name="navigation_menu_name" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="navigation_menu_nomenclature" xml:space="preserve">
+    <value>Nomenclature</value>
+  </data>
+  <data name="navigation_menu_registers" xml:space="preserve">
+    <value>Registers</value>
+  </data>
+  <data name="navigation_menu_register_registers" xml:space="preserve">
+    <value>Registers</value>
+  </data>
+  <data name="navigation_menu_structure" xml:space="preserve">
+    <value>Register Structure</value>
+  </data>
+  <data name="navigation_menu_system" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="navigation_menu_sytemlog" xml:space="preserve">
+    <value>System Log</value>
+  </data>
+  <data name="navigation_menu_unified_data" xml:space="preserve">
+    <value>Unified Data Objects</value>
+  </data>
+  <data name="navigation_menu_usergroup" xml:space="preserve">
+    <value>User Groups</value>
+  </data>
+  <data name="navigation_menu_users" xml:space="preserve">
+    <value>Users</value>
+  </data>
   <data name="RegionalAdminisration" xml:space="preserve">
     <value>RegionalAdminisration</value>
+  </data>
+  <data name="register_index_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="register_index_create_btn" xml:space="preserve">
+    <value>Create New Register</value>
   </data>
   <data name="SpecializedLocalAdministration" xml:space="preserve">
     <value>SpecializedLocalAdministration</value>
@@ -156,7 +300,358 @@
   <data name="StatePublicConsultativeCommission" xml:space="preserve">
     <value>StatePublicConsultativeCommission</value>
   </data>
+  <data name="syerstemlog_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="systemlog_index_export_btn" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="systemlog_index_header" xml:space="preserve">
+    <value>System Log</value>
+  </data>
+  <data name="unifieddata_create_composite_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="unifieddata_create_composite_breadcrumb_unifiedlist" xml:space="preserve">
+    <value>Unified Objects List</value>
+  </data>
+  <data name="unifieddata_create_composite_header" xml:space="preserve">
+    <value>Create Composite Object</value>
+  </data>
+  <data name="unifieddata_create_referential_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="unifieddata_create_referential_breadcrumb_unifiedlist" xml:space="preserve">
+    <value>Unified Objects List</value>
+  </data>
+  <data name="unifieddata_create_referential_header" xml:space="preserve">
+    <value>Create Referentail Object</value>
+  </data>
+  <data name="unifieddata_create_unified_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="unifieddata_create_unified_breadcrumb_unifiedlist" xml:space="preserve">
+    <value>Unified Objects List</value>
+  </data>
+  <data name="unifieddata_create_unified_header" xml:space="preserve">
+    <value>Create Unified Object</value>
+  </data>
+  <data name="unifieddata_edit_composite_header" xml:space="preserve">
+    <value>Edit Composite Object</value>
+  </data>
+  <data name="unifieddata_edit_referential_header" xml:space="preserve">
+    <value>Edit Referentail Object</value>
+  </data>
+  <data name="unifieddata_edit_unified_header" xml:space="preserve">
+    <value>Edit Unified Object</value>
+  </data>
+  <data name="unifieddata_index_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="unifieddata_index_breadcrumb_unifiedlist" xml:space="preserve">
+    <value>Unified Objects List</value>
+  </data>
+  <data name="unifieddata_index_create_btn" xml:space="preserve">
+    <value>Create Unified Object</value>
+  </data>
+  <data name="unifieddata_index_create_composite" xml:space="preserve">
+    <value>Create Composite Object</value>
+  </data>
+  <data name="unifieddata_index_create_referential" xml:space="preserve">
+    <value>Create Referential Object</value>
+  </data>
+  <data name="unifieddata_index_create_unified" xml:space="preserve">
+    <value>Create Unifed Object</value>
+  </data>
+  <data name="unifieddata_index_header" xml:space="preserve">
+    <value>Unified Objects List</value>
+  </data>
   <data name="Unknown" xml:space="preserve">
     <value>Unknown</value>
+  </data>
+  <data name="usergroups_create_header" xml:space="preserve">
+    <value>Create  User Group</value>
+  </data>
+  <data name="usergroups_edit_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="usergroups_edit_breadcrumb_usergroups" xml:space="preserve">
+    <value>User Groups</value>
+  </data>
+  <data name="usergroups_edit_header" xml:space="preserve">
+    <value>Edit User Group</value>
+  </data>
+  <data name="usergroups_index_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="usergroups_index_breadcrumb_usergroups" xml:space="preserve">
+    <value>User Groups</value>
+  </data>
+  <data name="usergroups_index_create_btn" xml:space="preserve">
+    <value>Create User Group</value>
+  </data>
+  <data name="usergroups_index_header" xml:space="preserve">
+    <value>User Groups</value>
+  </data>
+  <data name="users_create_header" xml:space="preserve">
+    <value>Create New User</value>
+  </data>
+  <data name="users_edit_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="users_edit_breadcrumb_users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="users_edit_header" xml:space="preserve">
+    <value>Edit User</value>
+  </data>
+  <data name="users_index_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="users_index_breadcrumb_users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="users_index_create_btn" xml:space="preserve">
+    <value>Create New User</value>
+  </data>
+  <data name="users_index_header" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="users_reset_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="users_reset_breadcrumb_users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="users_reset_email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="users_reset_header" xml:space="preserve">
+    <value>Reset User Authentication Data</value>
+  </data>
+  <data name="users_reset_name" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="users_reset_send_btn" xml:space="preserve">
+    <value>Send email</value>
+  </data>
+  <data name="registerrecords_create_header" xml:space="preserve">
+    <value>Register Record Entry</value>
+  </data>
+  <data name="registerrecords_edit_breadcrumb_records" xml:space="preserve">
+    <value>Register Records</value>
+  </data>
+  <data name="registerrecords_edit_breadcrumb_registers" xml:space="preserve">
+    <value>Registers</value>
+  </data>
+  <data name="registerrecords_edit_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="registerrecords_edit_state" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="registerrecords_index_breadcrumb_registers" xml:space="preserve">
+    <value>Registers</value>
+  </data>
+  <data name="registerrecords_index_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="registerrecords_index_entry_btn" xml:space="preserve">
+    <value>Enter Record</value>
+  </data>
+  <data name="registerrecords_index_entry_btn_list" xml:space="preserve">
+    <value>Enter</value>
+  </data>
+  <data name="registerrecords_index_header" xml:space="preserve">
+    <value>Register Record</value>
+  </data>
+  <data name="registerstates_create_header" xml:space="preserve">
+    <value>Create State</value>
+  </data>
+  <data name="registerstates_edit_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="registerstates_edit_breadcrumb_states" xml:space="preserve">
+    <value>States</value>
+  </data>
+  <data name="registerstates_edit_breadcrumb_structure" xml:space="preserve">
+    <value>Registers Structure</value>
+  </data>
+  <data name="registerstates_edit_header" xml:space="preserve">
+    <value>Edit State</value>
+  </data>
+  <data name="registerstates_index_add_btn" xml:space="preserve">
+    <value>Add State</value>
+  </data>
+  <data name="registerstates_index_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="registerstates_index_breadcrumb_structure" xml:space="preserve">
+    <value>Registers Structure</value>
+  </data>
+  <data name="registerstates_index_header" xml:space="preserve">
+    <value>State of proccess</value>
+  </data>
+  <data name="registers_create_header" xml:space="preserve">
+    <value>Create New Register</value>
+  </data>
+  <data name="registers_editstructure_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="registers_editstructure_breadcrumb_structue" xml:space="preserve">
+    <value>Registers Structure</value>
+  </data>
+  <data name="registers_editstructure_header" xml:space="preserve">
+    <value>Edit Structure - </value>
+  </data>
+  <data name="registers_edit_breadcrumb_registers" xml:space="preserve">
+    <value>Registers</value>
+  </data>
+  <data name="registers_edit_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="registers_edit_header" xml:space="preserve">
+    <value>Edit Register </value>
+  </data>
+  <data name="registers_index_header" xml:space="preserve">
+    <value>Registers</value>
+  </data>
+  <data name="registers_rights_breadcrumb_registry" xml:space="preserve">
+    <value>Registers</value>
+  </data>
+  <data name="registers_rights_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="registers_rights_header" xml:space="preserve">
+    <value>Register Rights - </value>
+  </data>
+  <data name="registers_structure_index_header" xml:space="preserve">
+    <value>Registers Structure</value>
+  </data>
+  <data name="registertransition_create_header" xml:space="preserve">
+    <value>Create Transition</value>
+  </data>
+  <data name="registertransition_edit_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="registertransition_edit_breadcrumb_structure" xml:space="preserve">
+    <value>Registers Structure</value>
+  </data>
+  <data name="registertransition_edit_breadcrumb_transitions" xml:space="preserve">
+    <value>Transitions</value>
+  </data>
+  <data name="registertransition_edit_header" xml:space="preserve">
+    <value>Edit Transition</value>
+  </data>
+  <data name="registertransition_index_add_btn" xml:space="preserve">
+    <value>Add Transition</value>
+  </data>
+  <data name="registertransition_index_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="registertransition_index_breadcrumb_structure" xml:space="preserve">
+    <value>Registers Structure</value>
+  </data>
+  <data name="registertransition_index_header" xml:space="preserve">
+    <value>Transitions</value>
+  </data>
+  <data name="edit_hint" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="webservices_edit_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="webservices_edit_breadcrumb_structure" xml:space="preserve">
+    <value>Registers Structure</value>
+  </data>
+  <data name="webservices_edit_header" xml:space="preserve">
+    <value>Edit Service</value>
+  </data>
+  <data name="webservices_edit_managment_header" xml:space="preserve">
+    <value>Create Service For Insert/Update/Delete</value>
+  </data>
+  <data name="webservices_edit_report_header" xml:space="preserve">
+    <value>Create Service For Validation</value>
+  </data>
+  <data name="webservices_list_breadcrumb_start" xml:space="preserve">
+    <value>Start</value>
+  </data>
+  <data name="webservices_list_breadcrumb_structure" xml:space="preserve">
+    <value>Registers Structure</value>
+  </data>
+  <data name="webservices_list_create_btn" xml:space="preserve">
+    <value>Create Web Service</value>
+  </data>
+  <data name="webservices_list_create_entryservice" xml:space="preserve">
+    <value>Create Service For Insert/Update/Delete</value>
+  </data>
+  <data name="webservices_list_create_validateservice" xml:space="preserve">
+    <value>Create Service For Validation</value>
+  </data>
+  <data name="webservices_list_header" xml:space="preserve">
+    <value>Web Services For Register : </value>
+  </data>
+  <data name="import_file_error" xml:space="preserve">
+    <value>There was an error uploading the file !</value>
+  </data>
+  <data name="import_file_filename" xml:space="preserve">
+    <value>Name of file: </value>
+  </data>
+  <data name="import_file_status" xml:space="preserve">
+    <value>Status: </value>
+  </data>
+  <data name="import_file_success" xml:space="preserve">
+    <value>File uploaded successfully!</value>
+  </data>
+  <data name="import_file_upload_by" xml:space="preserve">
+    <value>Uploaded by: </value>
+  </data>
+  <data name="import_file_upload_date" xml:space="preserve">
+    <value>Date file was uploaded: </value>
+  </data>
+  <data name="import_status_proccessed" xml:space="preserve">
+    <value>Proccessed</value>
+  </data>
+  <data name="import_status_uploaded_file" xml:space="preserve">
+    <value>UploadedFile</value>
+  </data>
+  <data name="import_status_validated" xml:space="preserve">
+    <value>Validated</value>
+  </data>
+  <data name="import_status_validation_error" xml:space="preserve">
+    <value>Validation Error</value>
+  </data>
+  <data name="base_namespace" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="base_option" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="base_status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="base_status_active" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="base_status_all" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="base_status_inactive" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="base_type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="site_head_iscipr" xml:space="preserve">
+    <value>ИСЦИПР</value>
+  </data>
+  <data name="site_head_meu" xml:space="preserve">
+    <value>MINISTRY OF E-GOVERNANCE</value>
+  </data>
+  <data name="site_head_system_1" xml:space="preserve">
+    <value>INFORMATION SYSTEM FOR CENTRALIZED</value>
+  </data>
+  <data name="site_head_system_2" xml:space="preserve">
+    <value>ESTABLISHMENT AND MAINTENANCE OF REGISTERS</value>
   </data>
 </root>

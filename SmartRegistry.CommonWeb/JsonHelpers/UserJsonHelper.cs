@@ -34,7 +34,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Име",
+                Label = Properties.Content.users_name,
                 Required = true,
                 Name = UserViewModel.JSON_NAME_NAME,             
                 Value = (user == null) ? string.Empty : user.Name
@@ -54,7 +54,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Телефон",
+                Label = Properties.Content.users_phone,
                 Name = UserViewModel.JSON_NAME_PHONE,
                 Value = (user == null) ? string.Empty : user.Phone
             });
@@ -62,7 +62,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Имейл",
+                Label = Properties.Content.users_email,
                 Required = true,
                 Name = UserViewModel.JSON_NAME_EMAIL,
                 Value = (user == null) ? string.Empty : user.Email
@@ -82,7 +82,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var bodyControl = new ControlModelOptionMultiList()
             {
                 Col = 12,
-                Label = "Потребителски групи",
+                Label = Properties.Content.base_usergroup,
                 Required = true,
                 Name = UserViewModel.JSON_NAME_USERGROUPS
             };

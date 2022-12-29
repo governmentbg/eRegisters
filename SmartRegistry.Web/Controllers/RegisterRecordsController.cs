@@ -27,8 +27,13 @@ namespace SmartRegistry.Web.Controllers
 
             var register = DbContext.GetRegistersDao().GetById(id);
             var regName = (register != null) ? register.Name : string.Empty;
-            ViewBag.Title = "Вписване - " + regName;
-           
+            ViewBag.Title = regName;
+
+            var regHead = DbContext.GetRegisterAttributeHeadDao().GetCurrentHeadForRegister(register.Id);
+
+            ViewBag.InitialStates = regHead.RegisterStatesList.Where(x => x.InitialState == 1).ToList(); 
+
+
 
             return View();
         }
@@ -59,7 +64,7 @@ namespace SmartRegistry.Web.Controllers
             {
                 var regRecordsService = SmartContext.RegisterRecordsService;
                 var registerService = SmartContext.RegistersService;
-
+             
                 var jsonHelper = new RegisterRecordListJsonHelper(SmartContext);
                 var regFilter = jsonHelper.DeserializeFilters(jsonFilters, (int)registerId);
 
@@ -79,44 +84,87 @@ namespace SmartRegistry.Web.Controllers
             }
         }
 
-        public ActionResult Create(int registerId)
+        public ActionResult Create(int registerId,int? stateId)
         {
-           // ViewBag.PageName = "Вписване на обстоятелства";
-          
+           
             var register = DbContext.GetRegistersDao().GetById(registerId);
             var regName = (register != null) ? register.Name : string.Empty;
-            ViewBag.PageName = "Вписване на обстоятелства - " + regName;
+            ViewBag.PageName = regName;
             ViewBag.ParentId = registerId;
             ViewBag.Register = registerId;
+            ViewBag.EntityId = 5;          
+            ViewBag.GetControlsUrl = Url.Action("GetRecordControls", "RegisterRecords", new { registerId = registerId});
 
-            ViewBag.GetControlsUrl = Url.Action("GetRecordControls", "RegisterRecords", new { registerId = registerId });
+            if (stateId != null) { 
+                ViewBag.GetControlsUrl = Url.Action("GetRecordControls", "RegisterRecords", new { stateId = stateId });
+          
+                var regStateService = SmartContext.RegisterStatesService;
+                var regState = regStateService.GetState((int)stateId);
+               // var transitionList = SmartContext.RegisterTransitionService.GetEndTransitions(regState);
+             //   ViewBag.EndList = transitionList;
+                ViewBag.State = regState.Name;
+            }
+
             ViewBag.SaveControlsUrl = Url.Action("SaveRegisterRecord", "RegisterRecords");
+
+           
 
             return View("Edit");
         }
 
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int id, int? stateId)
         {
-          //  ViewBag.PageName = "Промяна на обстоятелства";
+            //  ViewBag.PageName = "Промяна на обстоятелства";
 
             var registerRec = SmartContext.RegisterRecordsService.GetRegisterRecord(id);
             var regName = (registerRec != null) ? registerRec.Register.Name : string.Empty;
-            ViewBag.PageName = "Промяна на обстоятелства - " + regName;
+            ViewBag.PageName =  regName;
             ViewBag.ParentId = id;
             ViewBag.Register = registerRec.Register.Id;
 
-            ViewBag.GetControlsUrl = Url.Action("GetRecordControls", "RegisterRecords", new { recordId = id });
+            if (registerRec.RegisterState != null)
+            {
+                var transitionList = SmartContext.RegisterTransitionService.GetEndTransitions(registerRec.RegisterState);
+                var list = SmartContext.RegisterTransitionService.CheckForRights(transitionList);
+                ViewBag.EndList = list;
+                ViewBag.State = registerRec.RegisterState.Name;
+            }
+            if (stateId!=null) {
+                var selectedState = SmartContext.RegisterStatesService.GetState((int)stateId);
+                //var transitionList = SmartContext.RegisterTransitionService.GetEndTransitions(selectedState);
+                ViewBag.EndList = null;
+                ViewBag.State = selectedState.Name;     
+            }
+
+            ViewBag.GetControlsUrl = Url.Action("GetRecordControls", "RegisterRecords", new { recordId = id , stateId = stateId });          
             ViewBag.SaveControlsUrl = Url.Action("SaveRegisterRecord", "RegisterRecords");
+            TempData["name"] = stateId;
 
             return View();
         }
-
-        public ActionResult GetRecordControls(int? registerId, long? recordId)
+               
+        public ActionResult GetRecordControls(int? registerId, int? stateId, long? recordId)
         {
             var regRecService = SmartContext.RegisterRecordsService;
+            var regStateService = SmartContext.RegisterStatesService;
+          
+            var endTrans = GetIntQueryParam("amp;stateId");
 
             int regId = 0;
             RegisterRecord regRecord = null;
+            RegisterState regState = null;
+
+            if (stateId != null)
+            {
+
+                regState = regStateService.GetState((int)stateId);
+                if (regState == null)
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.NoContent);
+                }
+                regId = regState.Register.Id;
+            }
+
             if (recordId != null)
             {
                 regRecord = regRecService.GetRegisterRecord((long)recordId);
@@ -125,24 +173,54 @@ namespace SmartRegistry.Web.Controllers
                     return new HttpStatusCodeResult(HttpStatusCode.NoContent);
                 }
                 regId = regRecord.Register.Id;
+
+                if (regRecord.RegisterState != null) {
+                    stateId = regRecord.RegisterState.Id;
+                    regState = regStateService.GetState((int)stateId);
+                }
+                if (endTrans != null) {
+                    stateId = endTrans;
+                    regState = regStateService.GetState((int)stateId);
+                }
             }
-            else
+
+            if (registerId != null)
             {
                 if (registerId == null)
                 {
                     return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                 }
-                regId = (int)registerId;
+
+                regId = (int)registerId;    
             }
 
             var regService = SmartContext.RegistersService;
             var allAttributes = regService.GetEditableAttributes(regId);
 
+            if (stateId != null) {
+                allAttributes= filterStateAttributes(regState, allAttributes);               
+            }
+
             var jsonHelper = new RegisterRecordJsonHelper(SmartContext);
-            var recControls = jsonHelper.GetRecordEditControls(GetFullApplicationPath(),allAttributes, regRecord, regId);
+            var recControls = jsonHelper.GetRecordEditControls(GetFullApplicationPath(),allAttributes, regRecord, regId, stateId);
             var jsonData = JsonConvert.SerializeObject(recControls);
 
             return Content(jsonData, "application/json");
+        }
+
+        private List<RegisterAttribute> filterStateAttributes(RegisterState regState,IList<RegisterAttribute> allAttributes)
+        {
+            List<RegisterAttribute> regAttributeList = new List<RegisterAttribute>();
+            var stateAttributes = regState.AttributeList.Select(x => x.RegisterAttribute).ToList();
+            foreach (RegisterAttribute ra in stateAttributes)
+            {
+                if (allAttributes.Contains(ra))
+                {
+                    regAttributeList.Add(ra);
+                }
+            }
+            return regAttributeList;
+          
         }
 
         [HttpGet]
@@ -187,8 +265,17 @@ namespace SmartRegistry.Web.Controllers
                 }
 
 
-                regService.SaveRegisterRecordModel(attrValuesMdl);
+                var record = regService.SaveRegisterRecordModel(attrValuesMdl);
                 registerId = (int)attrValuesMdl.RegisterId;
+
+                if (attrValuesMdl.StateId != 0)
+                {
+                    return Json(new { status = "Success", errorMessage = "", redirectUrl = this.Url.Action("Edit", "RegisterRecords", new { id = record.Id }) }, JsonRequestBehavior.AllowGet);
+                }
+                else {
+                    return Json(new { status = "Success", errorMessage = "", redirectUrl = this.Url.Action("Index", "RegisterRecords", new { id = registerId }) }, JsonRequestBehavior.AllowGet);
+                }
+
             }
             catch (Exception ex)
             {
@@ -196,7 +283,7 @@ namespace SmartRegistry.Web.Controllers
                 return Json(new { status = "Error", errorMessage = ex.Message, redirectUrl = string.Empty }, JsonRequestBehavior.AllowGet);
 
             }
-            return Json(new { status = "Success", errorMessage = "", redirectUrl = this.Url.Action("Index", "RegisterRecords", new { id = registerId } ) }, JsonRequestBehavior.AllowGet);
+         
         }
 
     }

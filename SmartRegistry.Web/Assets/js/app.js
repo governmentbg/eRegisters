@@ -21,6 +21,23 @@ $(document).ready(function () {
     })
     
     
+    $(document).on('click', '.message-submit', function (e) {
+       e.preventDefault();
+       $('.submit-message').show();
+    })
+    
+    $(document).on('click', '.btn-yes', function (e) {
+        e.preventDefault();
+        $('.submit-message').hide();
+        $('.submit-btn button').trigger('click');
+    })
+    
+    $(document).on('click', '.btn-no', function (e) {
+        e.preventDefault();
+        $('.message-submit').show();
+        $('.submit-message').hide();
+    })
+    
 })
 
 

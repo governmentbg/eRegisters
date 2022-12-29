@@ -33,7 +33,8 @@ namespace SmartRegistry.Web.Controllers
         {
             ViewBag.GetControlsUrl = Url.Action("AreaData", "Area");
             ViewBag.SaveControlsUrl = Url.Action("SaveAreaData", "Area");
-            ViewBag.PageName = "Създаване на тема ";
+            // ViewBag.PageName = "Създаване на тема ";
+            ViewBag.PageName = "area_create_header";
             return View("Edit");
         }
 
@@ -42,7 +43,8 @@ namespace SmartRegistry.Web.Controllers
         {
             ViewBag.GetControlsUrl = Url.Action("AreaData", "Area", new { areaId = id });
             ViewBag.SaveControlsUrl = Url.Action("SaveAreaData", "Area");
-            ViewBag.PageName = "Редакция на тема";
+            // ViewBag.PageName = "Редакция на тема";
+            ViewBag.PageName = "area_edit_header";
 
             return View("Edit");
         }

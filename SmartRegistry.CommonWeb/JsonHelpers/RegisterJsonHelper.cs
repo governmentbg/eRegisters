@@ -64,16 +64,16 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "УРИ",
+                Label = Properties.Content.register_uri,
                 Name = RegisterViewModel.JSON_NAME_URI,
-                 Value = (register == null) ? "*генерира се*" : register.URI,
+                 Value = (register == null) ? Properties.Content.uri_auto_generated : register.URI,
                 Enabled =false
             });
 
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Наименование",
+                Label = Properties.Content.register_name,
                 Required=true,
                 Name = RegisterViewModel.JSON_NAME_NAME,
                 Value = (register == null) ? string.Empty : register.Name
@@ -82,7 +82,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Техническо наименование",
+                Label = Properties.Content.register_technicalname,
                 Required = true,
                 Name = RegisterViewModel.JSON_NAMESPACE_API,
                 Value = (register == null) ? string.Empty : register.NamespaceApi
@@ -91,7 +91,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelMultilineText()
             {
                 Col = 12,
-                Label = "Описание Публична част",
+                Label = Properties.Content.register_public_description,
                 Name = RegisterViewModel.JSON_NAME_DESCRIPTION,
                 Rows = 10,
                 Value = (register == null) ? string.Empty : register.Description
@@ -100,7 +100,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Закон",
+                Label = Properties.Content.register_order,
                 Name = RegisterViewModel.JSON_NAME_ADMINACT,
                 Value = (register == null) ? string.Empty : register.AdministrativeAct
             });
@@ -108,7 +108,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelMultilineText()
             {
                 Col = 12,
-                Label = "Законово основание за водене на регистър",
+                Label = Properties.Content.register_legalbasis,
                 Name = RegisterViewModel.JSON_NAME_LEGALBASIS,
                 Rows = 10,
                 Value = (register == null) ? string.Empty : register.LegalBasis
@@ -117,7 +117,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "URL",
+                Label = Properties.Content.register_url,
                 Name = RegisterViewModel.JSON_NAME_URL,
                 Value = (register == null) ? string.Empty : register.UrlAddress
             });
@@ -134,7 +134,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
         private void AddGroupComboBox(List<ControlModelBase> result, Register register)
         {
             var combo = new ControlModelOptionMultiList();
-            combo.Label = "Теми";
+            combo.Label = Properties.Content.register_theme;
             combo.Name = RegisterViewModel.JSON_NAME_AREA;
             combo.SelectedValues = new List<ControlModelOptionElement>();
 

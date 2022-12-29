@@ -34,7 +34,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Наименование",
+                Label = Properties.Content.usergroup_filter_name,
                 Required=true,
                 Name = UserGroupViewModel.JSON_NAME_NAME,
                 Value = (userGroup == null) ? string.Empty : userGroup.Name
@@ -61,26 +61,26 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var roleControl = new ControlModelOptionList()
             {
                 Col = 12,
-                Label = "Тип потребителска група",
+                Label = Properties.Content.usergroup_type,
                 Required = true,
                 Name = UserGroupViewModel.JSON_NAME_ROLE
             };
 
             var usersRole = new ControlModelOptionElement()
             {
-                Label = "Потребители",
+                Label = Properties.Content.user_role,
                 Value = ((int)UserGroupRole.Users).ToString()
             };
 
             var globalAdminsRole = new ControlModelOptionElement()
             {
-                Label = "Глобални администратори",
+                Label = Properties.Content.globaladmin_role,
                 Value = ((int)UserGroupRole.GlobalAdmins).ToString()
             };
 
             var localAdminsRole = new ControlModelOptionElement()
             {
-                Label = "Локални администратори",
+                Label = Properties.Content.localadmin_role,
                 Value = ((int)UserGroupRole.LocalAdmins).ToString()
             };
 
@@ -107,44 +107,51 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             listControls.Add(new ControlModelCheckbox()
             {
                 Col = 12,
-                Label = "Създаване и управляване на потребители и потребителски групи",
+                Label = Properties.Content.permission_manageuser,
                 Name = "HasRightManageUsers",
                 Checked = (userGroup == null) ? false : userGroup.Rights.Any(x => x.Permission == PermissionEnum.ManageUsers)
             });
             listControls.Add(new ControlModelCheckbox()
             {
                 Col = 12,
-                Label = "Деактивиране на потребител",
+                Label = Properties.Content.permission_deactivate,
                 Name = "HasRightDeactivateUser",
                 Checked = (userGroup == null) ? false : userGroup.Rights.Any(x => x.Permission == PermissionEnum.DeactivateUsers)
             });
             listControls.Add(new ControlModelCheckbox()
             {
                 Col = 12,
-                Label = "Модул Административни органи – преглед на административни органи и търсене",
+                Label = Properties.Content.permission_adminbody,
                 Name = "HasRightAdminBodies",
                 Checked = (userGroup == null) ? false : userGroup.Rights.Any(x => x.Permission == PermissionEnum.AccessAdminBodies)
             });
             listControls.Add(new ControlModelCheckbox()
             {
                 Col = 12,
-                Label = "Модул Информационни обекти – преглед на информационни обекти и търсене",
+                Label = Properties.Content.permission_info_oboject,
                 Name = "HasRightListInfoObjects",
                 Checked = (userGroup == null) ? false : userGroup.Rights.Any(x => x.Permission == PermissionEnum.AccessInfoObjects)
             });
             listControls.Add(new ControlModelCheckbox()
             {
                 Col = 12,
-                Label = "Създаване и редакция на информационен обект",
+                Label = Properties.Content.permission_manage_info_object,
                 Name = "HasRightManageInfoObjects",
                 Checked = (userGroup == null) ? false : userGroup.Rights.Any(x => x.Permission == PermissionEnum.ManageInfoObjects)
             });
             listControls.Add(new ControlModelCheckbox()
             {
                 Col = 12,
-                Label = "Модул Журнал лог – преглед и търсене",
+                Label = Properties.Content.permission_journal,
                 Name = "HasRightJournalLog",
                 Checked = (userGroup == null) ? false : userGroup.Rights.Any(x => x.Permission == PermissionEnum.AccessJournalLog)
+            });
+            listControls.Add(new ControlModelCheckbox()
+            {
+                Col = 12,
+                Label = Properties.Content.permission_importdata,
+                Name = "HasRightImportData",
+                Checked = (userGroup == null) ? false : userGroup.Rights.Any(x => x.Permission == PermissionEnum.AccessImportData)
             });
         }
 
@@ -236,6 +243,13 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 if (elem.value == "true")
                 {
                     userGroupModel.Permissions.Add(PermissionEnum.AccessJournalLog);
+                }
+            }
+            if (elem.name == "HasRightImportData")
+            {
+                if (elem.value == "true")
+                {
+                    userGroupModel.Permissions.Add(PermissionEnum.AccessImportData);
                 }
             }
         }

@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">@ViewBag.PageName </h4>
+                    <h4 class="page-title mb-0 font-size-18"> @Resources.Content.ResourceManager.GetString(ViewBag.PageName) </h4>
                 </div>
             </div>
         </div>
@@ -21,7 +21,9 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="breadcrumb">
-            <a href="~/Home/">Начало</a> /    <a href="~/Users/">Потребители</a> / @ViewBag.PageName
+            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("users_reset_breadcrumb_start")</a> / 
+            <a href="~/Users/">@Resources.Content.ResourceManager.GetString("users_reset_breadcrumb_users")</a> /
+            @Resources.Content.ResourceManager.GetString(ViewBag.PageName)
         </div>
         <div class="main-content">
             <div class="page-content">
@@ -37,14 +39,14 @@
                         <div class="col-md-10"><input id="Id" type="text" name="Id" class="form-control" value="@Model.Id" style="visibility:hidden"></div>
                         <div class="col-md-10"></div>
                     </div><div class="form-group row">
-                        <label for="UserName" class="col-md-2 col-form-label"><p> Наименование </p></label>
+                        <label for="UserName" class="col-md-2 col-form-label"><p> @Resources.Content.ResourceManager.GetString("users_reset_name") </p></label>
                         <div class="col-md-10"><input id="Name" type="text" name="Name" class="form-control" value="@Model.Name"></div>
                     </div>
                     <div class="form-group row">
-                        <label for="Email" class="col-md-2 col-form-label"><p> Имейл </p></label>
+                        <label for="Email" class="col-md-2 col-form-label"><p> @Resources.Content.ResourceManager.GetString("users_reset_email") </p></label>
                         <div class="col-md-10"><!----><input id="Email" type="text" name="Email" class="form-control" value="@Model.Email"></div>
                     </div>
-                    <div class="mb-3 row"><label class="col-md-2 col-form-label">&nbsp;</label><div class="col-md-10"><button type="submit" class="btn btn-primary pmt-2"> Изпрати имейл </button></div></div>
+                    <div class="mb-3 row"><label class="col-md-2 col-form-label">&nbsp;</label><div class="col-md-10"><button type="submit" class="btn btn-primary pmt-2"> @Resources.Content.ResourceManager.GetString("users_reset_send_btn")  </button></div></div>
                 }
 
 

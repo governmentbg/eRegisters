@@ -15,7 +15,7 @@ namespace SmartRegistry.CommonWeb.JsonControls
         }
 
         [JsonProperty(PropertyName = "value")]
-        public decimal Value { get; set; }
+        public decimal? Value { get; set; }
 
         [JsonProperty(PropertyName = "max")]
         public decimal? MaxValue { get; set; }

@@ -11,18 +11,18 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">@ViewBag.Title</h4>
+                    <h4 class="page-title mb-0 font-size-18">@Resources.Content.ResourceManager.GetString("webservices_list_header")  @ViewBag.Title</h4>
                     <div class="page-title-right">
 
                         <ul class="btn-list">
                             <li>
-                                <a href="#" class="btn btn-success waves-effect waves-light show-hide-btn"> <i class="mdi mdi-plus-box-multiple-outline"></i> Създай Уеб услуга </a>
+                                <a href="#" class="btn btn-success waves-effect waves-light show-hide-btn"> <i class="mdi mdi-plus-box-multiple-outline"></i>@Resources.Content.ResourceManager.GetString("webservices_list_create_btn") </a>
                                 <ul>
                                     <li>
-                                        <a href="@Url.Action("CreateManagementService", "WebServices", new { id = ViewBag.RegisterId})">Създай уеб услуга за вписване/промяна/заличаване</a>
+                                        <a href="@Url.Action("CreateManagementService", "WebServices", new { id = ViewBag.RegisterId})">@Resources.Content.ResourceManager.GetString("webservices_list_create_entryservice") </a>
                                     </li>
                                     <li>
-                                        <a href="@Url.Action("CreateReportService", "WebServices", new { id = ViewBag.RegisterId})">Създай уеб услуга за удостоверяване</a>
+                                        <a href="@Url.Action("CreateReportService", "WebServices", new { id = ViewBag.RegisterId})">@Resources.Content.ResourceManager.GetString("webservices_list_create_validateservice") </a>
                                     </li>
                                 </ul>
 
@@ -37,7 +37,9 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="breadcrumb">
-            <a href="@Url.Action("Index","Home")">Начало</a> / <a href="@Url.Action("Structure","Registers")">Структура на регистри</a> / @ViewBag.Title
+            <a href="@Url.Action("Index","Home")">@Resources.Content.ResourceManager.GetString("webservices_list_breadcrumb_start")</a> /
+            <a href="@Url.Action("Structure","Registers")">@Resources.Content.ResourceManager.GetString("webservices_list_breadcrumb_structure") </a> /
+            @ViewBag.Title
         </div>
         <div class="main-content">
             <div class="page-content">

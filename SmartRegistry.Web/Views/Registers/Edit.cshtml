@@ -20,16 +20,21 @@
         <!-- ============================================================== -->
         <!-- Start right Content here -->
         <!-- ============================================================== -->
-        @if (ViewBag.Type == "Edit")
+        @if (ViewBag.Type == "Edit" || ViewBag.Type == "Create" )
         {
             <div class="breadcrumb">
-                <a href="~/Home/">Начало</a> /   <a href="~/Registers/">Регистри</a> / @ViewBag.PageName
+                <a href="~/Home/">@Resources.Content.ResourceManager.GetString("registers_edit_breadcrumb_start")</a> /
+                <a href="~/Registers/">@Resources.Content.ResourceManager.GetString("registers_edit_breadcrumb_registers")</a> /
+                @ViewBag.PageName
             </div>
         }
-        else
+     
+        @if (ViewBag.Type == "EditStructure")
         {
             <div class="breadcrumb">
-                <a href="~/Home/">Начало</a> /   <a href="~/Registers/Structure/">Структура на регистър</a> / @ViewBag.PageName
+                <a href="~/Home/">@Resources.Content.ResourceManager.GetString("registers_editstructure_breadcrumb_start")</a> /
+                <a href="~/Registers/Structure">@Resources.Content.ResourceManager.GetString("registers_editstructure_breadcrumb_structue")</a> /
+                @ViewBag.PageName
             </div>
         }
 

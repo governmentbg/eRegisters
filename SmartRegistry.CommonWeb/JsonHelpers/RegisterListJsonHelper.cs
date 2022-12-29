@@ -29,7 +29,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 2,
-                Label = "УРИ",
+                Label = Properties.Content.register_uri,
                 Name = "UriFilter",
                 Value = ""
             });
@@ -37,7 +37,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 3,
-                Label = "Наименование",
+                Label = Properties.Content.register_name,
                 Name = "NameFilter",
                 Value = ""
             });
@@ -45,7 +45,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 3,
-                Label = "Административен орган",
+                Label = Properties.Content.filter_adminbody,
                 Name = "AdminBodyFilter",
                 Value = ""
             });
@@ -53,7 +53,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 3,
-                Label = "Таксономия",
+                Label = Properties.Content.filter_registerarea,
                 Name = "RegistersArea",
                 Value = ""
             });
@@ -74,7 +74,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 3,
-                Label = "Наименование",
+                Label = Properties.Content.register_name,
                 Name = "NameFilter",
                 Value = ""
             });
@@ -165,25 +165,25 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "URI",
-                Label = "УРИ",
+                Label = Properties.Content.register_uri,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Name",
-                Label = "Наименование",
+                Label = Properties.Content.register_name,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "AdministrativeBody",
-                Label = "Административен орган (ПАД)",
+                Label = Properties.Content.register_admin_body,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Area",
-                Label = "Таксономия",
+                Label = Properties.Content.filter_registerarea,
                 Sortable = false
             });
             if (listType != RegisterListType.Public)
@@ -191,19 +191,19 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 result.Columns.Add(new TableColumnTitleModel()
                 {
                     Key = "URL",
-                    Label = "URL",
+                    Label = Properties.Content.register_url,
                     Sortable = false
                 });
                 result.Columns.Add(new TableColumnTitleModel()
                 {
                     Key = "Status",
-                    Label = "Статус",
+                    Label = Properties.Content.base_status_name,
                     Sortable = true
                 });
                 result.Columns.Add(new TableColumnTitleModel()
                 {
                     Key = "Actions",
-                    Label = "Опции",
+                    Label = Properties.Content.base_options,
                     Sortable = false
                 });
             }
@@ -242,12 +242,12 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 switch (listType)
                 {
                     case RegisterListType.List :
-                        actions.AddAction("edit", "Редакция", relativePathBase + "Registers/Edit/" + register.Id);
+                        actions.AddAction("edit", Properties.Content.register_hint_edit, relativePathBase + "Registers/Edit/" + register.Id);
 
                         if ((SmartContext.CurrentUser != null)
                             && (SmartContext.CurrentUser.HasRegisterRight(register.Id, RegisterPermissionEnum.ManageRegisterRights)))
                         {
-                            actions.AddAction("rights", "Права", relativePathBase + "Registers/RegisterRights/" + register.Id);
+                            actions.AddAction("rights", Properties.Content.register_hint_rights, relativePathBase + "Registers/RegisterRights/" + register.Id);
                         }
                         if ((SmartContext.CurrentUser != null) && (
                             (SmartContext.CurrentUser.HasRegisterRight(register.Id, RegisterPermissionEnum.CreateRecords))
@@ -255,14 +255,22 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                             || (SmartContext.CurrentUser.HasRegisterRight(register.Id, RegisterPermissionEnum.DeleteRecords))
                             )&& attributesToList!=null)
                         {                           
-                            actions.AddAction("view", "Записи в регистър", relativePathBase + "RegisterRecords/Index/" + register.Id);                           
+                            actions.AddAction("view", Properties.Content.register_hint_records, relativePathBase + "RegisterRecords/Index/" + register.Id);                           
                         }
+
 
                         break;
                     case RegisterListType.Structure:
-                        actions.AddAction("edit", "Структура", relativePathBase + "Registers/EditStructure/" + register.Id);
-                        actions.AddAction("view", "Уеб услуги", relativePathBase + "WebServices/List/" + register.Id);
-                        actions.AddAction("webService", "Уеб услуги", relativePathBase + "WebServices/List/" + register.Id);
+                        actions.AddAction("edit", Properties.Content.structure_hint_edit, relativePathBase + "Registers/EditStructure/" + register.Id);
+                        //actions.AddAction("view", "Уеб услуги", relativePathBase + "WebServices/List/" + register.Id);
+                        actions.AddAction("webService", Properties.Content.structure_hint_services, relativePathBase + "WebServices/List/" + register.Id);
+                        if ((SmartContext.CurrentUser != null)
+                            && (SmartContext.CurrentUser.HasRegisterRight(register.Id, RegisterPermissionEnum.BusinessProcess)))
+                        {
+                            actions.AddAction("registerState", Properties.Content.structure_hint_states, relativePathBase + "RegisterStates/Index/" + register.Id);
+                            actions.AddAction("stateTransition", Properties.Content.structure_hint_transitions, relativePathBase + "RegisterTransition/Index/" + register.Id);
+                        }
+                      
                         break;
                 }
                 row.AddActionsCell("actions", actions);

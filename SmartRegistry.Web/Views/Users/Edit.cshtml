@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">@ViewBag.PageName </h4>
+                    <h4 class="page-title mb-0 font-size-18"> @Resources.Content.ResourceManager.GetString(ViewBag.PageName) </h4>
                 </div>
             </div>
         </div>
@@ -21,14 +21,17 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="breadcrumb">
-            <a href="~/Home/">Начало</a> /    <a href="~/Users/">Потребители</a> / @ViewBag.PageName
+            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("users_edit_breadcrumb_start")</a> /
+            <a href="~/Users/">@Resources.Content.ResourceManager.GetString("users_edit_breadcrumb_users")</a> /
+            @Resources.Content.ResourceManager.GetString(ViewBag.PageName)
         </div>
         <div class="main-content">
             <div class="page-content">
 
                 <!--     <a href="@ViewBag.GetControlsUrl">Линк за взимане на контролите на страницата</a><br />
-            <a href="@ViewBag.MultyOPT">MultyOPT</a><br />
-               <a href="@ViewBag.Multy">Multy</a>-->
+    <a href="@ViewBag.MultyOPT">MultyOPT</a><br />
+       <a href="@ViewBag.Multy">Multy</a>-->
+                
 
 
                 <div id="app"></div>

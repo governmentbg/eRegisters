@@ -1,10 +1,12 @@
-﻿using Newtonsoft.Json;
+﻿using log4net;
+using Newtonsoft.Json;
 using SmartRegistry.CommonWeb.JsonHelpers;
 using SmartRegistry.Domain.Common;
 using SmartRegistry.Domain.Entities;
 using SmartRegistry.Domain.Interfaces;
 using SmartRegistry.Domain.Services;
 using SmartRegistry.Domain.ViewModels;
+using SmartRegistry.EDelivery;
 using SmartRegistry.Web.AuthHelp;
 using System;
 using System.Collections.Generic;
@@ -18,15 +20,13 @@ namespace SmartRegistry.Web.Controllers
 {
     public class UsersController : BaseController
     {
+        private static readonly ILog _loggger = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         private IMessageService _messageService;
 
         [CustomAuthorize(PermissionEnum.ManageUsers)]
         public ActionResult Index()
         {
-
-            string baseUrl1 = HttpContext.Request.Url.AbsolutePath;
-            string baseUrl2 = HttpContext.Request.Url.AbsoluteUri;
-
             return View();
         }
 
@@ -34,8 +34,8 @@ namespace SmartRegistry.Web.Controllers
         public ActionResult Create()
         {
             ViewBag.GetControlsUrl = Url.Action("UserData", "Users");
-            ViewBag.PageName = "Създаване на потребител";
-
+            // ViewBag.PageName = "Създаване на потребител";
+            ViewBag.PageName = "users_create_header";
             return View("Edit");
         }
 
@@ -45,7 +45,8 @@ namespace SmartRegistry.Web.Controllers
         public ActionResult Edit(int id)
         {
             ViewBag.GetControlsUrl = Url.Action("UserData", "Users", new { userId = id });
-            ViewBag.PageName = "Редакция на потребител";
+           // ViewBag.PageName = "Редакция на потребител";
+            ViewBag.PageName = "users_edit_header";
 
             return View("Edit");
         }
@@ -54,8 +55,9 @@ namespace SmartRegistry.Web.Controllers
         public ActionResult Reset(int id)
         {
           //  ViewBag.GetControlsUrl = Url.Action("UserData", "Users", new { userId = id });
-            ViewBag.PageName = "Генерирай линк за потвърждение на акаунта";
-         
+          //  ViewBag.PageName = "Генерирай линк за потвърждение на акаунта";
+            ViewBag.PageName = "users_reset_header";
+
             var user = DbContext.GetUsersDao().GetById((int)id);
 
             return View("Reset", user);
@@ -85,6 +87,29 @@ namespace SmartRegistry.Web.Controllers
                     _messageService = new MessageService();
                     _messageService.SendMessage(ResetAccMessage.GetSubject(), ResetAccMessage.GetBody(selectedUser.ResetCode), selectedUser.Email);
 
+                    string egn = null;
+                    foreach(var ident in selectedUser.Identificators)
+                    {
+                        if (ident.IdentificatorType.IdentificatorType == "PNO")
+                        {
+                            egn = ident.Identificator;
+                        }
+                    }
+                    if (!string.IsNullOrEmpty(egn))
+                    {
+                        try
+                        {
+                            var eDelServ = new EDeliveryService("My", "orak.smartregistry.bg");
+                            eDelServ.SendMessage(ResetAccMessage.GetSubject(),
+                                ResetAccMessage.GetBody(selectedUser.ResetCode),
+                                EDeliveryReceiverType.Person,
+                                egn);
+                        }
+                        catch(Exception ex)
+                        {
+                            _loggger.Error("ResetPass : Cannot send eDelivery notification",ex);
+                        }
+                    }
                 }
 
 

@@ -236,6 +236,35 @@ namespace SmartRegistry.CommonWeb
             }
         }
 
+        public RegisterStatesService RegisterStatesService
+        {
+            get
+            {
+                var service = (RegisterStatesService)HttpContext.Current.Items["RegisterStatesService"];
+                if (service == null)
+                {
+                    service = new RegisterStatesService(this);
+                    HttpContext.Current.Items["RegisterStatesService"] = service;
+                }
+                return service;
+            }
+        }
+
+
+        public RegisterTransitionService RegisterTransitionService
+        {
+            get
+            {
+                var service = (RegisterTransitionService)HttpContext.Current.Items["RegisterTransitionService"];
+                if (service == null)
+                {
+                    service = new RegisterTransitionService(this);
+                    HttpContext.Current.Items["RegisterTransitionService"] = service;
+                }
+                return service;
+            }
+        }
+
         public ISmartRegistryContext CreateNewContext()
         {
             var result = new SmartRegistryWebContext(new NHibernateDbContext(), _currentUserId, _adminBodyId);

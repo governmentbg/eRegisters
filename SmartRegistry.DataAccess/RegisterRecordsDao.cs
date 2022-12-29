@@ -58,6 +58,9 @@ namespace SmartRegistry.DataAccess
                     case UnifiedDataTableType.Integer:
                         criteria = ApplyIntegerAttributeFilter(criteria, attrFilter, aliasCnt);
                         break;
+                    case UnifiedDataTableType.Numeric:
+                        criteria = ApplyDecimalAttributeFilter(criteria, attrFilter, aliasCnt);
+                        break;
                 }
             }
 
@@ -70,6 +73,15 @@ namespace SmartRegistry.DataAccess
                 else
                 {
                     criteria.Add(Restrictions.Eq("URI", filter.URI));
+                }
+            }
+
+            if (!string.IsNullOrEmpty(filter.State))
+            {
+                if (filter.State.StartsWith("%") || filter.State.EndsWith("%"))
+                {
+                    var critStates = criteria.CreateCriteria("RegisterState");
+                    critStates.Add(Restrictions.Like("Name", filter.State));                    
                 }
             }
 
@@ -98,6 +110,23 @@ namespace SmartRegistry.DataAccess
             return criteria;
         }
 
+        private ICriteria ApplyDecimalAttributeFilter(ICriteria criteria, RegisterAttributeFilterBase attrFilter, int aliasCnt)
+        {
+            var intFilter = (attrFilter as RegisterAttributeDecimalFilter);
+            if (intFilter == null) return criteria;
+
+            var aliasName = "AttrAlias_" + aliasCnt.ToString();
+            var detCrit = DetachedCriteria.For<RegisterRecordValueNumeric>(aliasName)
+                .SetProjection(Projections.Property($"{aliasName}.RegisterRecord.Id"))
+                .Add(Restrictions.Eq("Attribute", intFilter.Attribute))
+                .Add(Restrictions.EqProperty($"{aliasName}.RegisterRecord.Id", "RegRecord.Id"))
+                .Add(Restrictions.Eq("Value", intFilter.FilterValue));
+
+            criteria = criteria.Add(Subqueries.Exists(detCrit));
+
+            return criteria;
+        }
+
         private ICriteria ApplyVarcharAttributeFilter(ICriteria criteria, RegisterAttributeFilterBase attrFilter, int aliasCnt)
         {
             var textFilter = (attrFilter as RegisterAttributeTextFilter);
@@ -109,7 +138,7 @@ namespace SmartRegistry.DataAccess
                 .Add(Restrictions.Eq("Attribute",textFilter.Attribute))
                 .Add(Restrictions.EqProperty($"{aliasName}.RegisterRecord.Id", "RegRecord.Id"));
 
-            ApplyStringFilterToDetachedCriteria(detCrit, "Value", textFilter.FilterValue);
+            ApplyStringFilterToDetachedCriteria(detCrit, "ValueDB", textFilter.FilterValue);
 
             criteria = criteria.Add(Subqueries.Exists(detCrit));
 
@@ -127,7 +156,7 @@ namespace SmartRegistry.DataAccess
                 .Add(Restrictions.Eq("Attribute", textFilter.Attribute))
                 .Add(Restrictions.EqProperty($"{aliasName}.RegisterRecord.Id", "RegRecord.Id"));
 
-            ApplyStringFilterToDetachedCriteria(detCrit, "Value", textFilter.FilterValue);
+            ApplyStringFilterToDetachedCriteria(detCrit, "ValueDB", textFilter.FilterValue);
 
             criteria = criteria.Add(Subqueries.Exists(detCrit));
 

@@ -9,7 +9,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">Импортиране на данни </h4>
+                    <h4 class="page-title mb-0 font-size-18">@Resources.Content.ResourceManager.GetString("import_create_header") </h4>
                     <div class="page-title-right">
                     </div>
                 </div>
@@ -20,7 +20,9 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="breadcrumb">
-            <a href="~/Home/">Начало</a> /  <a href="~/Import/">Импортиране на данни</a>  / Добавяне нови данни
+            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("import_create_breadcrumb_start")</a> /
+            <a href="~/Import/">@Resources.Content.ResourceManager.GetString("import_create_breadcrumb_importdata")</a>  / 
+            @Resources.Content.ResourceManager.GetString("import_create_header")
         </div>
         <div class="main-content">
             <div class="page-content">
@@ -28,7 +30,7 @@
                 {
                     <div class="row text-center">
                         <div class="col-xl-12">
-                            <h3 class="form-label">Изберете регистър</h3> <br />
+                            <h3 class="form-label">  @Resources.Content.ResourceManager.GetString("import_create_pick_register")</h3> <br />
                             @Html.DropDownList("RegisterList", new SelectList(ViewBag.Registers, "Id", "Name"), new {  @class="form-control" })
                         </div>
 
@@ -43,10 +45,10 @@
 
                         </div>
                         <div class="col-xl-3">
-                            <input type="submit" value="Генерирай CSV" name="submitButton" class="btn btn-success waves-effect waves-light" />
+                            <input type="submit" value="@Resources.Content.ResourceManager.GetString("import_create_generate_csv")" name="submitButton" class="btn btn-success waves-effect waves-light" />
                         </div>
                         <div class="col-xl-3">
-                            <input type="submit" value="Генерирай CSV с данни" name="submitButton" class="btn btn-success waves-effect waves-light" />
+                            <input type="submit" value="@Resources.Content.ResourceManager.GetString("import_create_generate_csv_data")" name="submitButton" class="btn btn-success waves-effect waves-light" />
                         </div>
                         <div class="col-xl-3">
 
@@ -58,7 +60,7 @@
                     </div>
                    
                     <div class="row text-center" style="margin-top:100px;">
-                        <h3 class="form-label">Качване на CSV</h3> <br />
+                        <h3 class="form-label">@Resources.Content.ResourceManager.GetString("import_create_upload_csv_header")</h3> <br />
                         <p>
 
 
@@ -73,7 +75,7 @@
 
 
                             </p>
-                            <input type="submit" value="Качи CSV" name="submitButton" class="btn btn-success waves-effect waves-light" />
+                            <input type="submit" value="@Resources.Content.ResourceManager.GetString("import_create_upload_csv_btn")" name="submitButton" class="btn btn-success waves-effect waves-light" />
                             <p>
 
 

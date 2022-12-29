@@ -243,11 +243,13 @@
       <DependentUpon>Content.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="App_GlobalResources\Content.bg.designer.cs">
       <DependentUpon>Content.bg.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -270,6 +272,8 @@
     <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\RegisterRecordsController.cs" />
     <Compile Include="Controllers\RegistersController.cs" />
+    <Compile Include="Controllers\RegisterStatesController.cs" />
+    <Compile Include="Controllers\RegisterTransitionController.cs" />
     <Compile Include="Controllers\SelectAdminBodyController.cs" />
     <Compile Include="Controllers\SystemLogController.cs" />
     <Compile Include="Controllers\UnifiedDataController.cs" />
@@ -1448,6 +1452,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\avatar-6.jpg" />
     <Content Include="Images\blue_bg.gif" />
+    <Content Include="Images\flag-english.jpg" />
+    <Content Include="Images\Flag_of_Bulgaria.svg.png" />
     <Content Include="Images\logo.svg" />
     <Content Include="Images\program.png" />
     <Content Include="Scripts\apexcharts.min.js" />
@@ -1585,6 +1591,10 @@
     <Content Include="Views\Import\Index.cshtml" />
     <Content Include="Views\Import\Review.cshtml" />
     <Content Include="Views\Import\Create.cshtml" />
+    <Content Include="Views\RegisterStates\Index.cshtml" />
+    <Content Include="Views\RegisterStates\Edit.cshtml" />
+    <Content Include="Views\RegisterTransition\Index.cshtml" />
+    <Content Include="Views\RegisterTransition\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1606,10 +1616,12 @@
     <Content Include="App_GlobalResources\Content.bg.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Content.bg.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="App_GlobalResources\Content.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>Content.designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>
@@ -1636,6 +1648,10 @@
     <ProjectReference Include="..\SmartRegistry.Domain\SmartRegistry.Domain.csproj">
       <Project>{fbe519b9-6994-47d1-a344-388ade72700e}</Project>
       <Name>SmartRegistry.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SmartRegistry.EDelivery\SmartRegistry.EDelivery.csproj">
+      <Project>{C462FE87-EA3A-4286-9D51-2775D7A9E2C3}</Project>
+      <Name>SmartRegistry.EDelivery</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

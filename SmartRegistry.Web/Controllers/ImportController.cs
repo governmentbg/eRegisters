@@ -30,18 +30,27 @@ namespace SmartRegistry.Web.Controllers
             public const string ClearAndImport = "Импортирай със зануляване";
         }
 
+        public static class GroupTypesEN
+        {
+            public const string GenCSV = "Generate CSV";
+            public const string GenCSVData = "Generate CSV with Data";
+            public const string UploadCSV = "Upload CSV";
+            public const string Validate = "Validate";
+            public const string Reupload = "Reupload file";
+            public const string Import = "Import Data";
+            public const string ClearAndImport = "Delete Old Data and Import";
+        }
 
+        [CustomAuthorize(PermissionEnum.AccessImportData)]
         public ActionResult Index()
         {
-
-            ViewBag.Title = "Импортване на данни ";
             ViewBag.ListAction = "GetImportList";
 
             return View();
         }
 
 
-
+        [CustomAuthorize(PermissionEnum.AccessImportData)]
         [HttpGet]
         public ActionResult Create()
         {
@@ -57,14 +66,14 @@ namespace SmartRegistry.Web.Controllers
             return View("Create");
         }
 
-    
 
+        [CustomAuthorize(PermissionEnum.AccessImportData)]
         [HttpPost]
         public ActionResult CreateData(string RegisterList,string submitButton, HttpPostedFileBase file)
         {
 
             if ((submitButton == GroupTypes.GenCSV)
-              || (submitButton == GroupTypes.GenCSVData)) {
+              || (submitButton == GroupTypes.GenCSVData) || (submitButton == GroupTypesEN.GenCSV) || (submitButton == GroupTypesEN.GenCSVData)) {
                 var regId = Int32.Parse(RegisterList);
                 string csv = string.Empty;
                 if (submitButton == GroupTypes.GenCSV)
@@ -86,7 +95,7 @@ namespace SmartRegistry.Web.Controllers
                 return File(Encoding.UTF8.GetBytes(csv.ToString()), "text/csv", fileName + ".csv");
             }
 
-            if (submitButton == GroupTypes.UploadCSV)
+            if (submitButton == GroupTypes.UploadCSV || (submitButton == GroupTypesEN.UploadCSV))
             {
                 try
                 {
@@ -115,9 +124,13 @@ namespace SmartRegistry.Web.Controllers
 
                         SmartContext.DbContext.ImportHeadDao.Save(importHead);
 
+                        SmartContext.SystemLog.LogEvent(SmartContext,
+                       SystemLogEventTypeEnum.AddedImportCSVfile,
+                       $"Качено CSV за {selectedRegister.Name} ",
+                       importHead.Id);
 
                     }
-                    ViewBag.Message = "Файлът е качен успешно!";
+                    ViewBag.Message = Resources.Content.import_file_success;
                     ViewBag.PageName = "Импортиране на нов документ ";
 
                     var registerFilter = new RegisterFilter();
@@ -131,7 +144,7 @@ namespace SmartRegistry.Web.Controllers
                 }
                 catch
                 {
-                    ViewBag.Message = "Възникна грешка с качването на файла!";
+                    ViewBag.Message = Resources.Content.import_file_error;
                     ViewBag.PageName = "Импортиране на нов документ ";
 
                     var registerFilter = new RegisterFilter();
@@ -155,13 +168,17 @@ namespace SmartRegistry.Web.Controllers
         {
             var importHead = SmartContext.DbContext.ImportHeadDao.GetById(Id);
 
-            if (submitButton == GroupTypes.Validate)
+            if (submitButton == GroupTypes.Validate || (submitButton == GroupTypesEN.Validate))
             {
                 string errMsg = string.Empty;
                 try
                 {
                     string path = Server.MapPath("~/ImportFiles/");
                     errMsg = SmartContext.ImportService.ProcessFileImportHead(Id, path);
+                    SmartContext.SystemLog.LogEvent(SmartContext,
+                    SystemLogEventTypeEnum.ValidateCSV,
+                    $"Валидиране на CSV - {importHead.Register.Name}"  ,
+                    importHead.Id);
                 }
                 catch (Exception ex)
                 {
@@ -170,12 +187,12 @@ namespace SmartRegistry.Web.Controllers
                 ViewBag.ValidationErrors = errMsg;
             }
 
-            if (submitButton == GroupTypes.Reupload)
+            if (submitButton == GroupTypes.Reupload || (submitButton == GroupTypesEN.Reupload))
             {
                 ViewBag.ShowFile = "show";
             }
 
-            if (submitButton == GroupTypes.UploadCSV)
+            if (submitButton == GroupTypes.UploadCSV || (submitButton == GroupTypesEN.UploadCSV))
             {
                 ViewBag.ShowFile = "show";
                 try
@@ -195,30 +212,43 @@ namespace SmartRegistry.Web.Controllers
                         importHead.Status = ImportHeadStatus.UploadedFile;
                         SmartContext.DbContext.ImportHeadDao.Update(importHead);
 
+                        SmartContext.SystemLog.LogEvent(SmartContext,
+                        SystemLogEventTypeEnum.ReuploadCSV,
+                       $"Качване CSV наново - {importHead.Register.Name}",
+                       importHead.Id);
 
                     }
-                    ViewBag.Message = "Файлът е качен успешно!";
+                    ViewBag.Message = Resources.Content.import_file_success;
                  
                 }
                 catch
                 {
-                    ViewBag.Message = "Възникна грешка с качването на файла!";                 
+                    ViewBag.Message = Resources.Content.import_file_error;                 
                 }
             }
 
-            if (submitButton == GroupTypes.Import)
+            if (submitButton == GroupTypes.Import || (submitButton == GroupTypesEN.Import))
             {
 
                 var importResult = SmartContext.ImportService.ImportData(importHead);
                 ViewBag.InsertResult = importResult;
 
+                SmartContext.SystemLog.LogEvent(SmartContext,
+                        SystemLogEventTypeEnum.ImportCSV,
+                       $"Импортиране на CSV - {importHead.Register.Name}",
+                       importHead.Id);
             }
 
-            if (submitButton == GroupTypes.ClearAndImport)
+            if (submitButton == GroupTypes.ClearAndImport || (submitButton == GroupTypesEN.ClearAndImport))
             {
                 SmartContext.DbContext.RegisterRecordsDao.ClearRegisterRecords(importHead.Register);               
                 var importResult = SmartContext.ImportService.ImportData(importHead);
                 ViewBag.InsertResult = importResult;
+
+                SmartContext.SystemLog.LogEvent(SmartContext,
+                    SystemLogEventTypeEnum.ImportCSVWithDelete,
+                   $"Импортиране на CSV с изтриване на данни - {importHead.Register.Name}",
+                   importHead.Id);
             }
 
             ViewBag.ImportHead = importHead;
@@ -254,7 +284,7 @@ namespace SmartRegistry.Web.Controllers
             {
                 var jsonHelper = new ImportHeadJsonHelper(SmartContext);
                 var logFilter = jsonHelper.DeserializeFilters(jsonFilters);
-
+                logFilter.AdminBody = SmartContext.CurrentAdminBody;
                 var impHeadService = SmartContext.ImportService;
                 var list = impHeadService.GetAll(logFilter);
 

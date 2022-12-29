@@ -67,9 +67,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AreaGroupDao.cs" />
+    <Compile Include="Mappings\RegisterTransitionRightMap.cs" />
+    <Compile Include="Mappings\RegisterTransitionMap.cs" />
+    <Compile Include="RegisterStatesAttributeDao.cs" />
+    <Compile Include="RegisterTransitionRightsDao.cs" />
+    <Compile Include="RegisterTransitionsDao.cs" />
+    <Compile Include="RegisterStatesDao.cs" />
     <Compile Include="ImportColumnDao.cs" />
     <Compile Include="ImportHeadDao.cs" />
     <Compile Include="ImportRowDao.cs" />
+    <Compile Include="Mappings\RegisterStateAttributeMap.cs" />
+    <Compile Include="Mappings\RegisterStateMap.cs" />
     <Compile Include="Mappings\AreaGroupMap.cs" />
     <Compile Include="Mappings\ImportColumnMap.cs" />
     <Compile Include="Mappings\ImportDataMap.cs" />

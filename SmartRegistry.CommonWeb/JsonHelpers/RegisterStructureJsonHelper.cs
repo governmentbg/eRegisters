@@ -35,7 +35,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             // 
             var repeater = new ControlModelRepeater();
             repeater.Col = 12;
-            repeater.Label = "Атрибути на регистър";
+            repeater.Label = Properties.Content.structure_attributes;
             repeater.Name = "RegisterAttributes";
             repeater.ItemTemplate = CreateStructureItemTemplate(null);
             repeater.Values = new List<ControlModelRepeaterItemTemplate>();
@@ -76,7 +76,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Controls.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Наименование",
+                Label = Properties.Content.structure_name,
                 Name = "Name",
                 Required=true,
                 Value = (attribute == null) ? string.Empty : attribute.Name
@@ -85,7 +85,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Controls.Add(new ControlModelText()
             {
                 Col = 12,
-                Label = "Техническо наименование",
+                Label = Properties.Content.structure_apiname,
                 Name = "ApiName",
                 Required = true,
                 Value = (attribute == null) ? string.Empty : attribute.ApiName
@@ -95,7 +95,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var uniDataCombo = new ControlModelOptionList()
             {
                 Col = 12,
-                Label = "Информационен обект",
+                Label = Properties.Content.structure_infoobject,
                 Required = true,
                 Name = "InfoObject"
             };
@@ -123,35 +123,35 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Controls.Add(new ControlModelCheckbox()
             {
                 Col = 12,
-                Label = "По този атрибут може да се филтрира списъка",
+                Label = Properties.Content.structure_checkbox_filter,
                 Name = "CanFilterAttribute",
                 Checked = (attribute == null) ? true : attribute.CanFilter
             });
             result.Controls.Add(new ControlModelCheckbox()
             {
                 Col = 12,
-                Label = "Има публичен достъп до този атрибут",
+                Label = Properties.Content.structure_checkbox_public,
                 Name = "IsPublicAttribute",
                 Checked = (attribute == null) ? true : attribute.IsPublic
             });
             result.Controls.Add(new ControlModelCheckbox()
             {
                 Col = 12,
-                Label = "Стойностите се експортират към OpenData портала",
+                Label = Properties.Content.structure_checkbox_opendata,
                 Name = "ExportOpenData",
                 Checked = (attribute == null) ? true : attribute.ExportOpenData
             });
             result.Controls.Add(new ControlModelCheckbox()
             {
                 Col = 12,
-                Label = "Стойностите ще се достъпват през Уеб Услугите и Реджикс",
+                Label = Properties.Content.structure_checkbox_webservice,
                 Name = "ExportWebServices",
                 Checked = (attribute == null) ? true : attribute.ExportWebServices
             });
             result.Controls.Add(new ControlModelCheckbox()
             {
                 Col = 12,
-                Label = "Криптирана стойност (кратък текст до 80символа!)",
+                Label = Properties.Content.structure_checkbox_encrypted,
                 Name = "IsEncrypted",
                 Checked = (attribute == null) ? true : attribute.IsEncrypted
             });

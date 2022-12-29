@@ -74,7 +74,7 @@ namespace SmartRegistry.CommonWeb
             var statusControl = new ControlModelOptionList()
             {
                 Col = 3,
-                Label = "Статус",
+                Label = Properties.Content.base_status_name,
                 Required = true,
                 Name = controlName
             };
@@ -82,17 +82,17 @@ namespace SmartRegistry.CommonWeb
 
             var noStatus = new ControlModelOptionElement()
             {
-                Label = "--Избери--",
+                Label = Properties.Content.base_status_option_0,
                 Value = "0"
             };
             var activeStatus = new ControlModelOptionElement()
             {
-                Label = "Активен",
+                Label = Properties.Content.base_status_option_1,
                 Value = "1"
             };
             var inActiveStatus = new ControlModelOptionElement()
             {
-                Label = "Неактивен",
+                Label = Properties.Content.base_status_option_2,
                 Value = "2"
             };
             statusControl.Options.Add(noStatus);

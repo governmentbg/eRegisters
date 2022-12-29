@@ -20,7 +20,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
 
         }
 
-        public IList<ControlModelBase> GetRecordEditControls(string relativePathBase, IList<RegisterAttribute> allAttributes, RegisterRecord regRecord, int registerId)
+        public IList<ControlModelBase> GetRecordEditControls(string relativePathBase, IList<RegisterAttribute> allAttributes, RegisterRecord regRecord, int registerId, int? stateId)
         {
             var result = new List<ControlModelBase>();
             var resultComposites = new List<ControlModelFieldset>();
@@ -31,6 +31,14 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 Label = "",
                 Name = "RegisterId",
                 Value = registerId.ToString()
+            });
+
+            result.Add(new ControlModelHidden()
+            {
+                Col = 12,
+                Label = "",
+                Name = "StateId",
+                Value = (stateId == null) ?  "0" : stateId.ToString()
             });
 
             result.Add(new ControlModelHidden()
@@ -250,9 +258,9 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             if (regRecord != null)
             {
                 var attrValue = regRecord.GetIntValue(attr);
-                if (attrValue != null)
+                if ((attrValue != null) && (attrValue.Value != null))
                 {
-                    strValue =attrValue.Value;
+                    strValue = (int)attrValue.Value;
                 }
             }
 
@@ -270,9 +278,9 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             if (regRecord != null)
             {
                 var attrValue = regRecord.GetDecimalValue(attr);
-                if (attrValue != null)
+                if ((attrValue != null) && (attrValue.Value != null))
                 {
-                    strValue =attrValue.Value;
+                    strValue = (decimal)attrValue.Value;
                 }
             }
 
@@ -350,6 +358,10 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                 {
                     result.RegisterId = elem.value;
                 }
+                else if (elemName == "StateId")
+                {
+                    result.StateId = elem.value;
+                }
                 else if (elemName == "URI") {
                     if ((bool)elem.enabled)
                     {
@@ -397,12 +409,19 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                     break;
                 case "date":
                 case "datetime":
-                    DateTime dtVal = elem.value;
-                    result = dtVal;
-                    //result = DateTime.Parse(dtVal);
-                    //result = DateTime.ParseExact(dtVal, "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss.fffffffK",
-                                      //System.Globalization.CultureInfo.InvariantCulture);
-                    // result = DateTime.ParseExact(dtVal,"yyyy-MM-dd",CultureInfo.InvariantCulture);
+                    try
+                    {
+                        DateTime dtVal = elem.value;
+                        result = dtVal;
+                        //result = DateTime.Parse(dtVal);
+                        //result = DateTime.ParseExact(dtVal, "yyyy’-‘MM’-‘dd’T’HH’:’mm’:’ss.fffffffK",
+                        //System.Globalization.CultureInfo.InvariantCulture);
+                        // result = DateTime.ParseExact(dtVal,"yyyy-MM-dd",CultureInfo.InvariantCulture);
+                    }
+                    catch {
+                        result = null;
+                    }
+                 
                     break;
                 case "number":                   
                     result = (decimal)elem.value;

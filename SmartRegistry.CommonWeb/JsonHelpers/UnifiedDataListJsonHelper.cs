@@ -8,7 +8,9 @@ using SmartRegistry.Domain.QueryFilters;
 using SmartRegistry.Domain.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,7 +31,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 2,
-                Label = "УРИ",
+                Label = Properties.Content.unified_uri,
                 Name = "UriFilter",
                 Value = ""
             });
@@ -37,7 +39,7 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Add(new ControlModelText()
             {
                 Col = 3,
-                Label = "Наименование",
+                Label = Properties.Content.unified_filter_name,
                 Name = "NameFilter",
                 Value = ""
             });
@@ -45,23 +47,23 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             var statusFilter = new ControlModelOptionList()
             {
                 Col = 3,
-                Label = "Статус",
+                Label = Properties.Content.base_status_name,
                 Name = "StatusFilter"
             };
             var val1 = new ControlModelOptionElement()
             {
-                Label = "--Избери--",
+                Label = Properties.Content.base_status_option_0,
                 Value = "0"
             };
             statusFilter.Options.Add(val1);
             statusFilter.Options.Add(new ControlModelOptionElement()
             {
-                Label = "Активна",
+                Label = Properties.Content.base_status_option_1,
                 Value = "1"
             });
             statusFilter.Options.Add(new ControlModelOptionElement()
             {
-                Label = "Неактивна",
+                Label = Properties.Content.base_status_option_2,
                 Value = "2"
             });
             statusFilter.SelectedValue = val1;
@@ -84,37 +86,37 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "URI",
-                Label = "УРИ",
+                Label = Properties.Content.unified_uri,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Name",
-                Label = "Име",
+                Label = Properties.Content.unified_name,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Description",
-                Label = "Описание",
+                Label = Properties.Content.unified_description,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "DataTypeName",
-                Label = "Тип данни",
+                Label = Properties.Content.unified_type,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Status",
-                Label = "Статус",
+                Label = Properties.Content.base_status_name,
                 Sortable = true
             });
             result.Columns.Add(new TableColumnTitleModel()
             {
                 Key = "Actions",
-                Label = "Опции",
+                Label = Properties.Content.base_options,
                 Sortable = false
             });
 
@@ -141,15 +143,16 @@ namespace SmartRegistry.CommonWeb.JsonHelpers
                   
                     if (uniData.DataType == UnifiedDataTypeEnum.Composite)
                     {
-                        actions.AddAction("edit", "Редакция", relativePathBase + "UnifiedData/EditComposite/" + uniData.Id);
+                        actions.AddAction("edit", Properties.Content.unified_hint_edit, relativePathBase + "UnifiedData/EditComposite/" + uniData.Id);
                     }
                     else if (uniData.DataType == UnifiedDataTypeEnum.Referential)
                     {
-                        actions.AddAction("edit", "Редакция", relativePathBase + "UnifiedData/EditReferential/" + uniData.Id);
+                        actions.AddAction("edit", Properties.Content.unified_hint_edit, relativePathBase + "UnifiedData/EditReferential/" + uniData.Id);
                     }
                     else
                     {
-                        actions.AddAction("edit", "Редакция", relativePathBase + "UnifiedData/Edit/" + uniData.Id);
+                    
+                        actions.AddAction("edit", Properties.Content.unified_hint_edit, relativePathBase + "UnifiedData/Edit/" + uniData.Id);
                     }
                 }
                 row.AddActionsCell("actions", actions);

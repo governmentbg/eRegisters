@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">@ViewBag.PageName </h4>
+                    <h4 class="page-title mb-0 font-size-18">@Resources.Content.ResourceManager.GetString("registerrecords_create_header") - @ViewBag.PageName </h4>
                 </div>
             </div>
         </div>
@@ -21,8 +21,25 @@
         <!-- Start right Content here -->
         <!-- ============================================================== -->
         <div class="breadcrumb">
-            <a href="~/Home/">Начало</a> /   <a href="~/Registers/">Регистри</a> /  <a href="~/RegisterRecords/Index/@ViewBag.Register">Вписване на обстоятелства</a> /  @ViewBag.PageName
+            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("registerrecords_edit_breadcrumb_start")</a> /
+            <a href="~/Registers/">@Resources.Content.ResourceManager.GetString("registerrecords_edit_breadcrumb_registers")</a> /
+            <a href="~/RegisterRecords/Index/@ViewBag.Register">@Resources.Content.ResourceManager.GetString("registerrecords_edit_breadcrumb_records")</a> /
+            @ViewBag.PageName
         </div>
+        @if (@ViewBag.State != null) { 
+        <div class="breadcrumb">
+            <h2> @Resources.Content.ResourceManager.GetString("registerrecords_edit_state") : @ViewBag.State </h2> <span> &nbsp; &nbsp; &nbsp;</span>
+            <div style="margin-left:70%">
+                @if (ViewBag.EndList != null)
+                {
+                    foreach (RegisterTransition rt in (ViewBag.EndList as IList<RegisterTransition>))
+                    {
+                        <input type="button" class="btn btn-primary" value="@rt.EndState.Name" onclick="location.href='@Url.Action("Edit", "RegisterRecords", new { id = ViewBag.ParentId , stateId = @rt.EndState.Id })'" />
+                    }
+                }
+            </div>
+        </div>
+        }
         <div class="main-content">
             <div class="page-content">
 
@@ -39,7 +56,11 @@
                 <link href="@Url.Content("~/dist/dynamic-form/css/chunk-vendors.css")" rel="stylesheet">
                 <script defer="defer" src="@Url.Content("~/dist/dynamic-form/js/chunk-vendors-legacy.js")" nomodule></script>
                 <script defer="defer" src="@Url.Content("~/dist/dynamic-form/js/app-legacy.js")" nomodule></script>
-
+                <script>
+                    function callChangefunc(val) {
+                        window.location.href = "/RegisterRecords/NextState?registerId=" + val;
+                    }
+                </script>
             </div>
             <!-- End Page-content -->
         </div>

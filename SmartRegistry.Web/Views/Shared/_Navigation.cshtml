@@ -11,9 +11,9 @@
                     <a href="@Url.Action("Index", "Home")" class="logo logo-dark" style="line-height: normal;">
                         <img src="~/Images/logo.svg" alt="" />
                         <div>
-                            <p class="mobile -dn">ИСЦИПР</p>
-                            <p style="font-weight: 500 !important;">Информационна система за централизирано <br>изграждане и поддържане на регистри</p>
-                            <span style="color:grey;">МИНИСТЕРСТВО НА ЕЛЕКТРОННОТО УПРАВЛЕНИЕ</span>
+                            <p class="mobile -dn">@Resources.Content.ResourceManager.GetString("site_head_iscipr")</p>
+                            <p style="font-weight: 500 !important;">@Resources.Content.ResourceManager.GetString("site_head_system_1") <br>@Resources.Content.ResourceManager.GetString("site_head_system_2")</p>
+                            <span style="color:grey;">@Resources.Content.ResourceManager.GetString("site_head_meu")</span>
                             @*<p class="mobile">ИСЦИПР</p>
                     <p class="desktop">Информационна система <br>за централизирано изграждане <br>и поддържане на регистри</p>*@
                         </div>
@@ -21,7 +21,7 @@
                 </div>
                 @*<input type="button" class="btn btn-success waves-effect waves-light" value="Назад!" onclick="history.back()">*@
 
-                <a href="#" class="menu-toggle"><i class="mdi mdi-menu"></i> Меню</a>
+            <a href="#" class="menu-toggle"><i class="mdi mdi-menu"></i> @Resources.Content.ResourceManager.GetString("navigation_menu_name")</a>
             </div>
         
          
@@ -32,24 +32,24 @@
                    <nav>
                        <ul>
                            <li>
-                               <span> Регистри </span>
+                               <span>  @Resources.Content.ResourceManager.GetString("navigation_menu_registers") </span>
                                <ul>
                                    @if (TempData["sm"] != null)
                                    {
                                        var smContext = (ISmartRegistryContext)TempData["sm"];
                                        if (smContext.CurrentUser.HasPermission(PermissionEnum.AccessInfoObjects))
                                        {
-                                           <li><a href="@Url.Action("Index", "UnifiedData")">Информационни обекти</a></li>
+                                           <li><a href="@Url.Action("Index", "UnifiedData")">@Resources.Content.ResourceManager.GetString("navigation_menu_unified_data")</a></li>
                                        }
                                    }
 
-                                   <li><a href="@Url.Action("Index", "Registers")">Регистър на регистрите</a></li>
-                                   <li><a href="@Url.Action("Structure","Registers")">Структура на регистър</a></li>
+                                   <li><a href="@Url.Action("Index", "Registers")">@Resources.Content.ResourceManager.GetString("navigation_menu_register_registers")</a></li>
+                                   <li><a href="@Url.Action("Structure","Registers")">@Resources.Content.ResourceManager.GetString("navigation_menu_structure")</a></li>
                                </ul>
                            </li>
 
                            <li>
-                               <span>Номенклатури</span>
+                               <span>@Resources.Content.ResourceManager.GetString("navigation_menu_nomenclature")</span>
                                <ul>
                                    @if (TempData["sm"] != null)
                                    {
@@ -57,12 +57,12 @@
 
                                        if (smContext.CurrentUser.HasPermission(PermissionEnum.AccessAdminBodies))
                                        {
-                                           <li><a href="@Url.Action("Index", "AdministrativeBodies")">Административни органи</a></li>
+                                           <li><a href="@Url.Action("Index", "AdministrativeBodies")">@Resources.Content.ResourceManager.GetString("navigation_menu_adminbody")</a></li>
                                        }
                                        if (smContext.CurrentUser.HasPermission(PermissionEnum.ManageUsers))
                                        {
-                                           <li><a href="@Url.Action("Index", "UserGroups")">Потребителски групи</a></li>
-                                           <li><a href="@Url.Action("Index","Users")">Потребители</a></li>
+                                           <li><a href="@Url.Action("Index", "UserGroups")">@Resources.Content.ResourceManager.GetString("navigation_menu_usergroup")</a></li>
+                                           <li><a href="@Url.Action("Index","Users")">@Resources.Content.ResourceManager.GetString("navigation_menu_users")</a></li>
 
                                        }
                                    }
@@ -74,16 +74,16 @@
                                var smContext = (ISmartRegistryContext)TempData["sm"];
 
                                    <li>
-                                       <span>Системни</span>
+                                       <span>@Resources.Content.ResourceManager.GetString("navigation_menu_system")</span>
                                        <ul>
                                            @if (smContext.CurrentUser.HasPermission(PermissionEnum.AccessJournalLog))
                                            {
-                                               <li><a href="@Url.Action("Index", "SystemLog")">Системен журнал лог</a></li>
+                                               <li><a href="@Url.Action("Index", "SystemLog")">@Resources.Content.ResourceManager.GetString("navigation_menu_sytemlog")</a></li>
                                            }
-                                           <li><a href="@Url.Action("Index", "Area")">Теми</a></li>
-                                           @if (smContext.CurrentUser.IsGlobalAdmin || smContext.CurrentUser.IsLocalAdminFor(smContext.CurrentAdminBody))
+                                           <li><a href="@Url.Action("Index", "Area")">@Resources.Content.ResourceManager.GetString("navigation_menu_area")</a></li>
+                                           @if (smContext.CurrentUser.HasPermission(PermissionEnum.AccessImportData))
                                            {
-                                               <li><a href="@Url.Action("Index", "Import")">Импорт Данни</a></li>
+                                               <li><a href="@Url.Action("Index", "Import")">@Resources.Content.ResourceManager.GetString("navigation_menu_importdata")</a></li>
                                            }
                                        </ul>
                                    </li> 

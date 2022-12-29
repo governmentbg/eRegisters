@@ -12,14 +12,14 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 class="page-title mb-0 font-size-18">@ViewBag.Title</h4>
+                    <h4 class="page-title mb-0 font-size-18"> @ViewBag.Title</h4>
                     <div class="page-title-right">
                         @if (ViewBag.Type != "structure")
                         {
-                            <a href="@Url.Action("Create", "Registers")" class="btn btn-success waves-effect waves-light">
+                        <a href="@Url.Action("Create", "Registers")" class="btn btn-success waves-effect waves-light">
 
-                                <i class="mdi mdi-plus-box-multiple-outline"></i>Вписване нов регистър
-                            </a>
+                            <i class="mdi mdi-plus-box-multiple-outline"></i> @Resources.Content.ResourceManager.GetString("register_index_create_btn")
+                        </a>
                         }
                     </div>
                 </div>
@@ -31,7 +31,7 @@
         <!-- ============================================================== -->
       
         <div class="breadcrumb">
-            <a href="~/Home/">Начало</a> / @ViewBag.Title
+            <a href="~/Home/">@Resources.Content.ResourceManager.GetString("register_index_breadcrumb_start")</a> / @ViewBag.Title
         </div>
         <div class="main-content">
             <div class="page-content">

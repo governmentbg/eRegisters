@@ -68,21 +68,24 @@ namespace SmartRegistry.Web.Controllers
         public ActionResult Create()
         {
             ViewBag.GetControlsUrl = Url.Action("UniDataControls", "UnifiedData");
-            ViewBag.PageName = "Създаване на информационен обект";
+           // ViewBag.PageName = "Създаване на информационен обект";
+            ViewBag.PageName = "unifieddata_create_unified_header";
             return View("Edit");
         }
 
         public ActionResult CreateReferential()
         {
             ViewBag.GetControlsUrl = Url.Action("UniDataReferentialControls", "UnifiedData");
-            ViewBag.PageName = "Създаване на съставен обект";
+            //  ViewBag.PageName = "Създаване на съставен обект";
+            ViewBag.PageName = "unifieddata_create_referential_header";
             return View("EditReferential");
         }
 
         public ActionResult CreateComposite()
         {
             ViewBag.GetControlsUrl = Url.Action("UniDataCompositeControls", "UnifiedData");
-            ViewBag.PageName = "Създаване на съставен обект";
+          //  ViewBag.PageName = "Създаване на съставен обект";
+            ViewBag.PageName = "unifieddata_create_composite_header";
             return View("EditComposite");
         }
 
@@ -91,7 +94,8 @@ namespace SmartRegistry.Web.Controllers
         public ActionResult EditReferential(int id)
         {
             ViewBag.GetControlsUrl = Url.Action("UniDataReferentialControls", "UnifiedData", new { uniDataId = id });
-            ViewBag.PageName = "Редакция на референтен обект";
+           // ViewBag.PageName = "Редакция на референтен обект";
+            ViewBag.PageName = "unifieddata_edit_referential_header";
 
             return View("EditReferential");
         }
@@ -101,7 +105,8 @@ namespace SmartRegistry.Web.Controllers
         public ActionResult EditComposite(int id)
         {
             ViewBag.GetControlsUrl = Url.Action("UniDataCompositeControls", "UnifiedData", new { uniDataId = id });
-            ViewBag.PageName = "Редакция на съставен обект";
+           // ViewBag.PageName = "Редакция на съставен обект";
+            ViewBag.PageName = "unifieddata_edit_composite_header";
 
             return View("EditComposite");
         }
@@ -111,7 +116,8 @@ namespace SmartRegistry.Web.Controllers
         public ActionResult Edit(int id)
         {
             ViewBag.GetControlsUrl = Url.Action("UniDataControls", "UnifiedData", new { uniDataId = id });
-            ViewBag.PageName = "Редакция на информационен обект";
+            // ViewBag.PageName = "Редакция на информационен обект";
+            ViewBag.PageName = "unifieddata_edit_unified_header";
 
             return View("Edit");
         }

@@ -21,11 +21,5 @@ namespace SmartRegistry.DataAccess
 
         }
 
-
-        public IList<UserGroupRight> GetAll()
-        {
-            var result = Session.Query<UserGroupRight>().ToList(); 
-            return result;
-        }
     }
 }

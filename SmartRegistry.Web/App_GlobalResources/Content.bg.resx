@@ -123,6 +123,27 @@
   <data name="AreaMunicipalAdministration" xml:space="preserve">
     <value>Районна общинска администрация</value>
   </data>
+  <data name="area_add_btn" xml:space="preserve">
+    <value>Добави</value>
+  </data>
+  <data name="area_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="area_create_breadcrumb_areas" xml:space="preserve">
+    <value>Теми</value>
+  </data>
+  <data name="area_create_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="area_create_header" xml:space="preserve">
+    <value>Създаване на тема</value>
+  </data>
+  <data name="area_edit_header" xml:space="preserve">
+    <value>Редакция на тема</value>
+  </data>
+  <data name="area_index_header" xml:space="preserve">
+    <value>Теми</value>
+  </data>
   <data name="Council" xml:space="preserve">
     <value>Съвет</value>
   </data>
@@ -135,14 +156,137 @@
   <data name="ExecutivePowerAdministrativeStructure" xml:space="preserve">
     <value>Изпълнителна власт Административна структура</value>
   </data>
+  <data name="home_index_adminbody" xml:space="preserve">
+    <value>Административни органи</value>
+  </data>
+  <data name="home_index_information_objects" xml:space="preserve">
+    <value>Информационни обекти</value>
+  </data>
+  <data name="home_index_registers" xml:space="preserve">
+    <value>Регистър на Регистрите</value>
+  </data>
+  <data name="home_index_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="import_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="import_create_breadcrumb_importdata" xml:space="preserve">
+    <value>Импортиране на данни</value>
+  </data>
+  <data name="import_create_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="import_create_generate_csv" xml:space="preserve">
+    <value>Генерирай CSV</value>
+  </data>
+  <data name="import_create_generate_csv_data" xml:space="preserve">
+    <value>Генерирай CSV с данни</value>
+  </data>
+  <data name="import_create_header" xml:space="preserve">
+    <value>Импортиране на данни</value>
+  </data>
+  <data name="import_create_pick_register" xml:space="preserve">
+    <value>Изберете регистър</value>
+  </data>
+  <data name="import_create_upload_csv_btn" xml:space="preserve">
+    <value>Качи CSV</value>
+  </data>
+  <data name="import_create_upload_csv_header" xml:space="preserve">
+    <value>Качване на CSV</value>
+  </data>
+  <data name="import_index_add_btn" xml:space="preserve">
+    <value>Добави</value>
+  </data>
+  <data name="import_index_header" xml:space="preserve">
+    <value>Импортване на данни</value>
+  </data>
+  <data name="import_review_breadcrumb_importdata" xml:space="preserve">
+    <value>Импортиране на данни</value>
+  </data>
+  <data name="import_review_breadcrumb_review" xml:space="preserve">
+    <value>Преглед</value>
+  </data>
+  <data name="import_review_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="import_review_header" xml:space="preserve">
+    <value>Импортване на данни</value>
+  </data>
+  <data name="import_review_import_btn" xml:space="preserve">
+    <value>Импортирай</value>
+  </data>
+  <data name="import_review_import_data_btn" xml:space="preserve">
+    <value>Импортирай със зануляване</value>
+  </data>
+  <data name="import_review_reupload_btn" xml:space="preserve">
+    <value>Качи файл отново</value>
+  </data>
+  <data name="import_review_upload_csv" xml:space="preserve">
+    <value>Качване на CSV</value>
+  </data>
+  <data name="import_review_upload_csv_btn" xml:space="preserve">
+    <value>Качи CSV</value>
+  </data>
+  <data name="import_review_validate_btn" xml:space="preserve">
+    <value>Валидирай</value>
+  </data>
+  <data name="import_review_validation_error" xml:space="preserve">
+    <value>Грешки при валидация</value>
+  </data>
   <data name="Ministry" xml:space="preserve">
     <value>Министерство</value>
   </data>
   <data name="MunicipalAdministration" xml:space="preserve">
     <value>Общинска Администрация</value>
   </data>
+  <data name="navigation_menu_adminbody" xml:space="preserve">
+    <value>Административни органи</value>
+  </data>
+  <data name="navigation_menu_area" xml:space="preserve">
+    <value>Теми</value>
+  </data>
+  <data name="navigation_menu_importdata" xml:space="preserve">
+    <value>Импорт Данни</value>
+  </data>
+  <data name="navigation_menu_name" xml:space="preserve">
+    <value>Меню</value>
+  </data>
+  <data name="navigation_menu_nomenclature" xml:space="preserve">
+    <value>Номенклатури</value>
+  </data>
+  <data name="navigation_menu_registers" xml:space="preserve">
+    <value>Регистри</value>
+  </data>
+  <data name="navigation_menu_register_registers" xml:space="preserve">
+    <value>Регистър на регистрите</value>
+  </data>
+  <data name="navigation_menu_structure" xml:space="preserve">
+    <value>Структура на регистър</value>
+  </data>
+  <data name="navigation_menu_system" xml:space="preserve">
+    <value>Системни</value>
+  </data>
+  <data name="navigation_menu_sytemlog" xml:space="preserve">
+    <value>Системен журнал лог</value>
+  </data>
+  <data name="navigation_menu_unified_data" xml:space="preserve">
+    <value>Информационни обекти</value>
+  </data>
+  <data name="navigation_menu_usergroup" xml:space="preserve">
+    <value>Потребителски групи</value>
+  </data>
+  <data name="navigation_menu_users" xml:space="preserve">
+    <value>Потребители</value>
+  </data>
   <data name="RegionalAdminisration" xml:space="preserve">
     <value>Регионална Администрация</value>
+  </data>
+  <data name="register_index_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="register_index_create_btn" xml:space="preserve">
+    <value>Вписване нов регистър</value>
   </data>
   <data name="SpecializedLocalAdministration" xml:space="preserve">
     <value>Специализирана местна администрация</value>
@@ -156,7 +300,358 @@
   <data name="StatePublicConsultativeCommission" xml:space="preserve">
     <value>Държавна обществена консултативна комисия</value>
   </data>
+  <data name="syerstemlog_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="systemlog_index_export_btn" xml:space="preserve">
+    <value>Експорт</value>
+  </data>
+  <data name="systemlog_index_header" xml:space="preserve">
+    <value>Системен Журнал Лог</value>
+  </data>
+  <data name="unifieddata_create_composite_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="unifieddata_create_composite_breadcrumb_unifiedlist" xml:space="preserve">
+    <value>Списък информационни обекти</value>
+  </data>
+  <data name="unifieddata_create_composite_header" xml:space="preserve">
+    <value>Създаване на съставен обект</value>
+  </data>
+  <data name="unifieddata_create_referential_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="unifieddata_create_referential_breadcrumb_unifiedlist" xml:space="preserve">
+    <value>Списък информационни обекти</value>
+  </data>
+  <data name="unifieddata_create_referential_header" xml:space="preserve">
+    <value>Създаване на съставен обект</value>
+  </data>
+  <data name="unifieddata_create_unified_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="unifieddata_create_unified_breadcrumb_unifiedlist" xml:space="preserve">
+    <value>Списък информационни обекти</value>
+  </data>
+  <data name="unifieddata_create_unified_header" xml:space="preserve">
+    <value>Създаване на информационен обект</value>
+  </data>
+  <data name="unifieddata_edit_composite_header" xml:space="preserve">
+    <value>Редакция на съставен обект</value>
+  </data>
+  <data name="unifieddata_edit_referential_header" xml:space="preserve">
+    <value>Промяна на съставен обект</value>
+  </data>
+  <data name="unifieddata_edit_unified_header" xml:space="preserve">
+    <value>Редакция на информационен обект</value>
+  </data>
+  <data name="unifieddata_index_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="unifieddata_index_breadcrumb_unifiedlist" xml:space="preserve">
+    <value>Списък информационни обекти</value>
+  </data>
+  <data name="unifieddata_index_create_btn" xml:space="preserve">
+    <value>Създай обект</value>
+  </data>
+  <data name="unifieddata_index_create_composite" xml:space="preserve">
+    <value>Създай съставен обект</value>
+  </data>
+  <data name="unifieddata_index_create_referential" xml:space="preserve">
+    <value>Създай референтен обект</value>
+  </data>
+  <data name="unifieddata_index_create_unified" xml:space="preserve">
+    <value>Създай информационен обект</value>
+  </data>
+  <data name="unifieddata_index_header" xml:space="preserve">
+    <value>Списък информационни обекти</value>
+  </data>
   <data name="Unknown" xml:space="preserve">
     <value>Unknown</value>
+  </data>
+  <data name="usergroups_create_header" xml:space="preserve">
+    <value>Създаване на потребителска група</value>
+  </data>
+  <data name="usergroups_edit_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="usergroups_edit_breadcrumb_usergroups" xml:space="preserve">
+    <value>Потребителски групи</value>
+  </data>
+  <data name="usergroups_edit_header" xml:space="preserve">
+    <value>Редактиране на потребителска група</value>
+  </data>
+  <data name="usergroups_index_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="usergroups_index_breadcrumb_usergroups" xml:space="preserve">
+    <value>Потребителски групи</value>
+  </data>
+  <data name="usergroups_index_create_btn" xml:space="preserve">
+    <value>Добави нова потребителска група</value>
+  </data>
+  <data name="usergroups_index_header" xml:space="preserve">
+    <value>Потребителски групи</value>
+  </data>
+  <data name="users_create_header" xml:space="preserve">
+    <value>Създаване на потребител</value>
+  </data>
+  <data name="users_edit_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="users_edit_breadcrumb_users" xml:space="preserve">
+    <value>Потребители</value>
+  </data>
+  <data name="users_edit_header" xml:space="preserve">
+    <value>Редакция на потребител</value>
+  </data>
+  <data name="users_index_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="users_index_breadcrumb_users" xml:space="preserve">
+    <value>Потребители</value>
+  </data>
+  <data name="users_index_create_btn" xml:space="preserve">
+    <value>Добави нов потребител</value>
+  </data>
+  <data name="users_index_header" xml:space="preserve">
+    <value>Потребители</value>
+  </data>
+  <data name="users_reset_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="users_reset_breadcrumb_users" xml:space="preserve">
+    <value>Потребители</value>
+  </data>
+  <data name="users_reset_email" xml:space="preserve">
+    <value>Имейл</value>
+  </data>
+  <data name="users_reset_header" xml:space="preserve">
+    <value>Генерирай линк за потвърждение на акаунта</value>
+  </data>
+  <data name="users_reset_name" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="users_reset_send_btn" xml:space="preserve">
+    <value>Изпрати имейл</value>
+  </data>
+  <data name="registerrecords_create_header" xml:space="preserve">
+    <value>Вписване на обстоятелства</value>
+  </data>
+  <data name="registerrecords_edit_breadcrumb_records" xml:space="preserve">
+    <value>Вписване на обстоятелства</value>
+  </data>
+  <data name="registerrecords_edit_breadcrumb_registers" xml:space="preserve">
+    <value>Регистри</value>
+  </data>
+  <data name="registerrecords_edit_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="registerrecords_edit_state" xml:space="preserve">
+    <value>Състояние</value>
+  </data>
+  <data name="registerrecords_index_breadcrumb_registers" xml:space="preserve">
+    <value>Регистри</value>
+  </data>
+  <data name="registerrecords_index_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="registerrecords_index_entry_btn" xml:space="preserve">
+    <value>Вписване на обстоятелства</value>
+  </data>
+  <data name="registerrecords_index_entry_btn_list" xml:space="preserve">
+    <value>Вписване</value>
+  </data>
+  <data name="registerrecords_index_header" xml:space="preserve">
+    <value>Вписване </value>
+  </data>
+  <data name="registerstates_create_header" xml:space="preserve">
+    <value>Създаване на състояние</value>
+  </data>
+  <data name="registerstates_edit_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="registerstates_edit_breadcrumb_states" xml:space="preserve">
+    <value>Състояния на бизнес процес</value>
+  </data>
+  <data name="registerstates_edit_breadcrumb_structure" xml:space="preserve">
+    <value>Структура на регистър</value>
+  </data>
+  <data name="registerstates_edit_header" xml:space="preserve">
+    <value>Промяна на състояние</value>
+  </data>
+  <data name="registerstates_index_add_btn" xml:space="preserve">
+    <value>Добави състояние</value>
+  </data>
+  <data name="registerstates_index_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="registerstates_index_breadcrumb_structure" xml:space="preserve">
+    <value>Структура на регистър</value>
+  </data>
+  <data name="registerstates_index_header" xml:space="preserve">
+    <value>Състояния на бизнес процес -</value>
+  </data>
+  <data name="registers_create_header" xml:space="preserve">
+    <value>Вписване на регистър</value>
+  </data>
+  <data name="registers_editstructure_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="registers_editstructure_breadcrumb_structue" xml:space="preserve">
+    <value>Структура на регистър</value>
+  </data>
+  <data name="registers_editstructure_header" xml:space="preserve">
+    <value>Редакция на структура регистър - </value>
+  </data>
+  <data name="registers_edit_breadcrumb_registers" xml:space="preserve">
+    <value>Регистри</value>
+  </data>
+  <data name="registers_edit_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="registers_edit_header" xml:space="preserve">
+    <value>Редакция на регистър</value>
+  </data>
+  <data name="registers_index_header" xml:space="preserve">
+    <value>Регистър на регистрите</value>
+  </data>
+  <data name="registers_rights_breadcrumb_registry" xml:space="preserve">
+    <value>Регистри</value>
+  </data>
+  <data name="registers_rights_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="registers_rights_header" xml:space="preserve">
+    <value>Права за регистър - </value>
+  </data>
+  <data name="registers_structure_index_header" xml:space="preserve">
+    <value>Структура на регистър</value>
+  </data>
+  <data name="registertransition_create_header" xml:space="preserve">
+    <value>Създаване на бизнес процес</value>
+  </data>
+  <data name="registertransition_edit_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="registertransition_edit_breadcrumb_structure" xml:space="preserve">
+    <value>Структура на регистър</value>
+  </data>
+  <data name="registertransition_edit_breadcrumb_transitions" xml:space="preserve">
+    <value>Моделиране на бизнес процес</value>
+  </data>
+  <data name="registertransition_edit_header" xml:space="preserve">
+    <value>Промяна на бизнес процес</value>
+  </data>
+  <data name="registertransition_index_add_btn" xml:space="preserve">
+    <value>Добави бизнес процес</value>
+  </data>
+  <data name="registertransition_index_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="registertransition_index_breadcrumb_structure" xml:space="preserve">
+    <value>Структура на регистър</value>
+  </data>
+  <data name="registertransition_index_header" xml:space="preserve">
+    <value>Моделиране на бизнес процес</value>
+  </data>
+  <data name="edit_hint" xml:space="preserve">
+    <value>Редакция</value>
+  </data>
+  <data name="webservices_edit_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="webservices_edit_breadcrumb_structure" xml:space="preserve">
+    <value>Структура на регистри</value>
+  </data>
+  <data name="webservices_edit_header" xml:space="preserve">
+    <value>Редактиране на уеб услуга</value>
+  </data>
+  <data name="webservices_edit_managment_header" xml:space="preserve">
+    <value>Създаване на уеб услуга за вписване/промяна/заличаване</value>
+  </data>
+  <data name="webservices_edit_report_header" xml:space="preserve">
+    <value>Създаване на уеб услуга за удостоверяване</value>
+  </data>
+  <data name="webservices_list_breadcrumb_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="webservices_list_breadcrumb_structure" xml:space="preserve">
+    <value>Структура на регистри</value>
+  </data>
+  <data name="webservices_list_create_btn" xml:space="preserve">
+    <value>Създай Уеб услуга</value>
+  </data>
+  <data name="webservices_list_create_entryservice" xml:space="preserve">
+    <value>Създай уеб услуга за вписване/промяна/заличаване</value>
+  </data>
+  <data name="webservices_list_create_validateservice" xml:space="preserve">
+    <value>Създай уеб услуга за удостоверяване</value>
+  </data>
+  <data name="webservices_list_header" xml:space="preserve">
+    <value>Уеб услуги за регистър :</value>
+  </data>
+  <data name="import_file_error" xml:space="preserve">
+    <value>Възникна грешка с качването на файла!</value>
+  </data>
+  <data name="import_file_filename" xml:space="preserve">
+    <value>Име на файл:</value>
+  </data>
+  <data name="import_file_status" xml:space="preserve">
+    <value>Статус: </value>
+  </data>
+  <data name="import_file_success" xml:space="preserve">
+    <value>Файлът е качен успешно!</value>
+  </data>
+  <data name="import_file_upload_by" xml:space="preserve">
+    <value>Качено от: </value>
+  </data>
+  <data name="import_file_upload_date" xml:space="preserve">
+    <value>Файл качен на: </value>
+  </data>
+  <data name="import_status_proccessed" xml:space="preserve">
+    <value>Обработен</value>
+  </data>
+  <data name="import_status_uploaded_file" xml:space="preserve">
+    <value>Качен файл</value>
+  </data>
+  <data name="import_status_validated" xml:space="preserve">
+    <value>Валидиран</value>
+  </data>
+  <data name="import_status_validation_error" xml:space="preserve">
+    <value>С грешка</value>
+  </data>
+  <data name="base_namespace" xml:space="preserve">
+    <value>Наименование</value>
+  </data>
+  <data name="base_option" xml:space="preserve">
+    <value>Опции</value>
+  </data>
+  <data name="base_status" xml:space="preserve">
+    <value>Статус</value>
+  </data>
+  <data name="base_status_active" xml:space="preserve">
+    <value>Активни</value>
+  </data>
+  <data name="base_status_all" xml:space="preserve">
+    <value>Всички</value>
+  </data>
+  <data name="base_status_inactive" xml:space="preserve">
+    <value>Неактивни</value>
+  </data>
+  <data name="base_type" xml:space="preserve">
+    <value>Тип</value>
+  </data>
+  <data name="site_head_iscipr" xml:space="preserve">
+    <value>ИСЦИПР</value>
+  </data>
+  <data name="site_head_meu" xml:space="preserve">
+    <value>МИНИСТЕРСТВО НА ЕЛЕКТРОННОТО УПРАВЛЕНИЕ</value>
+  </data>
+  <data name="site_head_system_1" xml:space="preserve">
+    <value>ИНФОРМАЦИОННА СИСТЕМА ЗА ЦЕНТРАЛИЗИРАНО</value>
+  </data>
+  <data name="site_head_system_2" xml:space="preserve">
+    <value>ИЗГРАЖДАНЕ И ПОДДЪРЖАНЕ НА РЕГИСТРИ</value>
   </data>
 </root>

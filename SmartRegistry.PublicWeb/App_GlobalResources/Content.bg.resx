@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="base_start" xml:space="preserve">
+    <value>Начало</value>
+  </data>
+  <data name="footer_access" xml:space="preserve">
+    <value>Достъпност</value>
+  </data>
+  <data name="footer_contact" xml:space="preserve">
+    <value>Контакти</value>
+  </data>
+  <data name="footer_stats" xml:space="preserve">
+    <value>Статистика</value>
+  </data>
+  <data name="footer_terms" xml:space="preserve">
+    <value>Условия за ползване</value>
+  </data>
+  <data name="head_meu" xml:space="preserve">
+    <value>МИНИСТЕРСТВО НА ЕЛЕКТРОННОТО УПРАВЛЕНИЕ</value>
+  </data>
+  <data name="head_system_1" xml:space="preserve">
+    <value>Информационна система за централизирано</value>
+  </data>
+  <data name="head_system_2" xml:space="preserve">
+    <value>изграждане и поддържане на регистри</value>
+  </data>
+  <data name="home_index_access" xml:space="preserve">
+    <value>Достъпност до данните</value>
+  </data>
+  <data name="home_index_list_header" xml:space="preserve">
+    <value>Електронни услуги и информация за гражданите и бизнеса</value>
+  </data>
+  <data name="home_index_organization" xml:space="preserve">
+    <value>Организации</value>
+  </data>
+  <data name="home_index_registers" xml:space="preserve">
+    <value>Набори от данни</value>
+  </data>
+  <data name="menu_agency" xml:space="preserve">
+    <value>За агенцията</value>
+  </data>
+  <data name="menu_contact" xml:space="preserve">
+    <value>За Контакти</value>
+  </data>
+  <data name="menu_registers" xml:space="preserve">
+    <value>Регистри</value>
+  </data>
+  <data name="site_menu" xml:space="preserve">
+    <value>Меню</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>Лицензиране</value>
+  </data>
+  <data name="Авторско право и сродните му права" xml:space="preserve">
+    <value>Авторско право и сродните му права</value>
+  </data>
+  <data name="Алтернативни енергийни източници" xml:space="preserve">
+    <value>Алтернативни енергийни източници</value>
+  </data>
+  <data name="Архивни документи" xml:space="preserve">
+    <value>Архивни документи</value>
+  </data>
+  <data name="Асистирана репродукция" xml:space="preserve">
+    <value>Асистирана репродукция</value>
+  </data>
+  <data name="Безработица и насърчаване на заетостта" xml:space="preserve">
+    <value>Безработица и насърчаване на заетостта</value>
+  </data>
+  <data name="Безработица, заетост, осигуряване, социални помощи" xml:space="preserve">
+    <value>Безработица, заетост, осигуряване, социални помощи</value>
+  </data>
+  <data name="Бизнес и предприемачи" xml:space="preserve">
+    <value>Бизнес и предприемачи</value>
+  </data>
+  <data name="Билки и лечебни растения" xml:space="preserve">
+    <value>Билки и лечебни растения</value>
+  </data>
+  <data name="Български граждани в чужбина" xml:space="preserve">
+    <value>Български граждани в чужбина</value>
+  </data>
+  <data name="Българско гражданство" xml:space="preserve">
+    <value>Българско гражданство</value>
+  </data>
+  <data name="Ветеринарна медицина" xml:space="preserve">
+    <value>Ветеринарна медицина</value>
+  </data>
+  <data name="Ветеринарна медицина и контрол" xml:space="preserve">
+    <value>Ветеринарна медицина и контрол</value>
+  </data>
+  <data name="Вещни права. Отчуждаване, обезщетяване" xml:space="preserve">
+    <value>Вещни права. Отчуждаване, обезщетяване</value>
+  </data>
+  <data name="Води" xml:space="preserve">
+    <value>Води</value>
+  </data>
+  <data name="Водоснабдяване и канализационни услуги" xml:space="preserve">
+    <value>Водоснабдяване и канализационни услуги</value>
+  </data>
+  <data name="Гарантирани вземания при несъстоятелност на работодателя" xml:space="preserve">
+    <value>Гарантирани вземания при несъстоятелност на работодателя</value>
+  </data>
+  <data name="Геодезически и картографски фонд - карти, планове и координати" xml:space="preserve">
+    <value>Геодезически и картографски фонд - карти, планове и координати</value>
+  </data>
+  <data name="Гласуване, нотариална дейност, съдебни производства, лишаване от права" xml:space="preserve">
+    <value>Гласуване, нотариална дейност, съдебни производства, лишаване от права</value>
+  </data>
+  <data name="Глоба по ФИШ, наказателни постановления" xml:space="preserve">
+    <value>Глоба по ФИШ, наказателни постановления</value>
+  </data>
+  <data name="Горски фонд и ловно стопанство" xml:space="preserve">
+    <value>Горски фонд и ловно стопанство</value>
+  </data>
+  <data name="Граждани на други държави пребиваващи в България" xml:space="preserve">
+    <value>Граждани на други държави пребиваващи в България</value>
+  </data>
+  <data name="Граждански права и правен ред" xml:space="preserve">
+    <value>Граждански права и правен ред</value>
+  </data>
+  <data name="Гражданско състояние, самоличност, семейство" xml:space="preserve">
+    <value>Гражданско състояние, самоличност, семейство</value>
+  </data>
+  <data name="Данъци и осигурителни плащания" xml:space="preserve">
+    <value>Данъци и осигурителни плащания</value>
+  </data>
+  <data name="Данъци и такси за граждани" xml:space="preserve">
+    <value>Данъци и такси за граждани</value>
+  </data>
+  <data name="Данъци, социално и здравно осигуряване" xml:space="preserve">
+    <value>Данъци, социално и здравно осигуряване</value>
+  </data>
+  <data name="Дейности в областта на културата, културни ценности и културно наследство" xml:space="preserve">
+    <value>Дейности в областта на културата, културни ценности и културно наследство</value>
+  </data>
+  <data name="Дейности свързани с културни ценности" xml:space="preserve">
+    <value>Дейности свързани с културни ценности</value>
+  </data>
+  <data name="Дейности свързани със спортни обекти" xml:space="preserve">
+    <value>Дейности свързани със спортни обекти</value>
+  </data>
+  <data name="Детски градини, училище, университети, професионална квалификация" xml:space="preserve">
+    <value>Детски градини, училище, университети, професионална квалификация</value>
+  </data>
+  <data name="Детски градини, ясли и предучилищна подготoвка" xml:space="preserve">
+    <value>Детски градини, ясли и предучилищна подготoвка</value>
+  </data>
+  <data name="Деца в риск" xml:space="preserve">
+    <value>Деца в риск</value>
+  </data>
+  <data name="Диви животни, растителни и защитени видове" xml:space="preserve">
+    <value>Диви животни, растителни и защитени видове</value>
+  </data>
+  <data name="Достъп до данни" xml:space="preserve">
+    <value>Достъп до данни</value>
+  </data>
+  <data name="Достъпност, публичност и прозрачност" xml:space="preserve">
+    <value>Достъпност, публичност и прозрачност</value>
+  </data>
+  <data name="Други" xml:space="preserve">
+    <value>Други</value>
+  </data>
+  <data name="Държавен резерв и военновременни запаси" xml:space="preserve">
+    <value>Държавен резерв и военновременни запаси</value>
+  </data>
+  <data name="Държавна и общинска собственост" xml:space="preserve">
+    <value>Държавна и общинска собственост</value>
+  </data>
+  <data name="Екология и околна среда" xml:space="preserve">
+    <value>Екология и околна среда</value>
+  </data>
+  <data name="Електронни съобщения" xml:space="preserve">
+    <value>Електронни съобщения</value>
+  </data>
+  <data name="Електронни удостоверителни услуги" xml:space="preserve">
+    <value>Електронни удостоверителни услуги</value>
+  </data>
+  <data name="Електронно съобщителни мрежи" xml:space="preserve">
+    <value>Електронно съобщителни мрежи</value>
+  </data>
+  <data name="Енергетика" xml:space="preserve">
+    <value>Енергетика</value>
+  </data>
+  <data name="Етажна собственост" xml:space="preserve">
+    <value>Етажна собственост</value>
+  </data>
+  <data name="Животновъдство" xml:space="preserve">
+    <value>Животновъдство</value>
+  </data>
+  <data name="Започване, извършване и приключване на стопанска дейност" xml:space="preserve">
+    <value>Започване, извършване и приключване на стопанска дейност</value>
+  </data>
+  <data name="Защитени територии и видове, контрол на замърсяването" xml:space="preserve">
+    <value>Защитени територии и видове, контрол на замърсяването</value>
+  </data>
+  <data name="Здравен контрол" xml:space="preserve">
+    <value>Здравен контрол</value>
+  </data>
+  <data name="Здравеопазване и здравно осигуряване" xml:space="preserve">
+    <value>Здравеопазване и здравно осигуряване</value>
+  </data>
+  <data name="Здравеопазване, здравно осигуряване, здравословни и безопасни условия на труд" xml:space="preserve">
+    <value>Здравеопазване, здравно осигуряване, здравословни и безопасни условия на труд</value>
+  </data>
+  <data name="Зелена система - растителност и озеленяване" xml:space="preserve">
+    <value>Зелена система - растителност и озеленяване</value>
+  </data>
+  <data name="Земеделие" xml:space="preserve">
+    <value>Земеделие</value>
+  </data>
+  <data name="Земеделски дейности, храни, държавен санитарен контрол" xml:space="preserve">
+    <value>Земеделски дейности, храни, държавен санитарен контрол</value>
+  </data>
+  <data name="Издаване на документи на чуждестранни граждани, пребиваващи в България" xml:space="preserve">
+    <value>Издаване на документи на чуждестранни граждани, пребиваващи в България</value>
+  </data>
+  <data name="Издаване на Персонален идентификационен код (ПИК) и Идентификационен код на осигурителя (ИКО)" xml:space="preserve">
+    <value>Издаване на Персонален идентификационен код (ПИК) и Идентификационен код на осигурителя (ИКО)</value>
+  </data>
+  <data name="Измервания и оценки на въздействия върху околната среда" xml:space="preserve">
+    <value>Измервания и оценки на въздействия върху околната среда</value>
+  </data>
+  <data name="Име, адресна регистрация, документи за самоличност" xml:space="preserve">
+    <value>Име, адресна регистрация, документи за самоличност</value>
+  </data>
+  <data name="Имоти, жилища и комунални услуги" xml:space="preserve">
+    <value>Имоти, жилища и комунални услуги</value>
+  </data>
+  <data name="Инвестиционни проекти и концесии" xml:space="preserve">
+    <value>Инвестиционни проекти и концесии</value>
+  </data>
+  <data name="Инвестиционно проектиране и строителство" xml:space="preserve">
+    <value>Инвестиционно проектиране и строителство</value>
+  </data>
+  <data name="Инвестиционно проектиране, строителство, геодезия" xml:space="preserve">
+    <value>Инвестиционно проектиране, строителство, геодезия</value>
+  </data>
+  <data name="Информационни технологии и съобщения" xml:space="preserve">
+    <value>Информационни технологии и съобщения</value>
+  </data>
+  <data name="Кадастрални дейности" xml:space="preserve">
+    <value>Кадастрални дейности</value>
+  </data>
+  <data name="Колежи и университети" xml:space="preserve">
+    <value>Колежи и университети</value>
+  </data>
+  <data name="Контрол на замърсяването" xml:space="preserve">
+    <value>Контрол на замърсяването</value>
+  </data>
+  <data name="Корекции, заверки, удостоверения и справки, касаещи актове по гражданско състояние" xml:space="preserve">
+    <value>Корекции, заверки, удостоверения и справки, касаещи актове по гражданско състояние</value>
+  </data>
+  <data name="Култура и културно наследство" xml:space="preserve">
+    <value>Култура и културно наследство</value>
+  </data>
+  <data name="Лекарствени продукти и медицински изделия" xml:space="preserve">
+    <value>Лекарствени продукти и медицински изделия</value>
+  </data>
+  <data name="Лечебни заведения" xml:space="preserve">
+    <value>Лечебни заведения</value>
+  </data>
+  <data name="Лечебни заведения, лекарства, медици, осигурителни права" xml:space="preserve">
+    <value>Лечебни заведения, лекарства, медици, осигурителни права</value>
+  </data>
+  <data name="Лица и организации в областта на културата" xml:space="preserve">
+    <value>Лица и организации в областта на културата</value>
+  </data>
+  <data name="Лицензиране" xml:space="preserve">
+    <value>Лицензиране</value>
+  </data>
+  <data name="Лозарство и производство на вино" xml:space="preserve">
+    <value>Лозарство и производство на вино</value>
+  </data>
+  <data name="Местни данъци и такси" xml:space="preserve">
+    <value>Местни данъци и такси</value>
+  </data>
+  <data name="Митнически режими и разрешителни. Внос, износ, спедиция" xml:space="preserve">
+    <value>Митнически режими и разрешителни. Внос, износ, спедиция</value>
+  </data>
+  <data name="НАТО сертификации, държавен резерв и военновременни запаси" xml:space="preserve">
+    <value>НАТО сертификации, държавен резерв и военновременни запаси</value>
+  </data>
+  <data name="Неконвенционални методи за благоприятстване на здравето" xml:space="preserve">
+    <value>Неконвенционални методи за благоприятстване на здравето</value>
+  </data>
+  <data name="Необходими документи при пътуване, пребиваване" xml:space="preserve">
+    <value>Необходими документи при пътуване, пребиваване</value>
+  </data>
+  <data name="Несъстоятелност и ликвидация" xml:space="preserve">
+    <value>Несъстоятелност и ликвидация</value>
+  </data>
+  <data name="Образование и квалификация" xml:space="preserve">
+    <value>Образование и квалификация</value>
+  </data>
+  <data name="Образование или стаж в друга държава от Европейския съюз" xml:space="preserve">
+    <value>Образование или стаж в друга държава от Европейския съюз</value>
+  </data>
+  <data name="Обществени поръчки" xml:space="preserve">
+    <value>Обществени поръчки</value>
+  </data>
+  <data name="Опасни метеорологични явления" xml:space="preserve">
+    <value>Опасни метеорологични явления</value>
+  </data>
+  <data name="Осигурителен архив - документи на прекратени осигурители без правоприемник" xml:space="preserve">
+    <value>Осигурителен архив - документи на прекратени осигурители без правоприемник</value>
+  </data>
+  <data name="Осигуряване за фондовете на ДОО" xml:space="preserve">
+    <value>Осигуряване за фондовете на ДОО</value>
+  </data>
+  <data name="Отбрана и сигурност" xml:space="preserve">
+    <value>Отбрана и сигурност</value>
+  </data>
+  <data name="Отпадъци и опасни вещества" xml:space="preserve">
+    <value>Отпадъци и опасни вещества</value>
+  </data>
+  <data name="Охрана на труда" xml:space="preserve">
+    <value>Охрана на труда</value>
+  </data>
+  <data name="Парични обезщетения при болест, майчинство и безработица и помощи от ДОО" xml:space="preserve">
+    <value>Парични обезщетения при болест, майчинство и безработица и помощи от ДОО</value>
+  </data>
+  <data name="Парични обезщетения, помощи и пенсии по европейски регламенти и международни договори" xml:space="preserve">
+    <value>Парични обезщетения, помощи и пенсии по европейски регламенти и международни договори</value>
+  </data>
+  <data name="Патенти и авторски права" xml:space="preserve">
+    <value>Патенти и авторски права</value>
+  </data>
+  <data name="Пенсии по българското законодателство" xml:space="preserve">
+    <value>Пенсии по българското законодателство</value>
+  </data>
+  <data name="Персонал" xml:space="preserve">
+    <value>Персонал</value>
+  </data>
+  <data name="Правоспособност и професионална квалификация в областта на транспорта" xml:space="preserve">
+    <value>Правоспособност и професионална квалификация в областта на транспорта</value>
+  </data>
+  <data name="Правоспособност, превоз, пътни данъци, пътна инфраструктура" xml:space="preserve">
+    <value>Правоспособност, превоз, пътни данъци, пътна инфраструктура</value>
+  </data>
+  <data name="Пребиваване в друга държава членка на Европейския съюз" xml:space="preserve">
+    <value>Пребиваване в друга държава членка на Европейския съюз</value>
+  </data>
+  <data name="Превоз на пътници" xml:space="preserve">
+    <value>Превоз на пътници</value>
+  </data>
+  <data name="Превоз на товари" xml:space="preserve">
+    <value>Превоз на товари</value>
+  </data>
+  <data name="Предназначение на териториите, застрояване, преустройство" xml:space="preserve">
+    <value>Предназначение на териториите, застрояване, преустройство</value>
+  </data>
+  <data name="Предоставяне на данни от ГЕОКАРТФОНД" xml:space="preserve">
+    <value>Предоставяне на данни от ГЕОКАРТФОНД</value>
+  </data>
+  <data name="Премии на спортисти и треньори" xml:space="preserve">
+    <value>Премии на спортисти и треньори</value>
+  </data>
+  <data name="Придобиване, продажба и ипотека на недвижим имот" xml:space="preserve">
+    <value>Придобиване, продажба и ипотека на недвижим имот</value>
+  </data>
+  <data name="Придобиване, регистрация и данък на превозни средства" xml:space="preserve">
+    <value>Придобиване, регистрация и данък на превозни средства</value>
+  </data>
+  <data name="Продукти за растителна защита" xml:space="preserve">
+    <value>Продукти за растителна защита</value>
+  </data>
+  <data name="Проекти иновационни или финансирани от националния бюджет, банкови, финансови и инвестиционни услуги, финансиране на стопанска дейност" xml:space="preserve">
+    <value>Проекти иновационни или финансирани от националния бюджет, банкови, финансови и инвестиционни услуги, финансиране на стопанска дейност</value>
+  </data>
+  <data name="Производство и търговия на продукти със значение за здравето" xml:space="preserve">
+    <value>Производство и търговия на продукти със значение за здравето</value>
+  </data>
+  <data name="Производство и търговия с храни и земеделски продукти" xml:space="preserve">
+    <value>Производство и търговия с храни и земеделски продукти</value>
+  </data>
+  <data name="Производство и търговия, стоки и услуги" xml:space="preserve">
+    <value>Производство и търговия, стоки и услуги</value>
+  </data>
+  <data name="Професионалисти - геодезия, картография и кадастър" xml:space="preserve">
+    <value>Професионалисти - геодезия, картография и кадастър</value>
+  </data>
+  <data name="Професионално ориентиране и квалификация, обучение на възрастни" xml:space="preserve">
+    <value>Професионално ориентиране и квалификация, обучение на възрастни</value>
+  </data>
+  <data name="Профилактика, рехабилитация и трудова злополука" xml:space="preserve">
+    <value>Профилактика, рехабилитация и трудова злополука</value>
+  </data>
+  <data name="Пътуване в рамките на Европейския съюз" xml:space="preserve">
+    <value>Пътуване в рамките на Европейския съюз</value>
+  </data>
+  <data name="Пътуване и пребиваване в чужбина" xml:space="preserve">
+    <value>Пътуване и пребиваване в чужбина</value>
+  </data>
+  <data name="Работа и квалификация за чуждестранни граждани" xml:space="preserve">
+    <value>Работа и квалификация за чуждестранни граждани</value>
+  </data>
+  <data name="Работа, пенсия, социално подпомагане" xml:space="preserve">
+    <value>Работа, пенсия, социално подпомагане</value>
+  </data>
+  <data name="Радио, телевизия и други електронни медии" xml:space="preserve">
+    <value>Радио, телевизия и други електронни медии</value>
+  </data>
+  <data name="Раждане, осиновяване, приемни семейства, настойничество и попечителство" xml:space="preserve">
+    <value>Раждане, осиновяване, приемни семейства, настойничество и попечителство</value>
+  </data>
+  <data name="Разрешителни режими" xml:space="preserve">
+    <value>Разрешителни режими</value>
+  </data>
+  <data name="Растениевъдство" xml:space="preserve">
+    <value>Растениевъдство</value>
+  </data>
+  <data name="Регистрации, разрешителни, процедури" xml:space="preserve">
+    <value>Регистрации, разрешителни, процедури</value>
+  </data>
+  <data name="Рибарство и аквакултури" xml:space="preserve">
+    <value>Рибарство и аквакултури</value>
+  </data>
+  <data name="Свободни професии и занаяти. Самоосигуряващи се" xml:space="preserve">
+    <value>Свободни професии и занаяти. Самоосигуряващи се</value>
+  </data>
+  <data name="Селско стопанство и гори" xml:space="preserve">
+    <value>Селско стопанство и гори</value>
+  </data>
+  <data name="Селскостопанска техника и инфраструктура" xml:space="preserve">
+    <value>Селскостопанска техника и инфраструктура</value>
+  </data>
+  <data name="Семейство - брак, развод" xml:space="preserve">
+    <value>Семейство - брак, развод</value>
+  </data>
+  <data name="Сертификации и дейности свързани с НАТО" xml:space="preserve">
+    <value>Сертификации и дейности свързани с НАТО</value>
+  </data>
+  <data name="Смърт и наследяване" xml:space="preserve">
+    <value>Смърт и наследяване</value>
+  </data>
+  <data name="Социално осигуряване" xml:space="preserve">
+    <value>Социално осигуряване</value>
+  </data>
+  <data name="Социално осигуряване/Пенсии, парични обезщетения и помощи от ДОО, гарантирани вземания при несъстоятелност на работодателя" xml:space="preserve">
+    <value>Социално осигуряване/Пенсии, парични обезщетения и помощи от ДОО, гарантирани вземания при несъстоятелност на работодателя</value>
+  </data>
+  <data name="Социално подпомагане" xml:space="preserve">
+    <value>Социално подпомагане</value>
+  </data>
+  <data name="Справки и документи за здравен статус, здравни осигуровки" xml:space="preserve">
+    <value>Справки и документи за здравен статус, здравни осигуровки</value>
+  </data>
+  <data name="Строеж и преустройства" xml:space="preserve">
+    <value>Строеж и преустройства</value>
+  </data>
+  <data name="Строежи и преустройства, сделки с недвижими имоти, данъци" xml:space="preserve">
+    <value>Строежи и преустройства, сделки с недвижими имоти, данъци</value>
+  </data>
+  <data name="Строителство и въвеждане на обекти в експлоатация" xml:space="preserve">
+    <value>Строителство и въвеждане на обекти в експлоатация</value>
+  </data>
+  <data name="Съобщителни мрежи, радио и телевизия, електронни съобщения и дейности в областта на ИТ" xml:space="preserve">
+    <value>Съобщителни мрежи, радио и телевизия, електронни съобщения и дейности в областта на ИТ</value>
+  </data>
+  <data name="Техническа инфраструктура" xml:space="preserve">
+    <value>Техническа инфраструктура</value>
+  </data>
+  <data name="Трансплантации, донори на тъкани и клетки" xml:space="preserve">
+    <value>Трансплантации, донори на тъкани и клетки</value>
+  </data>
+  <data name="Транспорт и превозни средства" xml:space="preserve">
+    <value>Транспорт и превозни средства</value>
+  </data>
+  <data name="Транспортна инфраструктура" xml:space="preserve">
+    <value>Транспортна инфраструктура</value>
+  </data>
+  <data name="Трудово и пенсионно осигуряване" xml:space="preserve">
+    <value>Трудово и пенсионно осигуряване</value>
+  </data>
+  <data name="Туризъм, хотелиерство, ресторантьорство" xml:space="preserve">
+    <value>Туризъм, хотелиерство, ресторантьорство</value>
+  </data>
+  <data name="Търговия и транспортиране на оръжия, боеприпаси и други взривоопасни вещества" xml:space="preserve">
+    <value>Търговия и транспортиране на оръжия, боеприпаси и други взривоопасни вещества</value>
+  </data>
+  <data name="Удостоверителни и справочни услуги за бизнеса" xml:space="preserve">
+    <value>Удостоверителни и справочни услуги за бизнеса</value>
+  </data>
+  <data name="Удостоверителни услуги, свързани с образованието" xml:space="preserve">
+    <value>Удостоверителни услуги, свързани с образованието</value>
+  </data>
+  <data name="Удостоверяване и упражняване на граждански права" xml:space="preserve">
+    <value>Удостоверяване и упражняване на граждански права</value>
+  </data>
+  <data name="Удостоверяване на права върху имущество и вещи" xml:space="preserve">
+    <value>Удостоверяване на права върху имущество и вещи</value>
+  </data>
+  <data name="Услуги за чужди граждани" xml:space="preserve">
+    <value>Услуги за чужди граждани</value>
+  </data>
+  <data name="Устройствени планове - създаване, изменения" xml:space="preserve">
+    <value>Устройствени планове - създаване, изменения</value>
+  </data>
+  <data name="Устройство на територията, строителство и кадастър" xml:space="preserve">
+    <value>Устройство на територията, строителство и кадастър</value>
+  </data>
+  <data name="Училища" xml:space="preserve">
+    <value>Училища</value>
+  </data>
+  <data name="Филмови продукции" xml:space="preserve">
+    <value>Филмови продукции</value>
+  </data>
+  <data name="Фитосанитарен, фуражен контрол на храните, растителна защита" xml:space="preserve">
+    <value>Фитосанитарен, фуражен контрол на храните, растителна защита</value>
+  </data>
+  <data name="Хора в неравностойно положение" xml:space="preserve">
+    <value>Хора в неравностойно положение</value>
+  </data>
+  <data name="Частна охранителна дейност" xml:space="preserve">
+    <value>Частна охранителна дейност</value>
+  </data>
+  <data name="Чуждестранни граждани, пребиваващи в България" xml:space="preserve">
+    <value>Чуждестранни граждани, пребиваващи в България</value>
+  </data>
+</root>
