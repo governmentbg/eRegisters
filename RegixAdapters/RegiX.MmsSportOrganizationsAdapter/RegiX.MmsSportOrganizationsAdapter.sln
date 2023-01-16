@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33214.272
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegiX.MmsSportOrganizationsAdapter", "RegiX.MmsSportOrganizationsAdapter\RegiX.MmsSportOrganizationsAdapter.csproj", "{4C286066-7E58-4949-B830-8C7E27228915}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C286066-7E58-4949-B830-8C7E27228915}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C286066-7E58-4949-B830-8C7E27228915}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C286066-7E58-4949-B830-8C7E27228915}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C286066-7E58-4949-B830-8C7E27228915}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1F42E280-8238-4698-B93E-425069B686B2}
+	EndGlobalSection
+EndGlobal

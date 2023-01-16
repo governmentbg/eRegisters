@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+		   xmlns:common="http://egov.bg/RegiX/MMS/Common" 
+		   xmlns="http://egov.bg/RegiX/MMS/SportOrganizationsReportRequest" 
+		   targetNamespace="http://egov.bg/RegiX/MMS/SportOrganizationsReportRequest" 
+		   elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="SportOrganizationsRequestType">
+		<xs:sequence>
+			<xs:element name="FromDate" type="xs:date">
+				<xs:annotation>
+					<xs:documentation>След дата</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="SportOrganizationsRequest" type="SportOrganizationsRequestType">
+		<xs:annotation>
+			<xs:documentation>Справка на населени места</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+</xs:schema>
