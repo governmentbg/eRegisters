@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema 
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:common="http://egov.bg/RegiX/MMS/Common" 
+	xmlns="http://egov.bg/RegiX/MMS/SportOrganizationsReportResponse"
+	targetNamespace="http://egov.bg/RegiX/MMS/SportOrganizationsReportResponse" 
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="SportOrganizationData">
+		<xs:annotation>
+			<xs:documentation>Данни за спортна организация</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="SportUnionType" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Вид на спортното обединение</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="SportUnionRegNumber" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Регистрационен номер на спортно обединение</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="LicenseNumber" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Номер на лиценз</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="RegNumberEntryOrder" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Рег. номер на заповедта за вписване</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EntryOrderDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата на заповедта за вписване</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UnionName" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Наименование</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UnionLocation" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Седалище – населено място</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UnionAddress" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Седалище - адрес на управление</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UnionStatus" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Статус</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="UnionStatusDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата на статуса</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Presenter" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Представляващ</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="AddressCorespondant" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Адрес за кореспонденция</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Telephone" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Телефони</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Emails" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Имейли</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Sport" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Спорт</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="EIK" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>ЕИК</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="WebPage" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Web-страница</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ForeignData" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Данни за международна спортна организация</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CancelationOrder" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Заповед за прекратяване/отнемане на лиценз</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="CancelDate" type="xs:date" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Дата на отнемане</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="SportOrganizationsReportResponse">
+		<xs:annotation>
+			<xs:documentation>Справка за спортните обединения</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="SportOrganizationData" type="SportOrganizationData" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
